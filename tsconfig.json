@@ -1,5 +1,28 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@Assets/*": ["./assets/*"],
+      "@Atoms/*": ["./atoms/*"],
+      "@Atoms": ["./atoms/index"],
+      "@Components/*": ["./components/*"],
+      "@Components": ["./components/index"],
+      "@FirebaseConfig/*": ["./firebaseConfig/*"],
+      "@Hoc/*": ["./hoc/*"],
+      "@Hoc": ["./hoc/index"],
+      "@Molecules/*": ["./molecules/*"],
+      "@Molecules": ["./molecules/index"],
+      "@Organisms/*": ["./organisms/*"],
+      "@Organisms": ["./organisms/index"],
+      "@Store": ["./store/index"],
+      "@Store/*": ["./store/*"],
+      "@Styles": ["./styles/index"],
+      "@Styles/*": ["./styles/*"],
+      "@Services": ["./styles/services"],
+      "@Services/*": ["./services/*"],
+      "@Types/*": ["./types/*"],
+      "@Types": ["./types/index"],
+      "@Utils/*": ["./utils/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

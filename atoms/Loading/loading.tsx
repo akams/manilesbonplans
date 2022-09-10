@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components'
 
 const loading = keyframes`
   0% {
@@ -12,7 +12,7 @@ const loading = keyframes`
   100% {
     left: -30%;
   }
-`;
+`
 
 const Div = styled.div`
   margin: auto;
@@ -39,7 +39,7 @@ const Div = styled.div`
       animation: ${loading} 2000ms infinite;
     }
   }
-`;
+`
 
 const Loading = () => {
   return (
@@ -48,7 +48,7 @@ const Loading = () => {
         <div className="bar"></div>
       </div>
     </Div>
-  );
-};
+  )
+}
 
-export default Loading;
+export default Loading

@@ -27,7 +27,7 @@ export const LogoIcon = () => (
       </linearGradient>
     </defs>
   </svg>
-);
+)
 
 export const CartIcon = () => (
   <svg
@@ -46,7 +46,7 @@ export const CartIcon = () => (
     <line x1="3" y1="6" x2="21" y2="6"></line>
     <path d="M16 10a4 4 0 0 1-8 0"></path>
   </svg>
-);
+)
 
 export const WishlistIcon = () => (
   <svg
@@ -63,7 +63,7 @@ export const WishlistIcon = () => (
   >
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
   </svg>
-);
+)
 
 export const UserIcon = () => (
   <svg
@@ -83,7 +83,7 @@ export const UserIcon = () => (
     <circle cx="12" cy="10" r="3" />
     <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
   </svg>
-);
+)
 
 export const CheckIcon = () => (
   <svg
@@ -101,7 +101,7 @@ export const CheckIcon = () => (
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path d="M5 12l5 5l10 -10" />
   </svg>
-);
+)
 
 export const CloseIcon = () => (
   <svg
@@ -120,7 +120,7 @@ export const CloseIcon = () => (
     <line x1="18" y1="6" x2="6" y2="18" />
     <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
-);
+)
 
 export const ChevronDownIcon = () => (
   <svg
@@ -138,7 +138,7 @@ export const ChevronDownIcon = () => (
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <polyline points="6 9 12 15 18 9" />
   </svg>
-);
+)
 
 export const SortIcon = () => (
   <svg
@@ -157,7 +157,7 @@ export const SortIcon = () => (
     <path d="M3 9l4 -4l4 4m-4 -4v14" />
     <path d="M21 15l-4 4l-4 -4m4 4v-14" />
   </svg>
-);
+)
 
 export const FilterIcon = () => (
   <svg
@@ -183,4 +183,4 @@ export const FilterIcon = () => (
     <line x1="18" y1="4" x2="18" y2="5" />
     <line x1="18" y1="9" x2="18" y2="20" />
   </svg>
-);
+)

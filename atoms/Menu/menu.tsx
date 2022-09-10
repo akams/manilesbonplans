@@ -1,7 +1,11 @@
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-import OutsideClickHandler from 'react-outside-click-handler';
-import { useRouter } from 'next/router';
+import { FC } from 'react'
+import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+import OutsideClickHandler from 'react-outside-click-handler'
+import { useRouter } from 'next/router'
+
+import { Props } from './type'
+
 
 const Div = styled.div`
   border: 1px #eee solid;
@@ -51,31 +55,32 @@ const Div = styled.div`
       background-color: #f4f4f4;
     }
   }
-`;
+`
 
-const Menu = ({ onClose, onSignOut }) => {
-  const router = useRouter();
-  const user = useSelector((state) => state.auth.user);
+const Menu: FC<Props> = ({ onClose, onSignOut }) => {
+  const router = useRouter()
+  //@ts-ignore
+  const user = useSelector((state) => state.auth.user)
 
   const signInHandler = () => {
-    router.push('/signin');
-    onClose();
-  };
+    router.push('/signin')
+    onClose()
+  }
 
   const collectionsHandler = () => {
-    router.push('/collections');
-    onClose();
-  };
+    router.push('/collections')
+    onClose()
+  }
 
   const wishlistHandler = () => {
-    router.push('/wishlist');
-    onClose();
-  };
+    router.push('/wishlist')
+    onClose()
+  }
 
   const cartHandler = () => {
-    router.push('/cart');
-    onClose();
-  };
+    router.push('/cart')
+    onClose()
+  }
 
   return (
     <Div>
@@ -113,7 +118,7 @@ const Menu = ({ onClose, onSignOut }) => {
         )}
       </OutsideClickHandler>
     </Div>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

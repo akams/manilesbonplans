@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import { signOut } from 'firebase/auth';
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import styled from 'styled-components'
+import { signOut } from 'firebase/auth'
 
-import { LogoIcon, WishlistIcon, CartIcon, UserIcon } from '../assets/icons';
-import BetterLink from './BetterLink';
-import Menu from './Menu';
-import { auth } from '../services/firebase-config';
-import { useSelector } from 'react-redux';
+import { LogoIcon, WishlistIcon, CartIcon, UserIcon } from '@Assets/icons'
+import {
+  BetterLink,
+  Menu,
+} from '@Atoms'
+import { auth } from '@FirebaseConfig/firebase'
 
 const Div = styled.div`
   display: flex;
@@ -137,49 +139,52 @@ const Div = styled.div`
       }
     }
   }
-`;
+`
 
 const NavBar = () => {
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const wishlistCount = useSelector((state) => state.wishlist.items.length);
-  const cartItems = useSelector((state) => state.cart.items);
+  const [isMenuVisible, setIsMenuVisible] = useState(false)
+  //@ts-ignore
+  const wishlistCount = useSelector((state) => state.wishlist.items.length)
+  //@ts-ignore
+  const cartItems = useSelector((state) => state.cart.items)
   const cartCount = cartItems.reduce(
+    //@ts-ignore
     (prev, cur) => prev + +cur.itemQuantity,
-    0
-  );
+    0,
+  )
 
   const toggleMenuHandler = () => {
     if (isMenuVisible) {
-      closeMenu();
+      closeMenu()
     } else {
-      openMenu();
+      openMenu()
     }
-  };
+  }
 
   const openMenu = () => {
-    setIsMenuVisible(true);
-  };
+    setIsMenuVisible(true)
+  }
 
   const closeMenu = () => {
-    setIsMenuVisible(false);
-  };
+    setIsMenuVisible(false)
+  }
 
   const signOutHandler = () => {
     signOut(auth)
       .then(() => {
-        closeMenu();
+        closeMenu()
       })
       .catch((error) => {
-        console.log(error);
-      });
-  };
+        console.log(error)
+      })
+  }
 
   return (
     <Div>
       <h1 className="title">
         <BetterLink href="/">
           <LogoIcon />
-          <p>tiptop</p>
+          <p>Mani Les Bons Plans</p>
         </BetterLink>
       </h1>
       <div className="box">
@@ -209,7 +214,7 @@ const NavBar = () => {
         </div>
       </div>
     </Div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

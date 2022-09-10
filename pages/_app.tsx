@@ -1,40 +1,17 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import { Provider } from 'react-redux';
-import Head from 'next/head';
+import { Provider } from 'react-redux'
+import Head from 'next/head'
+import type { AppProps } from 'next/app'
 
-import store from '../store';
-import NavBar from '../components/NavBar';
-import ReactReduxFirebaseWrapper from '../components/ReactReduxFirebaseProvider';
+import GlobalStyle from '@Styles'
+import { Container } from '@Atoms'
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+import store from '@Store'
+import {
+  NavBar,
+  ReactReduxFirebaseProvider,
+} from '@Atoms'
 
-  body {
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  *::selection {
-    background-color: #b699f2;
-  }
-`;
-
-const Container = styled.div`
-  min-height: 100vh;
-  max-width: 1440px;
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-`;
-
-  //@ts-ignore
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -43,14 +20,14 @@ const MyApp = ({ Component, pageProps }) => {
       <GlobalStyle />
       <Container>
         <Provider store={store}>
-          <ReactReduxFirebaseWrapper>
+          <ReactReduxFirebaseProvider>
             <NavBar />
             <Component {...pageProps} />
-          </ReactReduxFirebaseWrapper>
+          </ReactReduxFirebaseProvider>
         </Provider>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default MyApp;
+export default MyApp
