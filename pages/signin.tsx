@@ -1,24 +1,26 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import type { NextPage } from 'next'
-// import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
 
+import { auth } from '@FirebaseConfig/firebase'
+
 import { SignInOrganism } from '@Organisms'
-import { MainNav } from '@Atoms'
 import { Div } from '@Organisms/SignIn/styledComponent'
+import { MainNav } from '@Atoms'
 
 import * as Types from '@Types'
-
-// import { auth } from '../services/firebase-config'
 
 const SignIn: NextPage = () => {
   const router = useRouter()
   //@ts-ignore
   const user = useSelector((state) => state.auth.user)
+  const [serverErrorMessage, setServerErrorMessage] = useState('')
+  const [isGuestLoading, setIsGuestLoading] = useState(false)
 
   if (user) {
     router.replace('/collections')
@@ -32,56 +34,41 @@ const SignIn: NextPage = () => {
     mode: 'onTouched',
   })
 
+  const submitHandler = async ({ email, password }: Types.SignInFormData) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+    } catch (error) {
+      //@ts-ignore
+      const errorCode = error.code
+      if (errorCode === 'auth/user-not-found') {
+        setServerErrorMessage('Account doesn\'t exist.')
+      } else if (errorCode === 'auth/wrong-password') {
+        setServerErrorMessage('Invalid password.')
+      } else {
+        setServerErrorMessage('Something went wrong.')
+      }
+    }
+  }
 
-  // //@ts-ignore
-  // const submitHandler = (ev) => {
-  //   ev.preventDefault()
-
-  //   setStartEmailValidation(true)
-  //   setStartPasswordValidation(true)
-
-  //   if (isEmailValid && isPasswordValid && !serverErrorMessage) {
-  //     setIsLoading(true)
-  //     signInWithEmailAndPassword(auth, emailInput, passwordInput)
-  //       .then((user) => { })
-  //       .catch((error) => {
-  //         const errorCode = error.code
-  //         console.log(errorCode)
-
-  //         if (errorCode === 'auth/user-not-found') {
-  //           setServerErrorMessage('Account doesn\'t exist.')
-  //         } else if (errorCode === 'auth/wrong-password') {
-  //           setServerErrorMessage('Invalid password.')
-  //         } else {
-  //           setServerErrorMessage('Something went wrong.')
-  //         }
-  //       })
-  //       .finally(() => {
-  //         setIsLoading(false)
-  //       })
-  //   }
-  // }
-
-  // const signInAsGuestHandler = () => {
-  //   setIsGuestLoading(true)
-  //   signInWithEmailAndPassword(auth, 'lovelyguest@fakemail.com', 'lovelyguest')
-  //     .then((user) => { })
-  //     .catch((error) => {
-  //       const errorCode = error.code
-  //       console.log(errorCode)
-
-  //       if (errorCode === 'auth/user-not-found') {
-  //         setServerErrorMessage('Account doesn\'t exist.')
-  //       } else if (errorCode === 'auth/wrong-password') {
-  //         setServerErrorMessage('Invalid password.')
-  //       } else {
-  //         setServerErrorMessage('Something went wrong.')
-  //       }
-  //     })
-  //     .finally(() => {
-  //       setIsGuestLoading(false)
-  //     })
-  // }
+  const signInAsGuestHandler = async () => {
+    setIsGuestLoading(true)
+    try {
+      await signInWithEmailAndPassword(auth, 'lovelyguest@fakemail.com', 'lovelyguest')
+    } catch (error) {
+      //@ts-ignore
+      const errorCode = error.code
+      console.log(errorCode)
+      if (errorCode === 'auth/user-not-found') {
+        setServerErrorMessage('Account doesn\'t exist.')
+      } else if (errorCode === 'auth/wrong-password') {
+        setServerErrorMessage('Invalid password.')
+      } else {
+        setServerErrorMessage('Something went wrong.')
+      }
+    } finally {
+      setIsGuestLoading(false)
+    }
+  }
 
   return (
     <>
@@ -101,7 +88,12 @@ const SignIn: NextPage = () => {
           </>
         ) : (
           <FormProvider {...useFormMethods}>
-            <SignInOrganism />
+            <SignInOrganism
+              serverErrorMessage={serverErrorMessage}
+              submitHandler={submitHandler}
+              signInAsGuestHandler={signInAsGuestHandler}
+              isGuestLoading={isGuestLoading}
+            />
           </FormProvider>
         )}
       </Div>
