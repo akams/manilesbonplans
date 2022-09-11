@@ -26,7 +26,7 @@ const SizePickerForTops = ({ currentSize, onSetSize }) => {
         XL
       </button>
     </>
-  );
-};
+  )
+}
 
-export default SizePickerForTops;
+export default SizePickerForTops

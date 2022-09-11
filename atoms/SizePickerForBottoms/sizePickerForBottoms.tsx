@@ -26,7 +26,7 @@ const SizePickerForBottoms = ({ currentSize, onSetSize }) => {
         34
       </button>
     </>
-  );
-};
+  )
+}
 
-export default SizePickerForBottoms;
+export default SizePickerForBottoms

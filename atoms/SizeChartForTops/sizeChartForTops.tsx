@@ -36,7 +36,7 @@ const SizeChartForTops = () => {
         </tr>
       </tbody>
     </table>
-  );
-};
+  )
+}
 
-export default SizeChartForTops;
+export default SizeChartForTops

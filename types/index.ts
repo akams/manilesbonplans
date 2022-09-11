@@ -23,3 +23,8 @@ export type ProductsViewProps = {
     brands: Array<String>;
     categories: Array<String>;
 }
+
+export type WishlistItemsType = {
+    itemId: string;
+    itemSize: string;
+}

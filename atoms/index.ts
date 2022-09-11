@@ -15,6 +15,10 @@ import SortBy from './SortBy'
 import RoundBox from './RoundBox'
 import Modal from './Modal'
 import SmallFilter from './SmallFilter'
+import SizeChartForTops from './SizeChartForTops'
+import SizeChartForBottoms from './SizeChartForBottoms'
+import SizePickerForTops from './SizePickerForTops'
+import SizePickerForBottoms from './SizePickerForBottoms'
 
 export {
   MainNav,
@@ -34,4 +38,8 @@ export {
   RoundBox,
   Modal,
   SmallFilter,
+  SizeChartForTops,
+  SizeChartForBottoms,
+  SizePickerForTops,
+  SizePickerForBottoms,
 }

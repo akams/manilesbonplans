@@ -31,7 +31,7 @@ const SizeChartForBottoms = () => {
         </tr>
       </tbody>
     </table>
-  );
-};
+  )
+}
 
-export default SizeChartForBottoms;
+export default SizeChartForBottoms

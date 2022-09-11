@@ -34,7 +34,9 @@
     "^@Types$": "<rootDir>/types/index",
     "^@Utils/(.*)$": "<rootDir>/utils/$1",
     "^@Locale/(.*)$": "<rootDir>/locale/$1",
-    "^@Locale$": "<rootDir>/locale/index"
+    "^@Locale$": "<rootDir>/locale/index",
+    "^@Api/(.*)$": "<rootDir>/pages/api/$1",
+    "^@Api$": "<rootDir>/pages/api/index"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",

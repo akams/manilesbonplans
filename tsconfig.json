@@ -23,7 +23,9 @@
       "@Types": ["./types/index"],
       "@Utils/*": ["./utils/*"],
       "@Locale": ["./locale/index"],
-      "@Locale/*": ["./locale/*"]
+      "@Locale/*": ["./locale/*"],
+      "@Api": ["./pages/api/index"],
+      "@Api/*": ["./pages/api/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
