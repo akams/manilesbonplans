@@ -22,6 +22,7 @@ import SizePickerForBottoms from './SizePickerForBottoms'
 import Notification from './Notification'
 import EmptyWishlist from './EmptyWishlist'
 import SignInPromptTemplate from './SignInPromptTemplate'
+import EmptyCart from './EmptyCart'
 
 export {
   MainNav,
@@ -48,4 +49,5 @@ export {
   Notification,
   EmptyWishlist,
   SignInPromptTemplate,
+  EmptyCart,
 }

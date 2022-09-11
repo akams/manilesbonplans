@@ -62,7 +62,7 @@ const QuantityPicker = ({ currentQuantity, onSetQuantity }) => {
         10
       </button>
     </>
-  );
-};
+  )
+}
 
-export default QuantityPicker;
+export default QuantityPicker

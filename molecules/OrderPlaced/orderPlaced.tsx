@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import Link from 'next/link';
+import styled from 'styled-components'
+import Link from 'next/link'
 
-import { CheckIcon } from '../assets/icons';
+import { CheckIcon } from '@Assets/icons'
 
 const Div = styled.div`
   flex: 1;
@@ -56,7 +56,7 @@ const Div = styled.div`
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-`;
+`
 
 const OrderPlaced = () => {
   return (
@@ -68,7 +68,7 @@ const OrderPlaced = () => {
       <p className="text">Thank you for shopping with us</p>
       <Link href="/collections">Continue Shopping</Link>
     </Div>
-  );
-};
+  )
+}
 
-export default OrderPlaced;
+export default OrderPlaced

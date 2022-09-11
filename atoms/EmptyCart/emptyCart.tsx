@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { CartIcon } from '../assets/icons';
+import { CartIcon } from '@Assets/icons'
 
 const Div = styled.div`
   flex: 1;
@@ -33,7 +33,7 @@ const Div = styled.div`
   .text {
     margin-top: 24px;
   }
-`;
+`
 
 const EmptyCart = () => {
   return (
@@ -43,7 +43,7 @@ const EmptyCart = () => {
       </div>
       <p className="text">Your cart is empty</p>
     </Div>
-  );
-};
+  )
+}
 
-export default EmptyCart;
+export default EmptyCart

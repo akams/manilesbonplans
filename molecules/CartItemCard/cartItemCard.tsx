@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { useSelector } from 'react-redux';
-import styled from 'styled-components';
-import { doc, updateDoc, arrayRemove } from 'firebase/firestore';
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import { useSelector } from 'react-redux'
+import styled from 'styled-components'
+import { doc, updateDoc, arrayRemove } from 'firebase/firestore'
+import { db } from '@FirebaseConfig/firebase'
 
-import BetterLink from './BetterLink';
-import { ChevronDownIcon, CloseIcon } from '../assets/icons';
-import { db } from '../services/firebase-config';
-import Modal from './Modal';
-import QuantityPicker from './QuantityPicker';
-import { getFormattedCurrency } from '../utils/getFormattedCurrency';
+import { ChevronDownIcon, CloseIcon } from '@Assets/icons'
+import { getFormattedCurrency } from '@Utils/getFormattedCurrency'
+
+import {
+  BetterLink,
+  Modal,
+} from '@Atoms'
+import { QuantityPicker } from '@Molecules'
 
 const Div = styled.div`
   font-size: 14px;
@@ -133,7 +136,7 @@ const Div = styled.div`
   @media (max-width: 640px) {
     width: 100%;
   }
-`;
+`
 
 const ModalDiv = styled.div`
   padding: 16px;
@@ -183,7 +186,7 @@ const ModalDiv = styled.div`
       }
     }
   }
-`;
+`
 
 const CartItemCard = ({
   index,
@@ -195,10 +198,10 @@ const CartItemCard = ({
   amount,
   quantity,
 }) => {
-  const [showQuantityPicker, setShowQuantityPicker] = useState(false);
-  const [currentQuantity, setCurrentQuantity] = useState(quantity);
-  const user = useSelector((state) => state.auth.user);
-  const cartItems = useSelector((state) => state.cart.items);
+  const [showQuantityPicker, setShowQuantityPicker] = useState(false)
+  const [currentQuantity, setCurrentQuantity] = useState(quantity)
+  const user = useSelector((state) => state.auth.user)
+  const cartItems = useSelector((state) => state.cart.items)
 
   // useEffect(() => {
   //   const item = cartItems.find((item) => item.itemId === id);
@@ -227,37 +230,37 @@ const CartItemCard = ({
         itemQuantity: currentQuantity,
       }),
     })
-      .then(() => {})
-      .catch((error) => console.log(error));
-  };
+      .then(() => { })
+      .catch((error) => console.log(error))
+  }
 
   const openQuantityPickerHandler = () => {
-    setShowQuantityPicker(true);
-  };
+    setShowQuantityPicker(true)
+  }
 
   const closeQuantityPickerHandler = () => {
-    setShowQuantityPicker(false);
-  };
+    setShowQuantityPicker(false)
+  }
 
   const setQuantityHandler = (selectedQuantity) => {
-    setCurrentQuantity(selectedQuantity);
+    setCurrentQuantity(selectedQuantity)
     const item = cartItems.find(
-      (item) => item.itemId === id && item.itemSize === size
-    );
+      (item) => item.itemId === id && item.itemSize === size,
+    )
     const updatedItem = {
       ...item,
       itemQuantity: selectedQuantity,
-    };
-    const updatedItems = [...cartItems];
-    updatedItems.splice(index, 1, updatedItem);
+    }
+    const updatedItems = [...cartItems]
+    updatedItems.splice(index, 1, updatedItem)
     updateDoc(doc(db, user.uid, 'cart'), {
       items: updatedItems,
     })
-      .then(() => {})
+      .then(() => { })
       .catch((error) => {
-        console.log(error);
-      });
-  };
+        console.log(error)
+      })
+  }
 
   return (
     <>
@@ -306,7 +309,7 @@ const CartItemCard = ({
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default CartItemCard;
+export default CartItemCard
