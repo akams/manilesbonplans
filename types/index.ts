@@ -8,3 +8,18 @@ export type SignUpFormData = {
     password: string;
     name: string;
 }
+
+export type ClothesProduct = {
+    id: string;
+    imageURL: string;
+    brand: string;
+    category: string;
+    name: string;
+    amount: string|number;
+}
+
+export type ProductsViewProps = {
+    clothes: ClothesProduct[];
+    brands: Array<String>;
+    categories: Array<String>;
+}

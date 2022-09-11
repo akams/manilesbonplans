@@ -1,13 +1,13 @@
-import Select from 'react-select';
-import { useDispatch } from 'react-redux';
+import Select from 'react-select'
+import { useDispatch } from 'react-redux'
 
-import { filterActions } from '../store/filterSlice';
+import { filterActions } from '@Store/filterSlice'
 
 const options = [
   { value: 'default', label: 'Default' },
   { value: 'price_high_to_low', label: 'Price: High to Low' },
   { value: 'price_low_to_high', label: 'Price: Low to High' },
-];
+]
 
 const customStyles = {
   container: (provided) => ({
@@ -44,14 +44,14 @@ const customStyles = {
     ...provided,
     color: '#bbb',
   }),
-};
+}
 
 const SortSelect = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const changeHandler = (selectedOption) => {
-    dispatch(filterActions.chooseSort(selectedOption.value));
-  };
+    dispatch(filterActions.chooseSort(selectedOption.value))
+  }
 
   return (
     <Select
@@ -64,7 +64,7 @@ const SortSelect = () => {
       placeholder="Sort by"
       styles={customStyles}
     />
-  );
-};
+  )
+}
 
-export default SortSelect;
+export default SortSelect

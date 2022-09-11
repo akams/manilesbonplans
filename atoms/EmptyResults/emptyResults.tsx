@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { FilterIcon } from '../assets/icons';
+import { FilterIcon } from '@Assets/icons'
 
 const Div = styled.div`
   flex: 1;
@@ -32,7 +32,7 @@ const Div = styled.div`
   .text {
     margin-top: 24px;
   }
-`;
+`
 
 const EmptyResults = () => {
   return (
@@ -42,7 +42,7 @@ const EmptyResults = () => {
       </div>
       <p className="text">No results found</p>
     </Div>
-  );
-};
+  )
+}
 
-export default EmptyResults;
+export default EmptyResults

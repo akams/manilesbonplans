@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from 'react'
+import styled from 'styled-components'
 
-import { SortIcon } from '../assets/icons';
-import Modal from './Modal';
-import SortBy from './SortBy';
+import { SortIcon } from '@Assets/icons'
+import { SortBy, Modal } from '@Atoms'
 
 const Button = styled.button`
   color: inherit;
@@ -16,7 +15,7 @@ const Button = styled.button`
   padding: 4px;
   margin-right: 8px;
   cursor: pointer;
-`;
+`
 
 const ModalDiv = styled.div`
   padding: 16px 20px 16px 16px;
@@ -41,18 +40,18 @@ const ModalDiv = styled.div`
       }
     }
   }
-`;
+`
 
 const SmallSort = () => {
-  const [showSort, setShowSort] = useState(false);
+  const [showSort, setShowSort] = useState(false)
 
   const openSortHandler = () => {
-    setShowSort(true);
-  };
+    setShowSort(true)
+  }
 
   const closeSortHander = () => {
-    setShowSort(false);
-  };
+    setShowSort(false)
+  }
 
   return (
     <>
@@ -68,7 +67,7 @@ const SmallSort = () => {
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default SmallSort;
+export default SmallSort

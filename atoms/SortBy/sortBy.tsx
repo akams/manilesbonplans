@@ -1,4 +1,4 @@
-import RoundBox from './RoundBox';
+import { RoundBox } from '@Atoms'
 
 const SortBy = () => {
   return (
@@ -16,7 +16,7 @@ const SortBy = () => {
         <span className="text">Price: Low to High</span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SortBy;
+export default SortBy

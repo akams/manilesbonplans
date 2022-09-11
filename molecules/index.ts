@@ -7,8 +7,11 @@ import {
   // InputRadioToggle,
   // Textarea,
 } from './ControlledFields'
+import ReactReduxFirebaseProvider from './ReactReduxFirebaseProvider'
 
+ 
 export {
+  ReactReduxFirebaseProvider,
   InputText,
   // Dropdown,
   // InputCurrency,

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import CheckBox from './CheckBox';
+import { CheckBox } from '@Atoms'
 
 const Div = styled.div`
   margin-top: 32px;
@@ -31,7 +31,7 @@ const Div = styled.div`
       margin: 16px 0;
     }
   }
-`;
+`
 
 const BrandFilter = ({ items }) => {
   return (
@@ -46,7 +46,7 @@ const BrandFilter = ({ items }) => {
           </div>
         ))}
     </Div>
-  );
-};
+  )
+}
 
-export default BrandFilter;
+export default BrandFilter

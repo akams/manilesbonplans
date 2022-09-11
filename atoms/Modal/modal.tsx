@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { CloseIcon } from '../assets/icons';
+import { CloseIcon } from '@Assets/icons'
 
 const Div = styled.div`
   position: fixed;
@@ -42,7 +42,7 @@ const Div = styled.div`
       margin-left: auto;
     }
   }
-`;
+`
 
 const Modal = ({ closeHandler, children }) => {
   return (
@@ -55,7 +55,7 @@ const Modal = ({ closeHandler, children }) => {
         {children}
       </div>
     </Div>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal

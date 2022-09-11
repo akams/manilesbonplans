@@ -37,7 +37,7 @@
       "no-undef": "off",
       "comma-dangle": ["error", "always-multiline"],
       "react/prop-types": "off",
-      "space-before-function-paren": ["error", "never"],
+      "space-before-function-paren": "off",
       "multiline-ternary": "off",
       "operator-linebreak": ["error", "before"],
       "import/export": "off",

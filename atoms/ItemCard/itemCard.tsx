@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import styled from 'styled-components';
-import { getFormattedCurrency } from '../utils/getFormattedCurrency';
+import Image from 'next/image'
+import styled from 'styled-components'
+import { BetterLink } from '@Atoms'
 
-import BetterLink from './BetterLink';
+import { getFormattedCurrency } from '@Utils/getFormattedCurrency'
 
 const Div = styled.div`
   border: 1px #eee solid;
@@ -29,7 +29,7 @@ const Div = styled.div`
       font-weight: 500;
     }
   }
-`;
+`
 
 const ItemCard = ({ id, imageURL, brand, name, amount, setPriority }) => {
   return (
@@ -41,6 +41,7 @@ const ItemCard = ({ id, imageURL, brand, name, amount, setPriority }) => {
           height={275}
           layout="responsive"
           priority={setPriority}
+          alt={`${name}-${brand}`}
         />
         <div className="info">
           <div className="brand">{brand}</div>
@@ -49,7 +50,7 @@ const ItemCard = ({ id, imageURL, brand, name, amount, setPriority }) => {
         </div>
       </BetterLink>
     </Div>
-  );
-};
+  )
+}
 
-export default ItemCard;
+export default ItemCard

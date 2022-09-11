@@ -34,41 +34,33 @@ const SignUp = () => {
     router.replace('/collections')
   }
 
-  //@ts-ignore
-  const submitHandler = async (formData: Types.SignUpFormData) => {
-    const { email, password, name } = formData
-    console.log('v1 ==>', { email, password, name })
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const uid = userCredential.user.uid
-        console.log('v1 userCredential ==>', { userCredential })
-        console.log('v1 uid ==>', { uid })
-        setDoc(doc(db, uid, 'account'), {
-          name,
-          email,
-        })
-          .then(() => {
-            setDoc(doc(db, uid, 'wishlist'), {
-              items: [],
-            }).then(() => {
-              setDoc(doc(db, uid, 'cart'), {
-                items: [],
-              })
-            })
-          })
-          .catch((error) => {
-            console.log(error)
-          })
-      })
-      .catch((error) => {
-        const errorCode = error.code
+  const submitHandler = async ({ email, password, name }: Types.SignUpFormData) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+      const { user: { uid } } = userCredential
 
-        if (errorCode === 'auth/email-already-in-use') {
-          setServerErrorMessage('Email address already in use.')
-        } else {
-          setServerErrorMessage('Something went wrong.')
-        }
+      await setDoc(doc(db, uid, 'account'), {
+        name,
+        email,
       })
+
+      await setDoc(doc(db, uid, 'wishlist'), {
+        items: [],
+      })
+
+      await setDoc(doc(db, uid, 'cart'), {
+        items: [],
+      })
+    } catch (error) {
+      //@ts-ignore
+      const errorCode = error.code
+
+      if (errorCode === 'auth/email-already-in-use') {
+        setServerErrorMessage('Email address already in use.')
+      } else {
+        setServerErrorMessage('Something went wrong.')
+      }
+    }
   }
 
   return (

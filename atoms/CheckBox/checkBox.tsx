@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import styled from 'styled-components';
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components'
 
-import { CheckIcon } from '../assets/icons';
-import { filterActions } from '../store/filterSlice';
+import { CheckIcon } from '@Assets/icons'
+import { filterActions } from '@Store/filterSlice'
 
 const Button = styled.button`
   flex-shrink: 0;
@@ -27,42 +27,44 @@ const Button = styled.button`
       stroke-width: 3;
     }
   }
-`;
+`
 
+//@ts-ignore
 const CheckBox = ({ of, type }) => {
-  const filters = useSelector((state) => state.filter);
-  const [isChecked, setIsChecked] = useState(false);
-  const dispatch = useDispatch();
+  //@ts-ignore
+  const { brands, categories } = useSelector((state) => state.filter)
+  const [isChecked, setIsChecked] = useState(false)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (type === 'brand') {
-      if (filters.brands.includes(of)) {
-        setIsChecked(true);
+      if (brands.includes(of)) {
+        setIsChecked(true)
       }
     } else if (type === 'category') {
-      if (filters.categories.includes(of)) {
-        setIsChecked(true);
+      if (categories.includes(of)) {
+        setIsChecked(true)
       }
     }
-  }, []);
+  }, [brands, categories, of, type])
 
   const clickHandler = () => {
     if (isChecked) {
       if (type === 'brand') {
-        dispatch(filterActions.deselectBrand(of));
+        dispatch(filterActions.deselectBrand(of))
       } else if (type === 'category') {
-        dispatch(filterActions.deselectCategory(of));
+        dispatch(filterActions.deselectCategory(of))
       }
     } else {
       if (type === 'brand') {
-        dispatch(filterActions.selectBrand(of));
+        dispatch(filterActions.selectBrand(of))
       } else if (type === 'category') {
-        dispatch(filterActions.selectCategory(of));
+        dispatch(filterActions.selectCategory(of))
       }
     }
 
-    setIsChecked((prevValue) => !prevValue);
-  };
+    setIsChecked((prevValue) => !prevValue)
+  }
 
   return isChecked ? (
     <Button className="checked" onClick={clickHandler}>
@@ -70,7 +72,7 @@ const CheckBox = ({ of, type }) => {
     </Button>
   ) : (
     <Button onClick={clickHandler}></Button>
-  );
-};
+  )
+}
 
-export default CheckBox;
+export default CheckBox

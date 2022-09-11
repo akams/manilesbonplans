@@ -7,13 +7,12 @@ import { useRouter } from 'next/router'
 import * as locales from '@Locale'
 
 import GlobalStyle from '@Styles'
-import { Container } from '@Atoms'
+import { Container, NavBar } from '@Atoms'
 
 import store from '@Store'
 import {
-  NavBar,
   ReactReduxFirebaseProvider,
-} from '@Atoms'
+} from '@Molecules'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter()

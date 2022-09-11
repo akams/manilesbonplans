@@ -1,10 +1,8 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from 'react'
+import styled from 'styled-components'
 
-import { FilterIcon } from '../assets/icons';
-import BrandFilter from './BrandFilter';
-import CategoryFilter from './CategoryFilter';
-import Modal from './Modal';
+import { FilterIcon } from '@Assets/icons'
+import { BrandFilter, CategoryFilter, Modal } from '@Atoms'
 
 const Button = styled.button`
   color: inherit;
@@ -17,7 +15,7 @@ const Button = styled.button`
   padding: 4px;
   margin-right: 8px;
   cursor: pointer;
-`;
+`
 
 const ModalDiv = styled.div`
   padding: 16px;
@@ -32,18 +30,18 @@ const ModalDiv = styled.div`
   .filters {
     display: flex;
   }
-`;
+`
 
 const SmallFilter = ({ brandItems, categoryItems }) => {
-  const [showFilter, setShowFilter] = useState(false);
+  const [showFilter, setShowFilter] = useState(false)
 
   const openFilterHandler = () => {
-    setShowFilter(true);
-  };
+    setShowFilter(true)
+  }
 
   const closeFilterHandler = () => {
-    setShowFilter(false);
-  };
+    setShowFilter(false)
+  }
 
   return (
     <>
@@ -62,7 +60,7 @@ const SmallFilter = ({ brandItems, categoryItems }) => {
         </Modal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default SmallFilter;
+export default SmallFilter

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import CheckBox from './CheckBox';
+import { CheckBox } from '@Atoms'
 
 const Div = styled.div`
   margin-top: 32px;
@@ -31,7 +31,7 @@ const Div = styled.div`
       margin-bottom: 16px;
     }
   }
-`;
+`
 
 const CategoryFilter = ({ items }) => {
   return (
@@ -46,7 +46,7 @@ const CategoryFilter = ({ items }) => {
           </div>
         ))}
     </Div>
-  );
-};
+  )
+}
 
-export default CategoryFilter;
+export default CategoryFilter

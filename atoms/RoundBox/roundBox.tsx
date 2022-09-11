@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import styled from 'styled-components';
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components'
 
-import { filterActions } from '../store/filterSlice';
+import { filterActions } from '@Store/filterSlice'
 
 const Button = styled.button`
   flex-shrink: 0;
@@ -22,32 +22,32 @@ const Button = styled.button`
       stroke-width: 3;
     }
   }
-`;
+`
 
 const RoundBox = ({ of }) => {
-  const filters = useSelector((state) => state.filter);
-  const [isChecked, setIsChecked] = useState(false);
-  const dispatch = useDispatch();
+  const filters = useSelector((state) => state.filter)
+  const [isChecked, setIsChecked] = useState(false)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (filters.sort === of) {
-      setIsChecked(true);
+      setIsChecked(true)
     } else {
-      setIsChecked(false);
+      setIsChecked(false)
     }
-  }, [filters.sort]);
+  }, [filters.sort])
 
   const clickHandler = () => {
-    dispatch(filterActions.chooseSort(of));
-    setIsChecked(true);
-  };
+    dispatch(filterActions.chooseSort(of))
+    setIsChecked(true)
+  }
 
   return (
     <Button
       className={isChecked ? 'checked' : ''}
       onClick={clickHandler}
     ></Button>
-  );
-};
+  )
+}
 
-export default RoundBox;
+export default RoundBox
