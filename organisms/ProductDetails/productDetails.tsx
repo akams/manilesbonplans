@@ -47,7 +47,7 @@ const ProductDetails: FC<Props> = ({
         <div className="brand">{brand}</div>
         <div className="name">{name}</div>
         <div className="amount">{`Rs. ${getFormattedCurrency(
-          amount,
+          Number(amount),
         )}`}</div>
         <div className="size-box">
           <div className="head">
