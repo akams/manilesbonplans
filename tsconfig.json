@@ -21,7 +21,9 @@
       "@Services/*": ["./services/*"],
       "@Types/*": ["./types/*"],
       "@Types": ["./types/index"],
-      "@Utils/*": ["./utils/*"]
+      "@Utils/*": ["./utils/*"],
+      "@Locale": ["./locale/index"],
+      "@Locale/*": ["./locale/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

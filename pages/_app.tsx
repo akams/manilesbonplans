@@ -1,6 +1,10 @@
 import { Provider } from 'react-redux'
+import { IntlProvider } from 'react-intl'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+
+import * as locales from '@Locale'
 
 import GlobalStyle from '@Styles'
 import { Container } from '@Atoms'
@@ -12,17 +16,29 @@ import {
 } from '@Atoms'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter()
+  const { locale, defaultLocale } = router
+  //@ts-ignore
+  const messages = locales[locale]
   return (
     <>
       <Head>
-        <title>Tiptop</title>
+        <title>Mani les bons plans</title>
       </Head>
       <GlobalStyle />
       <Container>
         <Provider store={store}>
           <ReactReduxFirebaseProvider>
             <NavBar />
-            <Component {...pageProps} />
+            <IntlProvider
+              //@ts-ignore
+              locale={locale}
+              defaultLocale={defaultLocale}
+              messages={messages}
+            >
+              <Component {...pageProps} />
+
+            </IntlProvider>
           </ReactReduxFirebaseProvider>
         </Provider>
       </Container>
