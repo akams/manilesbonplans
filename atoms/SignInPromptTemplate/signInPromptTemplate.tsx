@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import styled from 'styled-components';
+import Link from 'next/link'
+import styled from 'styled-components'
 
-import { UserIcon } from '../assets/icons';
+import { UserIcon } from '@Assets/icons'
 
 const Div = styled.div`
   flex: 1;
@@ -55,7 +55,7 @@ const Div = styled.div`
     border-radius: 10px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.24);
   }
-`;
+`
 
 const SignInPromptTemplate = ({ type }) => {
   return (
@@ -67,7 +67,7 @@ const SignInPromptTemplate = ({ type }) => {
       <p className="text">Sign In to view items in your {type}</p>
       <Link href="/signin">Sign In</Link>
     </Div>
-  );
-};
+  )
+}
 
-export default SignInPromptTemplate;
+export default SignInPromptTemplate

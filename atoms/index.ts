@@ -19,6 +19,9 @@ import SizeChartForTops from './SizeChartForTops'
 import SizeChartForBottoms from './SizeChartForBottoms'
 import SizePickerForTops from './SizePickerForTops'
 import SizePickerForBottoms from './SizePickerForBottoms'
+import Notification from './Notification'
+import EmptyWishlist from './EmptyWishlist'
+import SignInPromptTemplate from './SignInPromptTemplate'
 
 export {
   MainNav,
@@ -42,4 +45,7 @@ export {
   SizeChartForBottoms,
   SizePickerForTops,
   SizePickerForBottoms,
+  Notification,
+  EmptyWishlist,
+  SignInPromptTemplate,
 }

@@ -8,9 +8,10 @@ import {
   // Textarea,
 } from './ControlledFields'
 import ReactReduxFirebaseProvider from './ReactReduxFirebaseProvider'
-
+import WishlistItemCard from './WishlistItemCard'
  
 export {
+  WishlistItemCard,
   ReactReduxFirebaseProvider,
   InputText,
   // Dropdown,

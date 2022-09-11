@@ -16,6 +16,7 @@ export type ClothesProduct = {
     category: string;
     name: string;
     amount: string|number;
+    size?: string|null;
 }
 
 export type ProductsViewProps = {
@@ -26,5 +27,5 @@ export type ProductsViewProps = {
 
 export type WishlistItemsType = {
     itemId: string;
-    itemSize: string;
+    itemSize: string|null;
 }

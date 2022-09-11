@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { WishlistIcon } from '../assets/icons';
+import { WishlistIcon } from '@Assets/icons'
 
 const Div = styled.div`
   flex: 1;
@@ -32,7 +32,7 @@ const Div = styled.div`
   .text {
     margin-top: 24px;
   }
-`;
+`
 
 const EmptyWishlist = () => {
   return (
@@ -42,7 +42,7 @@ const EmptyWishlist = () => {
       </div>
       <p className="text">Your wishlist is empty</p>
     </Div>
-  );
-};
+  )
+}
 
-export default EmptyWishlist;
+export default EmptyWishlist
