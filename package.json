@@ -39,6 +39,9 @@
     "^@Api$": "<rootDir>/pages/api/index"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.5",
     "@reduxjs/toolkit": "^1.8.0",
     "firebase": "^9.9.4",
     "next": "12.3.0",

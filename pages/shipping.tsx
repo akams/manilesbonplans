@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
 import { MainNav } from '@Atoms'
 import { ShippingOrganism } from '@Organisms'
+import { ShippingContextProvider } from '@Organisms/Shipping'
 import { Div } from '@Organisms/SignUp/styledComponent'
 
 const Shipping: NextPage = () => {
@@ -40,11 +41,13 @@ const Shipping: NextPage = () => {
         <Link href="/">Home</Link> / <span>Shipping</span>
       </MainNav>
       <Div>
-        <FormProvider {...useFormMethods}>
-          <ShippingOrganism
-            submitHandler={submitHandler}
-          />
-        </FormProvider>
+        <ShippingContextProvider>
+          <FormProvider {...useFormMethods}>
+            <ShippingOrganism
+              submitHandler={submitHandler}
+            />
+          </FormProvider>
+        </ShippingContextProvider>
       </Div>
     </>
   )
