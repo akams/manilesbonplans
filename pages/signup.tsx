@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'

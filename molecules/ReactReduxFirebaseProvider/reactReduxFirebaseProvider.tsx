@@ -7,7 +7,7 @@ import { doc, onSnapshot } from 'firebase/firestore'
 import { authActions } from '@Store/authSlice'
 import { wishlistActions } from '@Store/wishlistSlice'
 import { cartActions } from '@Store/cartSlice'
-import Loading from '@Atoms/Loading'
+import { Loading } from '@Atoms'
 
 import { auth, db } from '@FirebaseConfig/firebase'
 

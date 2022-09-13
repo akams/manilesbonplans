@@ -4,6 +4,8 @@ import {
   SizePickerForTops,
   SizePickerForBottoms,
 } from '@Atoms'
+
+import { Spinner } from '@Atoms/Loading'
 import { getFormattedCurrency } from '@Utils/getFormattedCurrency'
 
 import { Props } from './type'
@@ -32,15 +34,18 @@ const ProductDetails: FC<Props> = ({
   //@ts-ignore
   const isWishlisted = !!wishlistItems.find((value) => value.itemId === id)
 
+  if (!id) return <Spinner />
+
   return (
     <div className="card">
       <div className="image">
         <Image
+          loading="lazy"
           src={imageURL}
           width={330}
           height={412}
           layout="responsive"
-          alt="img"
+          alt={`${name}-${brand}`}
         />
       </div>
       <div className="info">

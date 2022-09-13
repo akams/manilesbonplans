@@ -1,7 +1,5 @@
 import uniqid from 'uniqid'
-
 import { CartItemCard } from '@Molecules'
-
 
 const Cart = ({
   isPlacingOrder,

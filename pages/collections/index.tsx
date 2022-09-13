@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import type { NextPage } from 'next'
 
 import { MainNav } from '@Atoms'
 import { ProductsOrganism } from '@Organisms'
@@ -9,9 +8,8 @@ import { Div } from '@Organisms/Products/styledComponent'
 import getItems from '@Utils/getItems'
 import * as Types from '@Types'
 
-//@ts-ignore
-const Products: NextPage = ({ clothes, brands, categories }: Types.ProductsViewProps) => {
 
+const Products = ({ clothes, brands, categories }: Types.ProductsViewProps) => {
   return (
     <>
       <Head>
@@ -31,18 +29,17 @@ const Products: NextPage = ({ clothes, brands, categories }: Types.ProductsViewP
   )
 }
 
-//@ts-ignore
 export const getStaticProps = () => {
   const items = getItems()
 
-  const brands = items.reduce((previous: String[], { brand }: Types.ClothesProduct) => {
+  const brands = items.reduce((previous: string[], { brand }: Types.ClothesProduct) => {
     if (!previous.includes(brand)) {
       previous.push(brand)
     }
     return previous
   }, [])
 
-  const categories = items.reduce((previous: String[], { category }: Types.ClothesProduct) => {
+  const categories = items.reduce((previous: string[], { category }: Types.ClothesProduct) => {
     if (!previous.includes(category)) {
       previous.push(category)
     }
