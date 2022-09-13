@@ -1,0 +1,43 @@
+{
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.editorAssociations": {
+      "*.pdf": "cweijan.officeViewer"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.editor.untitled.hint": "hidden",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "local-history.path": "/Users/vo2group/Desktop/workspace/local-history",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "workbench.editor.enablePreview": false,
+    "editor.codeActionsOnSave": {
+  
+      "source.fixAll.eslint": true,
+      // "source.fixAll.tslint": true
+    },
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "eslint.validate": ["javascript"],
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.validate.enable": false
+  }
+  
