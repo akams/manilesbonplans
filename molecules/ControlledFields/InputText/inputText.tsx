@@ -13,6 +13,7 @@ function InputText({
   name,
   rules,
   label,
+  disabled = false,
   ...otherProps
 }: InputTextControlledPropsType) {
   const {
@@ -45,6 +46,7 @@ function InputText({
             {label && <label htmlFor={label}>{`${label}${requiredLabel}`}</label>}
             <input
               id={label}
+              disabled={disabled}
               {...field}
               {...otherProps}
             />

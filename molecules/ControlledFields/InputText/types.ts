@@ -6,4 +6,5 @@ export type InputTextControlledPropsType = {
   label?: string;
   rules?: RegisterOptions;
   placeholder?: string;
+  disabled?: boolean;
 }

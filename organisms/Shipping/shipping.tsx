@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FC, useContext } from 'react'
-import { useFormContext } from 'react-hook-form'
-import { useIntl } from 'react-intl'
 
 import {
   HorizontalLinearStepper,
   ShippingDeliveryAddress,
-  ShippingBillingAddress,
   ShippingPaymentMethod,
 } from '@Molecules'
+
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 import { ShippingContext } from './shippingContext'
 
@@ -17,27 +16,41 @@ import { Props } from './type'
 const Shipping: FC<Props> = ({
   submitHandler,
 }) => {
-  const {
-    handleSubmit,
-    formState: { isSubmitting },
-  } = useFormContext()
-
   const value = useContext(ShippingContext);
 
-  console.log({ value })
-
+  const styles = {
+    btn: {
+      width: '20%'
+    },
+    color: {
+      color: 'rgba(0, 0, 0, 0.26)',
+      background: 'none',
+    },
+  }
   return (
     <div className="box" style={{ maxWidth: 'none' }}>
       <div className="title">
-        <HorizontalLinearStepper handleBack={value?.handleBack} handleNext={value?.handleNext} page={value?.page} />
+        <HorizontalLinearStepper steps={value?.steps} page={value?.page} />
       </div>
       <form className="form">
         {value?.page === 0 && <ShippingDeliveryAddress />}
-        {value?.page === 1 && <ShippingBillingAddress />}
-        {value?.page === 2 && <ShippingPaymentMethod />}
-        <button type="submit" onClick={handleSubmit(submitHandler)} disabled={isSubmitting}>
-          {isSubmitting ? <span className="loader"></span> : 'Sign Up'}
-        </button>
+        {value?.page === 1 && <ShippingPaymentMethod />}
+        <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          {value?.page !== 0 && <Button
+            color="inherit"
+            disabled={value?.page === 0}
+            onClick={() => value?.handleBack()}
+            sx={{ mr: 1 }}
+            style={{ ...styles.btn, ...styles.color }}
+          >
+            Retour
+          </Button>}
+          <Box sx={{ flex: '1 1 auto' }} />
+          {value?.page < value?.steps.length - 1 && (
+            <Button style={styles.btn} onClick={() => value?.handleNext()}>
+              Continuer
+            </Button>)}
+        </Box>
       </form>
     </div>
   )

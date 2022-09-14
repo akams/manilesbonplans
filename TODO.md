@@ -7,7 +7,7 @@
 - [X] améliorer donnée Order
 
 - [ ] Page shipping
-  - [ ] init archi page
+  - [X] init archi page
   - [ ] faire micro page shipping delivery
   - [ ] faire micro page shipping billing
   - [ ] faire micro page shipping payment
@@ -28,6 +28,13 @@
 - [X] src img product detail
 - [ ] update all wording app
 - [ ] update type TS in app
+
+
+Help :
+
+https://styled-components.com/docs/basics
+
+https://nextjs.org/docs/api-reference/next/image
 
 
 Maybe later:

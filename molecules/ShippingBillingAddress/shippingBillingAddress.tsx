@@ -1,37 +1,82 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useContext } from 'react'
-import { useFormContext } from 'react-hook-form'
-import { useIntl } from 'react-intl'
-
 import {
   InputText as ControlledInputText,
 } from '@Molecules'
 
 
 const ShippingBillingAddress = () => {
+  const billingAddressName = 'billingAddress'
+  const rulesFields = {
+    name: {
+      rules: {
+        required: true,
+      },
+    },
+    street: {
+      rules: {
+        required: true,
+      },
+    },
+    city: {
+      rules: {
+        required: true,
+      },
+    },
+    country: {
+      disabled: true,
+      rules: {
+        required: true,
+      },
+    },
+    zipCode: {
+      rules: {
+        required: true,
+      },
+    },
+    tel: {
+      rules: {
+        required: true,
+      },
+    },
+
+  }
   return (
     <div>
-      <div className="title">
-        <span>ShippingBillingAddress</span>
-      </div>
       <ControlledInputText
         placeholder="Name"
-        name="name"
-      // rules={rulesFields.name.rules}
+        name={`${billingAddressName}.name`}
+        rules={rulesFields.name.rules}
       />
 
       <ControlledInputText
-        type="email"
-        name="email"
-        placeholder="Email"
-      // rules={rulesFields.email.rules}
+        placeholder="Street"
+        name={`${billingAddressName}.street`}
+        rules={rulesFields.street.rules}
       />
 
       <ControlledInputText
-        type="password"
-        name="password"
-        placeholder="Password"
-      // rules={rulesFields.password.rules}
+        placeholder="ZipCode"
+        name={`${billingAddressName}.zipCode`}
+        rules={rulesFields.zipCode.rules}
+      />
+
+      <ControlledInputText
+        placeholder="City"
+        name={`${billingAddressName}.city`}
+        rules={rulesFields.city.rules}
+      />
+
+      <ControlledInputText
+        placeholder="Country"
+        name={`${billingAddressName}.country`}
+        rules={rulesFields.country.rules}
+        disabled={rulesFields.country.disabled}
+      />
+
+      <ControlledInputText
+        type='tel'
+        placeholder="Tél"
+        name={`${billingAddressName}.tel`}
+        rules={rulesFields.tel.rules}
       />
     </div>
   )

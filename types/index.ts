@@ -15,6 +15,15 @@ export type SignUpFormData = {
     name: string;
 }
 
+export type UserAddress = {
+    name: string;
+    street: string;
+    city: string;
+    country: string;
+    zipCode: string;
+    tel: string;
+}
+
 export type User = {
     uid: string;
     email: string;
@@ -22,6 +31,8 @@ export type User = {
     clientId: string;
     recommendBy?: string; // default BETA_USER_APP
     nbReco: number;
+    deliveryAddress?: UserAddress;
+    billingAddress?: UserAddress;
 }
 
 export type Cart = {

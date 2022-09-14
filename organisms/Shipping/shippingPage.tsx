@@ -19,12 +19,32 @@ const Shipping: NextPage = () => {
 
   const useFormMethods = useForm({
     defaultValues: {
-      email: '',
-      password: '',
-      name: '',
+      deliveryAddress: {
+        name: '',
+        street: '',
+        city: '',
+        country: 'GABON',
+        zipCode: '',
+        tel: '',
+      },
+      billingAddress: {
+        name: '',
+        street: '',
+        city: '',
+        country: '',
+        zipCode: '',
+        tel: '',
+      },
+      isSame: true,
     },
     mode: 'onTouched',
   })
+
+  const {
+    getValues,
+  } = useFormMethods
+
+  const { deliveryAddress, billingAddress, isSame } = getValues()
 
   if (!user) {
     router.replace('/signin')
@@ -41,7 +61,11 @@ const Shipping: NextPage = () => {
         <Link href="/">Home</Link> / <span>Shipping</span>
       </MainNav>
       <Div>
-        <ShippingContextProvider>
+        <ShippingContextProvider
+          deliveryAddress={deliveryAddress}
+          billingAddress={billingAddress}
+          isSame={isSame}
+        >
           <FormProvider {...useFormMethods}>
             <ShippingOrganism
               submitHandler={submitHandler}
