@@ -28,7 +28,7 @@ const Wishlist = () => {
   const wishlistItems = useSelector((state) => state.wishlist.items)
 
   useEffect(() => {
-    const items = wishlistItems.map((item: Types.WishlistItemsType) => {
+    const items = wishlistItems.map((item: Types.Wishlist) => {
       const itemDetails = getItemById(item.itemId)
       return { size: item.itemSize, ...itemDetails }
     })

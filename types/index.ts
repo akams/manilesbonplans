@@ -15,6 +15,37 @@ export type SignUpFormData = {
     name: string;
 }
 
+
+export type SelectorTypes = {
+    auth: ISelectorAuth;
+    cart: ISelectorCart;
+    wishlist: ISelectorWishlist;
+    filter: ISelectorFilter;
+}
+interface ISelectorFilter {
+    filter: FilterType;
+}
+export type FilterType = {
+    brands: string[];
+    categories: string[];
+    sort: string;
+}
+
+
+interface ISelectorAuth {
+    user: User;
+}
+export type User = {
+    uid: string;
+    email: string;
+    name: string;
+    clientId?: string;
+    recommendBy?: string; // default BETA_USER_APP
+    nbReco?: number;
+    deliveryAddress?: UserAddress;
+    billingAddress?: UserAddress;
+    accessToken?: string;
+}
 export type UserAddress = {
     name: string;
     street: string;
@@ -24,21 +55,21 @@ export type UserAddress = {
     tel: string;
 }
 
-export type User = {
-    uid: string;
-    email: string;
-    name: string;
-    clientId: string;
-    recommendBy?: string; // default BETA_USER_APP
-    nbReco: number;
-    deliveryAddress?: UserAddress;
-    billingAddress?: UserAddress;
+interface ISelectorCart {
+    items: Cart[];
 }
-
 export type Cart = {
     itemId: string;
     itemQuantity: string;
     itemSize: string;
+}
+
+interface ISelectorWishlist {
+    items: Wishlist[];
+}
+export type Wishlist = {
+    itemId: string;
+    itemSize: string|null;
 }
 
 declare type CATEGORIES = 'CLOTHES' | 'SHOES' | 'ACCESSORIES';
@@ -76,9 +107,4 @@ export type Order = {
     totalPrice: number;
     cart: Cart[];
     userId: string;
-}
-
-export type WishlistItemsType = {
-    itemId: string;
-    itemSize: string|null;
 }

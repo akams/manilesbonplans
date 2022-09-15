@@ -10,5 +10,5 @@ export type Props = {
     isLoading: boolean;
     addToWishlistHandler: () => void;
     addToCartHandler: () => void;
-    wishlistItems: Types.WishlistItemsType[]
+    wishlistItems: Types.Wishlist[]
 }

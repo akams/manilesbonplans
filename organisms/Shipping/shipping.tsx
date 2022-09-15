@@ -3,7 +3,7 @@ import { FC, useContext } from 'react'
 import {
   HorizontalLinearStepper,
   ShippingDeliveryAddress,
-  ShippingPaymentMethod,
+  OrderPlaced,
 } from '@Molecules'
 
 import Box from '@mui/material/Box';
@@ -17,6 +17,11 @@ const Shipping: FC<Props> = ({
   submitHandler,
 }) => {
   const value = useContext(ShippingContext);
+
+  const HandleSubmit = () => {
+    console.log('here save value')
+    // value?.handleNext()
+  }
 
   const styles = {
     btn: {
@@ -34,7 +39,7 @@ const Shipping: FC<Props> = ({
       </div>
       <form className="form">
         {value?.page === 0 && <ShippingDeliveryAddress />}
-        {value?.page === 1 && <ShippingPaymentMethod />}
+        {value?.page === 1 && <OrderPlaced />}
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
           {value?.page !== 0 && <Button
             color="inherit"
@@ -47,7 +52,7 @@ const Shipping: FC<Props> = ({
           </Button>}
           <Box sx={{ flex: '1 1 auto' }} />
           {value?.page < value?.steps.length - 1 && (
-            <Button style={styles.btn} onClick={() => value?.handleNext()}>
+            <Button style={styles.btn} onClick={() => HandleSubmit()}>
               Continuer
             </Button>)}
         </Box>

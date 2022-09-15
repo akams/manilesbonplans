@@ -25,53 +25,57 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
       auth,
       (user) => {
         if (user) {
-          const userInfo = {
-            //@ts-ignore
-            accessToken: user?.accessToken,
-            email: user.email,
-            uid: user.uid,
-          }
-          console.log('===============userInfo=====================')
-          console.log('userInfo', userInfo)
-          console.log('====================================')
-          dispatch(authActions.setUser(userInfo))
-
-          const wishlistSub = onSnapshot(
-            doc(db, user.uid, 'wishlist'),
+          const userInfoSub = onSnapshot(
+            doc(db, user.uid, 'account'),
             (document) => {
-              try {
+              const items = document.data()
+              dispatch(authActions.setUser({
                 //@ts-ignore
-                const items = document.data().items
-                dispatch(wishlistActions.setItems(items))
+                accessToken: user?.accessToken,
+                email: user.email,
+                uid: user.uid,
+                ...items,
+              }))
 
-                const cartSub = onSnapshot(
-                  doc(db, user.uid, 'cart'),
-                  (document) => {
-                    try {
-                      //@ts-ignore
-                      const items = document.data().items
-                      dispatch(cartActions.setItems(items))
-                      setIsLoading(false)
-                    } catch (error) {
-                      setIsLoading(false)
-                    }
-                  },
-                  () => {
+              const wishlistSub = onSnapshot(
+                doc(db, user.uid, 'wishlist'),
+                (document) => {
+                  try {
+                    //@ts-ignore
+                    const items = document.data().items
+                    dispatch(wishlistActions.setItems(items))
+
+                    const cartSub = onSnapshot(
+                      doc(db, user.uid, 'cart'),
+                      (document) => {
+                        try {
+                          //@ts-ignore
+                          const items = document.data().items
+                          dispatch(cartActions.setItems(items))
+                          setIsLoading(false)
+                        } catch (error) {
+                          setIsLoading(false)
+                        }
+                      },
+                      () => {
+                        setIsLoading(false)
+                      },
+                    )
+
+                    subscriptions.push(cartSub)
+                  } catch (error) {
                     setIsLoading(false)
-                  },
-                )
-
-                subscriptions.push(cartSub)
-              } catch (error) {
-                setIsLoading(false)
-              }
-            },
-            () => {
-              setIsLoading(false)
-            },
+                  }
+                },
+                () => {
+                  setIsLoading(false)
+                },
+              )
+              subscriptions.push(wishlistSub)
+            }
           )
 
-          subscriptions.push(wishlistSub)
+          subscriptions.push(userInfoSub)
         } else {
           dispatch(authActions.setUser(null))
           dispatch(wishlistActions.setItems([]))

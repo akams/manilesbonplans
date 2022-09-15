@@ -1,6 +1,6 @@
 # Next step
 
-## Features:
+## Features à faire:
 
 - [X] améliorer donnée Product
 - [X] améliorer donnée User
@@ -8,11 +8,8 @@
 
 - [ ] Page shipping
   - [X] init archi page
-  - [ ] faire micro page shipping delivery
-  - [ ] faire micro page shipping billing
-  - [ ] faire micro page shipping payment
-  - [ ] save data 
-  - [ ] check lib pour method de paiement
+  - [ ] faire micro page shipping delivery 
+  - [ ] save data
   
 - [ ] sécurité mailing auth
 
@@ -36,8 +33,14 @@ https://styled-components.com/docs/basics
 
 https://nextjs.org/docs/api-reference/next/image
 
+https://stackoverflow.com/questions/56583184/what-is-the-best-way-to-use-async-await-inside-onauthstatechanged-of-firebase
+
 
 Maybe later:
+
+- [ ] faire micro page shipping billing
+- [ ] faire micro page shipping payment
+- [ ] check lib pour method de paiement
 
 https://github.com/gladly-team/next-firebase-auth
 

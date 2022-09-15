@@ -82,6 +82,11 @@ const Menu: FC<Props> = ({ onClose, onSignOut }) => {
     onClose()
   }
 
+  const cartOrder = () => {
+    router.push('/orders')
+    onClose()
+  }
+
   return (
     <Div>
       <OutsideClickHandler onOutsideClick={onClose}>
@@ -89,7 +94,7 @@ const Menu: FC<Props> = ({ onClose, onSignOut }) => {
           {user ? (
             <>
               <p>Hello</p>
-              <p>{user.email}</p>
+              <p>{user.name}</p>
             </>
           ) : (
             <>
@@ -110,6 +115,9 @@ const Menu: FC<Props> = ({ onClose, onSignOut }) => {
         </div>
         <div className="item" onClick={cartHandler}>
           Cart
+        </div>
+        <div className="item" onClick={cartOrder}>
+          Commandes
         </div>
         {user && (
           <div className="item" onClick={onSignOut}>
