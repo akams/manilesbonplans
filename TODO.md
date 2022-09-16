@@ -10,9 +10,11 @@
   - [X] init archi page
   - [X] faire micro page shipping delivery 
   - [X] save data
-  - [ ] modal message plus clean
+  - [X] modal message plus clean
   
 - [ ] sécurité mailing auth
+
+- [ ] Page mes commandes
 
 - [ ] injection des data Products en BDD
 - [ ] sécurité db

@@ -14,20 +14,32 @@ import { Div } from '@Organisms/SignUp/styledComponent'
 
 import * as Types from '@Types'
 
+const getDefaultValue = (deliveryAddress: any) => {
+  const {
+    deliveryAddressName,
+    deliveryAddressStreet,
+    deliveryAddressCity,
+    deliveryAddressCountry,
+    deliveryAddressZipCode,
+    deliveryAddressTel,
+  } = deliveryAddress
+  return {
+    deliveryAddressName: '' || deliveryAddressName,
+    deliveryAddressStreet: '' || deliveryAddressStreet,
+    deliveryAddressCity: '' || deliveryAddressCity,
+    deliveryAddressCountry: 'GABON' || deliveryAddressCountry,
+    deliveryAddressZipCode: '' || deliveryAddressZipCode,
+    deliveryAddressTel: '' || deliveryAddressTel,
+  }
+}
+
 const Shipping: NextPage = () => {
   const router = useRouter()
 
   const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
 
   const useFormMethods = useForm({
-    defaultValues: {
-      deliveryAddressName: '',
-      deliveryAddressStreet: '',
-      deliveryAddressCity: '',
-      deliveryAddressCountry: 'GABON',
-      deliveryAddressZipCode: '',
-      deliveryAddressTel: '',
-    },
+    defaultValues: getDefaultValue(user.deliveryAddress),
     mode: 'onTouched',
   })
 

@@ -52,7 +52,7 @@ const Shipping: FC<Props> = ({
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
           <Box sx={{ flex: '1 1 auto' }} />
           {value?.page < value?.steps.length - 1 && (
-            <Button style={styles.btn} onClick={() => shippingFormSubmitHandler()}>
+            <Button className='button' style={styles.btn} onClick={() => shippingFormSubmitHandler()}>
               Continuer
             </Button>)}
         </Box>

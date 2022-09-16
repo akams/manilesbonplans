@@ -30,7 +30,7 @@ const Div = styled.div`
     border-radius: 10px;
     z-index: 30;
 
-    .close {
+    button.close {
       border: 1px transparent solid;
       border-radius: 50%;
       background-color: white;

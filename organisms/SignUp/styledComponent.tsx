@@ -99,7 +99,7 @@ export const Div = styled.div`
         }
       }
 
-      button {
+      .button {
         font: inherit;
         background: #8e2de2;
         background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);

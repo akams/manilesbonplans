@@ -1,7 +1,12 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
-
 import { CheckIcon } from '@Assets/icons'
+
+import {
+  Modal,
+} from '@Atoms'
+import { ModalDiv } from '@Atoms/Modal'
 
 const Div = styled.div`
   flex: 1;
@@ -59,19 +64,33 @@ const Div = styled.div`
 `
 
 const OrderPlaced = () => {
+  const [open, setOpenModal] = useState(true)
+  const closeModal = () => {
+    setOpenModal(false)
+  }
   return (
-    <Div>
-      <div className="round">
-        <CheckIcon />
-      </div>
-      <h2 className="title">Order placed successfully</h2>
-      <p className="title">Un message vous sera envoyer via whatsapp pour procéder au paiement</p>
-      <p className="title">Votre commande est bloquer pendant 24H le temps que le paiement soit valider</p>
-      <p className="title">Passé ce delai, votre commande sera perdu</p>
-      <p className="title">Pour votre information la durée du delai de livraison est compris entre 7 et 14 jour</p>
-      <p className="text">Thank you for shopping with us</p>
-      <Link href="/collections">Continue Shopping</Link>
-    </Div>
+    <>
+      <Div>
+        <div className="round">
+          <CheckIcon />
+        </div>
+        <h2 className="title">Order placed successfully</h2>
+        <p className="text">Thank you for shopping with us</p>
+        <Link href="/collections">Continue Shopping</Link>
+
+      </Div>
+      {open && (
+        <Modal closeHandler={closeModal}>
+          <ModalDiv>
+            <div className="title">A votre attention</div>
+            <p className="text">Un message vous sera envoyer via whatsapp pour procéder au paiement</p>
+            <p className="text">Votre commande est bloquer pendant 24H le temps que le paiement soit valider</p>
+            <p className="text">Passé ce delai, votre commande sera perdu</p>
+            <p className="text">Pour votre information la durée du delai de livraison est compris entre 7 et 14 jours</p>
+          </ModalDiv>
+        </Modal>
+      )}
+    </>
   )
 }
 

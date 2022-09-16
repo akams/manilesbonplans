@@ -30,8 +30,6 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
             (document) => {
               const items = document.data()
               dispatch(authActions.setUser({
-                //@ts-ignore
-                accessToken: user?.accessToken,
                 email: user.email,
                 uid: user.uid,
                 ...items,
