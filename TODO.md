@@ -6,17 +6,22 @@
 - [X] améliorer donnée User
 - [X] améliorer donnée Order
 
-- [ ] Page shipping
+- [X] Page shipping
   - [X] init archi page
-  - [ ] faire micro page shipping delivery 
-  - [ ] save data
+  - [X] faire micro page shipping delivery 
+  - [X] save data
+  - [ ] modal message plus clean
   
 - [ ] sécurité mailing auth
 
 - [ ] injection des data Products en BDD
-
-- [ ] sécurité api
 - [ ] sécurité db
+
+- [ ] Api pour les produits
+- [ ] sécurité api
+
+- [ ] compte whatsapp pro
+- [ ] Faire une page "le site est en cours de maj" avec une branche qui delete tout les pages et garde qu'une seul
 
 - [ ] hosting
 
