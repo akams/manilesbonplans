@@ -25,6 +25,7 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
       auth,
       (user) => {
         if (user) {
+          console.log('user from onAuthStateChanged', user);
           const userInfoSub = onSnapshot(
             doc(db, user.uid, 'account'),
             (document) => {
@@ -32,6 +33,7 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
               dispatch(authActions.setUser({
                 email: user.email,
                 uid: user.uid,
+                emailVerified: user.emailVerified,
                 ...items,
               }))
 

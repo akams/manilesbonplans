@@ -35,7 +35,6 @@ const getDefaultValue = (deliveryAddress: any) => {
 
 const Shipping: NextPage = () => {
   const router = useRouter()
-
   const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
 
   const useFormMethods = useForm({

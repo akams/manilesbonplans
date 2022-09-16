@@ -45,6 +45,7 @@ export type User = {
     deliveryAddress?: UserAddress;
     billingAddress?: UserAddress;
     accessToken?: string;
+    emailVerified?: string;
 }
 export type UserAddress = {
     name: string;

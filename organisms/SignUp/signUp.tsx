@@ -1,6 +1,4 @@
 import { FC } from 'react'
-import { useRouter } from 'next/router'
-import { useSelector } from 'react-redux'
 import { useFormContext } from 'react-hook-form'
 import { useIntl } from 'react-intl'
 
@@ -16,21 +14,12 @@ const SignUp: FC<Props> = ({
   submitHandler,
   serverErrorMessage,
 }) => {
-  const router = useRouter()
   const { formatMessage } = useIntl()
 
   const {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext()
-
-  //@ts-ignore
-  const user = useSelector((state) => state.auth.user)
-
-  if (user) {
-    router.replace('/collections')
-  }
-
 
   const rulesFields = {
     name: {
@@ -94,7 +83,7 @@ const SignUp: FC<Props> = ({
           placeholder="Password"
           rules={rulesFields.password.rules}
         />
-        <button type="submit" onClick={handleSubmit(submitHandler)} disabled={isSubmitting}>
+        <button className='button' type="submit" onClick={handleSubmit(submitHandler)} disabled={isSubmitting}>
           {isSubmitting ? <span className="loader"></span> : 'Sign Up'}
         </button>
       </form>

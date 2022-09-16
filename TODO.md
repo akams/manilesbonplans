@@ -42,6 +42,10 @@ https://nextjs.org/docs/api-reference/next/image
 
 https://stackoverflow.com/questions/56583184/what-is-the-best-way-to-use-async-await-inside-onauthstatechanged-of-firebase
 
+https://firebase.google.com/docs/rules/rules-and-auth
+
+https://stackoverflow.com/questions/52249352/firebase-dashboard-set-email-verified
+
 
 Maybe later:
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
+import { sendEmailVerification } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -18,8 +19,7 @@ import * as Types from '@Types'
 
 const SignUp = () => {
   const router = useRouter()
-  //@ts-ignore
-  const user = useSelector((state) => state.auth.user)
+  const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
   const [serverErrorMessage, setServerErrorMessage] = useState('')
 
   const useFormMethods = useForm<Types.SignUpFormData>({
@@ -31,30 +31,36 @@ const SignUp = () => {
     mode: 'onTouched',
   })
 
-  if (user) {
-    router.replace('/collections')
-  }
+  // if (user) {
+  //   router.replace('/collections')
+  // }
 
   const submitHandler = async ({ email, password, name }: Types.SignUpFormData) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-      const { user: { uid } } = userCredential
+      const { user } = await createUserWithEmailAndPassword(auth, email, password)
+      const { uid, emailVerified } = user
 
-      await setDoc(doc(db, uid, 'account'), {
-        name,
-        email,
-      })
+      if (!emailVerified) {
+        sendEmailVerification(user)
+        return router.replace('/signup-confirmation')
+      }
 
-      await setDoc(doc(db, uid, 'wishlist'), {
-        items: [],
-      })
+      return router.replace('/collections')
 
-      await setDoc(doc(db, uid, 'cart'), {
-        items: [],
-      })
+      // await setDoc(doc(db, uid, 'account'), {
+      //   name,
+      //   email,
+      // })
+      // await setDoc(doc(db, uid, 'wishlist'), {
+      //   items: [],
+      // })
+      // await setDoc(doc(db, uid, 'cart'), {
+      //   items: [],
+      // })
     } catch (error) {
       //@ts-ignore
       const errorCode = error.code
+      console.error(error)
 
       if (errorCode === 'auth/email-already-in-use') {
         setServerErrorMessage('Email address already in use.')
