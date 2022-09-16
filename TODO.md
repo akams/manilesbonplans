@@ -47,6 +47,13 @@ https://firebase.google.com/docs/rules/rules-and-auth
 https://stackoverflow.com/questions/52249352/firebase-dashboard-set-email-verified
 
 
+Help back:
+
+https://www.twilio.com/blog/add-cors-support-express-typescript-api
+
+https://blog.logrocket.com/rest-api-firebase-cloud-functions-typescript-firestore/
+
+
 Maybe later:
 
 - [ ] faire micro page shipping billing

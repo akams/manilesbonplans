@@ -1,0 +1,1441 @@
+[debug] [2022-09-16T19:28:00.575Z] ----------------------------------------------------------------------
+[debug] [2022-09-16T19:28:00.577Z] Command:       /usr/local/bin/firebase /Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase emulators:start
+[debug] [2022-09-16T19:28:00.578Z] CLI Version:   11.9.0
+[debug] [2022-09-16T19:28:00.578Z] Platform:      darwin
+[debug] [2022-09-16T19:28:00.578Z] Node Version:  v16.16.0
+[debug] [2022-09-16T19:28:00.579Z] Time:          Fri Sep 16 2022 21:28:00 GMT+0200 (GMT+02:00)
+[debug] [2022-09-16T19:28:00.580Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-16T19:28:00.662Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-16T19:28:00.662Z] > authorizing via signed-in user (e.ndjawe@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-09-16T19:28:00.679Z] [hub] writing locator at /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/hub-manilesbonsplans-22c99.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage, eventarc\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-09-16T19:28:00.708Z] defaultcredentials: writing to file /Users/vo2group/.config/firebase/e_ndjawe_gmail.com_application_default_credentials.json
+[debug] [2022-09-16T19:28:00.721Z] Setting GAC to /Users/vo2group/.config/firebase/e_ndjawe_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/vo2group/.config/firebase/e_ndjawe_gmail.com_application_default_credentials.json"}}
+[debug] [2022-09-16T19:28:00.725Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/manilesbonsplans-22c99/adminSdkConfig [none]
+[debug] [2022-09-16T19:28:00.952Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/manilesbonsplans-22c99/adminSdkConfig 200
+[debug] [2022-09-16T19:28:00.953Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/manilesbonsplans-22c99/adminSdkConfig {"projectId":"manilesbonsplans-22c99","storageBucket":"manilesbonsplans-22c99.appspot.com","locationId":"europe-west"}
+[debug] [2022-09-16T19:28:01.001Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-16T19:28:01.002Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-16T19:28:01.002Z] Starting Emulator UI with command {"binary":"node","args":["/Users/vo2group/.cache/firebase/emulators/ui-v1.9.0/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/vo2group/.cache/firebase/emulators/ui-v1.9.0/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-09-16T19:28:01.229Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\" for Cloud Functions..."}}
+[debug] [2022-09-16T19:28:01.275Z] Validating nodejs source
+[debug] [2022-09-16T19:28:03.366Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:28:03.367Z] Building nodejs source
+[debug] [2022-09-16T19:28:03.367Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:28:03.369Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:28:03.968Z] Serving at port 9005
+
+[debug] [2022-09-16T19:28:04.037Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:28:04.043Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[info] ✔  functions[us-central1-mlbp]: http function initialized (http://localhost:5001/manilesbonsplans-22c99/us-central1/mlbp). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/manilesbonsplans-22c99/us-central1/mlbp)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-09-16T19:28:23.117Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:28:23.117Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:28:24.122Z] Validating nodejs source
+[debug] [2022-09-16T19:28:27.457Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:28:27.458Z] Building nodejs source
+[debug] [2022-09-16T19:28:27.458Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:28:27.459Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:28:27.916Z] Serving at port 9005
+
+[debug] [2022-09-16T19:28:27.983Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:28:27.987Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:28:35.862Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:28:35.862Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:28:35.863Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/ --> us-central1-mlbp
+[debug] [2022-09-16T19:28:35.872Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:28:35.873Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:28:35.873Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:28:35.873Z] [worker-us-central1-mlbp-2b2771db-4740-47dd-8fe9-2d9c002a5e5a]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2b2771db-4740-47dd-8fe9-2d9c002a5e5a]: BUSY"}}
+[debug] [2022-09-16T19:28:37.239Z] [runtime-status] [14318] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:28:37.240Z] [runtime-status] [14318] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:28:37.241Z] [runtime-status] [14318] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:28:37.241Z] [runtime-status] [14318] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:28:37.290Z] [runtime-status] [14318] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:28:37.290Z] [runtime-status] [14318] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:28:37.291Z] [runtime-status] [14318] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:28:37.293Z] [runtime-status] [14318] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:28:37.293Z] [runtime-status] [14318] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:28:37.294Z] [runtime-status] [14318] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:28:37.294Z] [runtime-status] [14318] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:28:37.406Z] [runtime-status] [14318] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:28:37.407Z] [runtime-status] [14318] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:28:37.412Z] [runtime-status] [14318] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_bd8ea1b057a00ce3.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_bd8ea1b057a00ce3.sock"}}
+[debug] [2022-09-16T19:28:37.523Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:28:37.524Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/, mapping to path=/api/v1/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/, mapping to path=/api/v1/"}}
+[debug] [2022-09-16T19:28:37.526Z] [runtime-status] [14318] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:28:37.527Z] [runtime-status] [14318] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14318] Ephemeral server survived."}}
+[warn] ⚠  functions: Your function timed out after ~60s. To configure this timeout, see
+      https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Your function timed out after ~60s. To configure this timeout, see\n      https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation."}}
+[info] >  /Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635 {"user":"/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m /Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635"}}
+[info] >              throw new Error("Function timed out."); {"user":"            throw new Error(\"Function timed out.\");","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m             throw new Error(\"Function timed out.\");"}}
+[info] >              ^ {"user":"            ^","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m             ^"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m "}}
+[info] >  Error: Function timed out. {"user":"Error: Function timed out.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m Error: Function timed out."}}
+[info] >      at Timeout._onTimeout (/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635:19) {"user":"    at Timeout._onTimeout (/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635:19)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Timeout._onTimeout (/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635:19)"}}
+[info] >      at listOnTimeout (node:internal/timers:559:17) {"user":"    at listOnTimeout (node:internal/timers:559:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m     at listOnTimeout (node:internal/timers:559:17)"}}
+[info] >      at processTimers (node:internal/timers:502:7) {"user":"    at processTimers (node:internal/timers:502:7)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m     at processTimers (node:internal/timers:502:7)"}}
+[debug] [2022-09-16T19:29:37.429Z] [worker-us-central1-mlbp-2b2771db-4740-47dd-8fe9-2d9c002a5e5a]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2b2771db-4740-47dd-8fe9-2d9c002a5e5a]: exited"}}
+[debug] [2022-09-16T19:29:37.429Z] [worker-us-central1-mlbp-2b2771db-4740-47dd-8fe9-2d9c002a5e5a]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2b2771db-4740-47dd-8fe9-2d9c002a5e5a]: FINISHED"}}
+[debug] [2022-09-16T19:29:37.429Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:30:48.547Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:30:49.267Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:30:49.267Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:30:50.272Z] Validating nodejs source
+[debug] [2022-09-16T19:30:52.549Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:30:52.550Z] Building nodejs source
+[debug] [2022-09-16T19:30:52.550Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:30:52.551Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:30:53.055Z] Serving at port 9005
+
+[debug] [2022-09-16T19:30:53.133Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:30:53.137Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:31:05.060Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:31:05.060Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:31:05.060Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/ --> us-central1-mlbp
+[debug] [2022-09-16T19:31:05.060Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:31:05.070Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:31:05.071Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:31:05.071Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:31:05.071Z] [worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: BUSY"}}
+[debug] [2022-09-16T19:31:06.841Z] [runtime-status] [14368] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:31:06.843Z] [runtime-status] [14368] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:31:06.843Z] [runtime-status] [14368] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:31:06.844Z] [runtime-status] [14368] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:31:06.909Z] [runtime-status] [14368] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:31:06.911Z] [runtime-status] [14368] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:31:06.911Z] [runtime-status] [14368] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:31:06.913Z] [runtime-status] [14368] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:31:06.913Z] [runtime-status] [14368] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:31:06.914Z] [runtime-status] [14368] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:31:06.914Z] [runtime-status] [14368] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:31:07.102Z] [runtime-status] [14368] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:31:07.103Z] [runtime-status] [14368] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:31:07.110Z] [runtime-status] [14368] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_1a424d7dbc61dcb2.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_1a424d7dbc61dcb2.sock"}}
+[debug] [2022-09-16T19:31:07.142Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:31:07.143Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/, mapping to path=/"}}
+[debug] [2022-09-16T19:31:07.149Z] [runtime-status] [14368] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:31:07.155Z] [runtime-status] [14368] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:31:07.192Z] [worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: IDLE"}}
+[debug] [2022-09-16T19:31:07.194Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:31:12.444Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:31:12.444Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:31:12.444Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:31:12.444Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:31:12.445Z] [worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: BUSY"}}
+[debug] [2022-09-16T19:31:12.445Z] [runtime-status] [14368] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:31:12.446Z] [runtime-status] [14368] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:31:12.446Z] [runtime-status] [14368] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_1a424d7dbc61dcb2.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_1a424d7dbc61dcb2.sock"}}
+[debug] [2022-09-16T19:31:12.555Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:31:12.555Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/warmup, mapping to path=/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/warmup, mapping to path=/warmup"}}
+[debug] [2022-09-16T19:31:12.556Z] [runtime-status] [14368] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:31:12.557Z] [runtime-status] [14368] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14368] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:31:12.558Z] [worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: IDLE"}}
+[debug] [2022-09-16T19:31:12.558Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:31:32.389Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:31:32.796Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:31:32.796Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:31:33.801Z] Validating nodejs source
+[debug] [2022-09-16T19:31:35.734Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:31:35.734Z] Building nodejs source
+[debug] [2022-09-16T19:31:35.734Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:31:35.735Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:31:36.198Z] Serving at port 9005
+
+[debug] [2022-09-16T19:31:36.265Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:31:36.268Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:31:36.287Z] [worker-pool] Shutting down IDLE worker (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:31:36.287Z] [worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: FINISHING"}}
+[debug] [2022-09-16T19:31:36.299Z] [worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: exited"}}
+[debug] [2022-09-16T19:31:36.299Z] [worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-ca707415-7d0b-4d60-a4b2-cf409f0d5051]: FINISHED"}}
+[debug] [2022-09-16T19:33:46.360Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:33:46.868Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:33:46.868Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:33:47.874Z] Validating nodejs source
+[debug] [2022-09-16T19:33:49.944Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:33:49.944Z] Building nodejs source
+[debug] [2022-09-16T19:33:49.945Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:33:49.949Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:33:50.505Z] Serving at port 9005
+
+[debug] [2022-09-16T19:33:50.582Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:33:50.585Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:33:55.154Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:33:55.774Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:33:55.774Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:33:56.776Z] Validating nodejs source
+[debug] [2022-09-16T19:33:58.699Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:33:58.700Z] Building nodejs source
+[debug] [2022-09-16T19:33:58.700Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:33:58.700Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:33:59.154Z] Serving at port 9005
+
+[debug] [2022-09-16T19:33:59.220Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:33:59.224Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:34:09.227Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:34:09.737Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:34:09.737Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:34:10.741Z] Validating nodejs source
+[debug] [2022-09-16T19:34:12.969Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:34:12.969Z] Building nodejs source
+[debug] [2022-09-16T19:34:12.969Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:34:12.989Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:34:13.524Z] Serving at port 9005
+
+[debug] [2022-09-16T19:34:13.591Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:34:13.595Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:34:21.354Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:34:21.355Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:34:21.355Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:34:21.355Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:34:21.363Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:34:21.364Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:34:21.364Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:34:21.365Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: BUSY"}}
+[debug] [2022-09-16T19:34:23.233Z] [runtime-status] [14505] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:34:23.234Z] [runtime-status] [14505] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:34:23.234Z] [runtime-status] [14505] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:34:23.235Z] [runtime-status] [14505] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:34:23.281Z] [runtime-status] [14505] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:34:23.282Z] [runtime-status] [14505] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:34:23.282Z] [runtime-status] [14505] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:34:23.284Z] [runtime-status] [14505] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:34:23.284Z] [runtime-status] [14505] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:34:23.284Z] [runtime-status] [14505] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:34:23.285Z] [runtime-status] [14505] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:34:23.393Z] [runtime-status] [14505] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:34:23.394Z] [runtime-status] [14505] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:34:23.399Z] [runtime-status] [14505] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_51add16c8da016ac.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_51add16c8da016ac.sock"}}
+[debug] [2022-09-16T19:34:23.434Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:34:23.434Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/warmup, mapping to path=/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/warmup, mapping to path=/warmup"}}
+[debug] [2022-09-16T19:34:23.448Z] [runtime-status] [14505] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:34:23.448Z] [runtime-status] [14505] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:34:23.451Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: IDLE"}}
+[debug] [2022-09-16T19:34:23.451Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:34:31.652Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:34:31.652Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:34:31.652Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/ --> us-central1-mlbp
+[debug] [2022-09-16T19:34:31.652Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:34:31.652Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: BUSY"}}
+[debug] [2022-09-16T19:34:31.657Z] [runtime-status] [14505] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:34:31.658Z] [runtime-status] [14505] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:34:31.658Z] [runtime-status] [14505] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_51add16c8da016ac.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_51add16c8da016ac.sock"}}
+[debug] [2022-09-16T19:34:31.763Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:34:31.764Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/, mapping to path=/api/v1/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/, mapping to path=/api/v1/"}}
+[debug] [2022-09-16T19:34:31.765Z] [runtime-status] [14505] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:34:31.769Z] [runtime-status] [14505] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:34:31.769Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: IDLE"}}
+[debug] [2022-09-16T19:34:31.769Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:34:36.301Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:34:36.301Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:34:36.301Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:34:36.302Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:34:36.302Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: BUSY"}}
+[debug] [2022-09-16T19:34:36.302Z] [runtime-status] [14505] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:34:36.303Z] [runtime-status] [14505] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:34:36.304Z] [runtime-status] [14505] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_51add16c8da016ac.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_51add16c8da016ac.sock"}}
+[debug] [2022-09-16T19:34:36.411Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:34:36.412Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:34:36.413Z] [runtime-status] [14505] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:34:36.415Z] [runtime-status] [14505] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14505] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:34:36.417Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: IDLE"}}
+[debug] [2022-09-16T19:34:36.417Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:34:50.782Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:34:51.299Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:34:51.299Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:34:52.304Z] Validating nodejs source
+[debug] [2022-09-16T19:34:54.430Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:34:54.431Z] Building nodejs source
+[debug] [2022-09-16T19:34:54.431Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:34:54.432Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:34:54.937Z] Serving at port 9005
+
+[debug] [2022-09-16T19:34:55.000Z] Got response from /__/functions.yaml Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'json')
+[debug] [2022-09-16T19:34:55.002Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 60:
+     ...  from function source: TypeError: Cannot read properties of unde ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'json')\n\u0000","position":59,"line":0,"column":59},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 60:\n     ...  from function source: TypeError: Cannot read properties of unde ... \n                                         ^"}
+[debug] [2022-09-16T19:34:55.005Z] shutdown requested via /__/quitquitquit
+
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'json') {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'json')"}}
+[debug] [2022-09-16T19:35:09.304Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:35:09.920Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:35:09.920Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:35:10.924Z] Validating nodejs source
+[debug] [2022-09-16T19:35:12.963Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:35:12.963Z] Building nodejs source
+[debug] [2022-09-16T19:35:12.964Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:35:12.965Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:35:13.452Z] Serving at port 9005
+
+[debug] [2022-09-16T19:35:13.518Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:35:13.521Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:35:13.540Z] [worker-pool] Shutting down IDLE worker (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:35:13.541Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: FINISHING"}}
+[debug] [2022-09-16T19:35:13.555Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: exited"}}
+[debug] [2022-09-16T19:35:13.555Z] [worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-d4d0f936-21fd-4b40-8391-58ae971df879]: FINISHED"}}
+[debug] [2022-09-16T19:35:26.781Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:35:26.781Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:35:26.781Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:35:26.784Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:35:26.795Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:35:26.796Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:35:26.796Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:35:26.796Z] [worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: BUSY"}}
+[debug] [2022-09-16T19:35:28.268Z] [runtime-status] [14560] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:35:28.270Z] [runtime-status] [14560] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:35:28.270Z] [runtime-status] [14560] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:35:28.271Z] [runtime-status] [14560] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:35:28.314Z] [runtime-status] [14560] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:35:28.315Z] [runtime-status] [14560] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:35:28.315Z] [runtime-status] [14560] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:35:28.317Z] [runtime-status] [14560] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:35:28.317Z] [runtime-status] [14560] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:35:28.318Z] [runtime-status] [14560] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:35:28.318Z] [runtime-status] [14560] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:35:28.425Z] [runtime-status] [14560] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:35:28.426Z] [runtime-status] [14560] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:35:28.431Z] [runtime-status] [14560] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_50727f65dedaa4b3.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_50727f65dedaa4b3.sock"}}
+[debug] [2022-09-16T19:35:28.534Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:35:28.534Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:35:28.536Z] [runtime-status] [14560] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:35:28.540Z] [runtime-status] [14560] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14560] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:35:28.542Z] [worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: IDLE"}}
+[debug] [2022-09-16T19:35:28.542Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:35:50.731Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:35:51.451Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:35:51.452Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:35:52.458Z] Validating nodejs source
+[debug] [2022-09-16T19:35:54.468Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:35:54.469Z] Building nodejs source
+[debug] [2022-09-16T19:35:54.469Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:35:54.469Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:35:54.949Z] Serving at port 9005
+
+[debug] [2022-09-16T19:35:55.017Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:35:55.024Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:35:55.044Z] [worker-pool] Shutting down IDLE worker (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:35:55.044Z] [worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: FINISHING"}}
+[debug] [2022-09-16T19:35:55.057Z] [worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: exited"}}
+[debug] [2022-09-16T19:35:55.057Z] [worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-002e37eb-6b62-4461-9d66-de082f7e49e0]: FINISHED"}}
+[debug] [2022-09-16T19:35:59.124Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:35:59.124Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:35:59.124Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:35:59.124Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:35:59.133Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:35:59.133Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:35:59.134Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:35:59.134Z] [worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: BUSY"}}
+[debug] [2022-09-16T19:36:00.333Z] [runtime-status] [14584] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:00.334Z] [runtime-status] [14584] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:00.335Z] [runtime-status] [14584] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:36:00.336Z] [runtime-status] [14584] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:00.379Z] [runtime-status] [14584] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:36:00.379Z] [runtime-status] [14584] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:36:00.380Z] [runtime-status] [14584] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:00.381Z] [runtime-status] [14584] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:00.382Z] [runtime-status] [14584] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:00.382Z] [runtime-status] [14584] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:36:00.383Z] [runtime-status] [14584] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:36:00.495Z] [runtime-status] [14584] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:36:00.496Z] [runtime-status] [14584] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:36:00.501Z] [runtime-status] [14584] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_5eb471ff9793204e.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_5eb471ff9793204e.sock"}}
+[debug] [2022-09-16T19:36:00.574Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:36:00.574Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:36:00.576Z] [runtime-status] [14584] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:36:00.581Z] [runtime-status] [14584] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:36:00.582Z] [worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: IDLE"}}
+[debug] [2022-09-16T19:36:00.582Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:36:05.052Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:05.686Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:05.687Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:06.691Z] Validating nodejs source
+[debug] [2022-09-16T19:36:09.010Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:36:09.010Z] Building nodejs source
+[debug] [2022-09-16T19:36:09.010Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:36:09.012Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:36:09.021Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:36:09.021Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:36:09.021Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:36:09.022Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:36:09.022Z] [worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: BUSY"}}
+[debug] [2022-09-16T19:36:09.023Z] [runtime-status] [14584] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:36:09.023Z] [runtime-status] [14584] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:36:09.023Z] [runtime-status] [14584] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_5eb471ff9793204e.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_5eb471ff9793204e.sock"}}
+[debug] [2022-09-16T19:36:09.126Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:36:09.126Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:36:09.128Z] [runtime-status] [14584] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:36:09.134Z] [runtime-status] [14584] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14584] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:36:09.135Z] [worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: IDLE"}}
+[debug] [2022-09-16T19:36:09.136Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:36:09.596Z] Serving at port 9005
+
+[debug] [2022-09-16T19:36:09.663Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:36:09.666Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:36:09.684Z] [worker-pool] Shutting down IDLE worker (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:36:09.684Z] [worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: FINISHING"}}
+[debug] [2022-09-16T19:36:09.697Z] [worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: exited"}}
+[debug] [2022-09-16T19:36:09.697Z] [worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-3dc46ff5-fa84-4584-928b-dbac16a06315]: FINISHED"}}
+[debug] [2022-09-16T19:36:17.720Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:18.232Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:18.232Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:19.236Z] Validating nodejs source
+[debug] [2022-09-16T19:36:21.341Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:36:21.342Z] Building nodejs source
+[debug] [2022-09-16T19:36:21.342Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:36:21.343Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:36:21.837Z] Serving at port 9005
+
+[debug] [2022-09-16T19:36:21.908Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:36:21.914Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:36:27.481Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:27.896Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:27.896Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:28.899Z] Validating nodejs source
+[debug] [2022-09-16T19:36:31.074Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:36:31.074Z] Building nodejs source
+[debug] [2022-09-16T19:36:31.075Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:36:31.076Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:36:31.855Z] Serving at port 9005
+
+[debug] [2022-09-16T19:36:32.029Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:36:32.033Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:36:34.452Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:36:34.453Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:36:34.453Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:36:34.453Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:36:34.460Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:36:34.461Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:36:34.461Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:36:34.461Z] [worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: BUSY"}}
+[debug] [2022-09-16T19:36:35.678Z] [runtime-status] [14647] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:35.679Z] [runtime-status] [14647] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:35.679Z] [runtime-status] [14647] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:36:35.680Z] [runtime-status] [14647] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:35.724Z] [runtime-status] [14647] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:36:35.725Z] [runtime-status] [14647] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:36:35.725Z] [runtime-status] [14647] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:35.727Z] [runtime-status] [14647] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:35.727Z] [runtime-status] [14647] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:36:35.727Z] [runtime-status] [14647] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:36:35.728Z] [runtime-status] [14647] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:36:35.842Z] [runtime-status] [14647] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:36:35.842Z] [runtime-status] [14647] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:36:35.847Z] [runtime-status] [14647] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_e669f1270d1718db.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_e669f1270d1718db.sock"}}
+[debug] [2022-09-16T19:36:35.895Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:36:35.896Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:36:35.898Z] [runtime-status] [14647] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:36:35.903Z] [runtime-status] [14647] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14647] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:36:35.904Z] [worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: IDLE"}}
+[debug] [2022-09-16T19:36:35.904Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:36:46.820Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:47.327Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:47.328Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:36:48.333Z] Validating nodejs source
+[debug] [2022-09-16T19:36:50.331Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:36:50.332Z] Building nodejs source
+[debug] [2022-09-16T19:36:50.333Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:36:50.334Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:36:51.027Z] Serving at port 9005
+
+[debug] [2022-09-16T19:36:51.102Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:36:51.106Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:36:51.126Z] [worker-pool] Shutting down IDLE worker (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:36:51.126Z] [worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: FINISHING"}}
+[debug] [2022-09-16T19:36:51.141Z] [worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: exited"}}
+[debug] [2022-09-16T19:36:51.142Z] [worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-33a3c2a9-b75f-4c69-8636-87cc6a3079ef]: FINISHED"}}
+[debug] [2022-09-16T19:37:03.530Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:37:03.530Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:37:03.530Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:37:03.531Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:37:03.541Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:37:03.542Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:37:03.543Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:37:03.543Z] [worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: BUSY"}}
+[debug] [2022-09-16T19:37:05.171Z] [runtime-status] [14668] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:37:05.172Z] [runtime-status] [14668] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:37:05.173Z] [runtime-status] [14668] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:37:05.174Z] [runtime-status] [14668] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:37:05.233Z] [runtime-status] [14668] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:37:05.233Z] [runtime-status] [14668] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:37:05.234Z] [runtime-status] [14668] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:37:05.236Z] [runtime-status] [14668] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:37:05.237Z] [runtime-status] [14668] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:37:05.237Z] [runtime-status] [14668] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:37:05.237Z] [runtime-status] [14668] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:37:05.392Z] [runtime-status] [14668] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:37:05.392Z] [runtime-status] [14668] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:37:05.397Z] [runtime-status] [14668] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_502052a0a5e7667e.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_502052a0a5e7667e.sock"}}
+[debug] [2022-09-16T19:37:05.496Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:37:05.496Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:37:05.498Z] [runtime-status] [14668] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:37:05.499Z] [runtime-status] [14668] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14668] Ephemeral server survived."}}
+[debug] [2022-09-16T19:37:50.501Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:37:50.912Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:37:50.913Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:37:51.914Z] Validating nodejs source
+[debug] [2022-09-16T19:37:54.196Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:37:54.197Z] Building nodejs source
+[debug] [2022-09-16T19:37:54.197Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:37:54.198Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:37:54.797Z] Serving at port 9005
+
+[debug] [2022-09-16T19:37:54.893Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:37:54.900Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:37:54.928Z] [worker-pool] Marking BUSY worker to finish (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Marking BUSY worker to finish (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:37:54.928Z] [worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: FINISHING"}}
+[warn] ⚠  functions: Your function timed out after ~60s. To configure this timeout, see
+      https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Your function timed out after ~60s. To configure this timeout, see\n      https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation."}}
+[info] >  /Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635 {"user":"/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m /Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635"}}
+[info] >              throw new Error("Function timed out."); {"user":"            throw new Error(\"Function timed out.\");","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m             throw new Error(\"Function timed out.\");"}}
+[info] >              ^ {"user":"            ^","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m             ^"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m "}}
+[info] >  Error: Function timed out. {"user":"Error: Function timed out.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m Error: Function timed out."}}
+[info] >      at Timeout._onTimeout (/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635:19) {"user":"    at Timeout._onTimeout (/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635:19)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Timeout._onTimeout (/Users/vo2group/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:635:19)"}}
+[info] >      at listOnTimeout (node:internal/timers:559:17) {"user":"    at listOnTimeout (node:internal/timers:559:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m     at listOnTimeout (node:internal/timers:559:17)"}}
+[info] >      at processTimers (node:internal/timers:502:7) {"user":"    at processTimers (node:internal/timers:502:7)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"\u001b[90m> \u001b[39m     at processTimers (node:internal/timers:502:7)"}}
+[debug] [2022-09-16T19:38:05.412Z] [worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: exited"}}
+[debug] [2022-09-16T19:38:05.412Z] [worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-14ac6c6f-89ff-47dd-8ee2-8b2f2ca90173]: FINISHED"}}
+[debug] [2022-09-16T19:38:05.412Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:38:18.267Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:18.678Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:18.678Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:19.679Z] Validating nodejs source
+[debug] [2022-09-16T19:38:21.658Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:38:21.659Z] Building nodejs source
+[debug] [2022-09-16T19:38:21.659Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:38:21.659Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:38:22.131Z] Serving at port 9005
+
+[debug] [2022-09-16T19:38:22.200Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:38:22.203Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:38:29.566Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:30.082Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:30.083Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:31.088Z] Validating nodejs source
+[debug] [2022-09-16T19:38:33.186Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:38:33.186Z] Building nodejs source
+[debug] [2022-09-16T19:38:33.187Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:38:33.187Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:38:33.641Z] Serving at port 9005
+
+[debug] [2022-09-16T19:38:33.709Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:38:33.712Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:38:57.223Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:57.739Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:57.739Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:38:58.744Z] Validating nodejs source
+[debug] [2022-09-16T19:39:01.039Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:39:01.040Z] Building nodejs source
+[debug] [2022-09-16T19:39:01.040Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:39:01.041Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:39:01.536Z] Serving at port 9005
+
+[debug] [2022-09-16T19:39:01.604Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:39:01.607Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:39:07.675Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:39:07.675Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:39:07.675Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:39:07.675Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:39:07.682Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:39:07.683Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:39:07.683Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:39:07.683Z] [worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: BUSY"}}
+[debug] [2022-09-16T19:39:09.168Z] [runtime-status] [14775] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:39:09.170Z] [runtime-status] [14775] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:39:09.171Z] [runtime-status] [14775] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:39:09.172Z] [runtime-status] [14775] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:39:09.214Z] [runtime-status] [14775] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:39:09.215Z] [runtime-status] [14775] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:39:09.215Z] [runtime-status] [14775] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:39:09.217Z] [runtime-status] [14775] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:39:09.217Z] [runtime-status] [14775] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:39:09.217Z] [runtime-status] [14775] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:39:09.218Z] [runtime-status] [14775] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:39:09.329Z] [runtime-status] [14775] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:39:09.330Z] [runtime-status] [14775] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:39:09.335Z] [runtime-status] [14775] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_92e7009d947806c4.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_92e7009d947806c4.sock"}}
+[debug] [2022-09-16T19:39:09.435Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:39:09.435Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:39:09.437Z] [runtime-status] [14775] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:39:09.442Z] [runtime-status] [14775] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14775] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:39:09.443Z] [worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: IDLE"}}
+[debug] [2022-09-16T19:39:09.443Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:40:25.921Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:40:26.335Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:40:26.336Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:40:27.337Z] Validating nodejs source
+[debug] [2022-09-16T19:40:29.447Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:40:29.448Z] Building nodejs source
+[debug] [2022-09-16T19:40:29.448Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:40:29.449Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:40:29.963Z] Serving at port 9005
+
+[debug] [2022-09-16T19:40:30.052Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:40:30.056Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:40:30.077Z] [worker-pool] Shutting down IDLE worker (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:40:30.077Z] [worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: FINISHING"}}
+[debug] [2022-09-16T19:40:30.089Z] [worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: exited"}}
+[debug] [2022-09-16T19:40:30.089Z] [worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-2005bb00-f092-4fc6-bfd2-9ed8d75b9710]: FINISHED"}}
+[debug] [2022-09-16T19:40:35.294Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:40:35.294Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:40:35.294Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/ --> us-central1-mlbp
+[debug] [2022-09-16T19:40:35.294Z] [worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-mlbp: 1 --> 0"}}
+[debug] [2022-09-16T19:40:35.301Z] [worker-pool] addWorker(us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-mlbp)"}}
+[debug] [2022-09-16T19:40:35.302Z] [worker-pool] Adding worker with key us-central1-mlbp, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-mlbp, total=1"}}
+[debug] [2022-09-16T19:40:35.302Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:40:35.303Z] [worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: BUSY"}}
+[debug] [2022-09-16T19:40:36.855Z] [runtime-status] [14805] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:40:36.857Z] [runtime-status] [14805] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:40:36.858Z] [runtime-status] [14805] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T19:40:36.859Z] [runtime-status] [14805] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:40:36.902Z] [runtime-status] [14805] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T19:40:36.902Z] [runtime-status] [14805] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:40:36.903Z] [runtime-status] [14805] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:40:36.905Z] [runtime-status] [14805] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T19:40:36.906Z] [runtime-status] [14805] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T19:40:36.906Z] [runtime-status] [14805] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T19:40:36.906Z] [runtime-status] [14805] Functions runtime initialized. {"cwd":"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Functions runtime initialized. {\"cwd\":\"/Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T19:40:37.023Z] [runtime-status] [14805] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:40:37.024Z] [runtime-status] [14805] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:40:37.029Z] [runtime-status] [14805] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_47e25608775e1ad8.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_47e25608775e1ad8.sock"}}
+[debug] [2022-09-16T19:40:37.048Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:40:37.049Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/, mapping to path=/api/v1/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/, mapping to path=/api/v1/"}}
+[debug] [2022-09-16T19:40:37.050Z] [runtime-status] [14805] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:40:37.056Z] [runtime-status] [14805] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:40:37.057Z] [worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: IDLE"}}
+[debug] [2022-09-16T19:40:37.057Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:40:40.440Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T19:40:40.440Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T19:40:40.440Z] Accepted request GET /manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup --> us-central1-mlbp
+[debug] [2022-09-16T19:40:40.440Z] [worker-pool] submitWork(triggerId=us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-mlbp)"}}
+[debug] [2022-09-16T19:40:40.440Z] [worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: BUSY"}}
+[debug] [2022-09-16T19:40:40.441Z] [runtime-status] [14805] Beginning invocation function mlbp! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Beginning invocation function mlbp!"}}
+[info] i  functions: Beginning execution of "mlbp" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Beginning execution of \"mlbp\""}}
+[debug] [2022-09-16T19:40:40.441Z] [runtime-status] [14805] Running mlbp in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Running mlbp in signature http"}}
+[debug] [2022-09-16T19:40:40.442Z] [runtime-status] [14805] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_47e25608775e1ad8.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Listening to port: /var/folders/27/p2p893xs65zdjcbzx1hdnhc00000gn/T/fire_emu_47e25608775e1ad8.sock"}}
+[debug] [2022-09-16T19:40:40.547Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-16T19:40:40.547Z] [functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/manilesbonsplans-22c99/us-central1/mlbp/api/v1/warmup, mapping to path=/api/v1/warmup"}}
+[debug] [2022-09-16T19:40:40.549Z] [runtime-status] [14805] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Ephemeral server handling GET request"}}
+[debug] [2022-09-16T19:40:40.550Z] [runtime-status] [14805] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"[runtime-status] [14805] Ephemeral server survived."}}
+[info] i  functions: Finished "mlbp" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-mlbp"},"extension":{},"message":"Finished \"mlbp\" in ~1s"}}
+[debug] [2022-09-16T19:40:40.551Z] [worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: IDLE"}}
+[debug] [2022-09-16T19:40:40.551Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T19:44:55.861Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2022-09-16T19:44:56.272Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2022-09-16T19:44:56.272Z] File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/vo2group/Desktop/workspace/projet-perso/ecommerce-secret-plan/manilesbonplans/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2022-09-16T19:44:57.276Z] Validating nodejs source
+[debug] [2022-09-16T19:44:59.448Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-09-16T19:44:59.449Z] Building nodejs source
+[debug] [2022-09-16T19:44:59.449Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T19:44:59.450Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T19:44:59.968Z] Serving at port 9005
+
+[debug] [2022-09-16T19:45:00.037Z] Got response from /__/functions.yaml {"endpoints":{"mlbp":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"mlbp"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T19:45:00.040Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: mlbp. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: mlbp."}}
+[debug] [2022-09-16T19:45:00.058Z] [worker-pool] Shutting down IDLE worker (us-central1-mlbp) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-mlbp)"}}
+[debug] [2022-09-16T19:45:00.058Z] [worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: FINISHING"}}
+[debug] [2022-09-16T19:45:00.070Z] [worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: exited"}}
+[debug] [2022-09-16T19:45:00.070Z] [worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-mlbp-30d86241-46b7-465a-8fad-779853f29321]: FINISHED"}}
