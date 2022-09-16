@@ -74,7 +74,7 @@ const WishlistItemCard: FC<Props> = ({
     }
   }
 
-  const moveToCartHandler = async (ev, fromModal = false) => {
+  const moveToCartHandler = async (fromModal = false) => {
     if (size) {
       if (isInCart) {
         const updatedItem = {
@@ -176,7 +176,7 @@ const WishlistItemCard: FC<Props> = ({
             )}`}</div>
           </div>
         </div>
-        <button className="cart" onClick={moveToCartHandler}>
+        <button className="cart" onClick={() => moveToCartHandler}>
           Move to Cart
         </button>
       </Div>
@@ -200,7 +200,7 @@ const WishlistItemCard: FC<Props> = ({
             </div>
             <button
               className="done"
-              onClick={moveToCartHandler.bind(this, true)}
+              onClick={() => moveToCartHandler(true)}
             >
               Done
             </button>

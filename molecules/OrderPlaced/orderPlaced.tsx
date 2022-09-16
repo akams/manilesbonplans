@@ -65,6 +65,10 @@ const OrderPlaced = () => {
         <CheckIcon />
       </div>
       <h2 className="title">Order placed successfully</h2>
+      <p className="title">Un message vous sera envoyer via whatsapp pour procéder au paiement</p>
+      <p className="title">Votre commande est bloquer pendant 24H le temps que le paiement soit valider</p>
+      <p className="title">Passé ce delai, votre commande sera perdu</p>
+      <p className="title">Pour votre information la durée du delai de livraison est compris entre 7 et 14 jour</p>
       <p className="text">Thank you for shopping with us</p>
       <Link href="/collections">Continue Shopping</Link>
     </Div>

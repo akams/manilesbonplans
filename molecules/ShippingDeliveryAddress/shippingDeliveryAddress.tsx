@@ -4,7 +4,6 @@ import {
 
 
 const ShippingDeliveryAddress = () => {
-  const deliveryAddressName = 'deliveryAddress'
   const rulesFields = {
     name: {
       rules: {
@@ -37,37 +36,36 @@ const ShippingDeliveryAddress = () => {
         required: true,
       },
     },
-
   }
   return (
     <div>
       <ControlledInputText
         placeholder="Name"
-        name={`${deliveryAddressName}.name`}
+        name="deliveryAddressName"
         rules={rulesFields.name.rules}
       />
 
       <ControlledInputText
         placeholder="Street"
-        name={`${deliveryAddressName}.street`}
+        name="deliveryAddressStreet"
         rules={rulesFields.street.rules}
       />
 
       <ControlledInputText
         placeholder="ZipCode"
-        name={`${deliveryAddressName}.zipCode`}
+        name="deliveryAddressZipCode"
         rules={rulesFields.zipCode.rules}
       />
 
       <ControlledInputText
         placeholder="City"
-        name={`${deliveryAddressName}.city`}
+        name="deliveryAddressCity"
         rules={rulesFields.city.rules}
       />
 
       <ControlledInputText
         placeholder="Country"
-        name={`${deliveryAddressName}.country`}
+        name="deliveryAddressCountry"
         rules={rulesFields.country.rules}
         disabled={rulesFields.country.disabled}
       />
@@ -75,7 +73,7 @@ const ShippingDeliveryAddress = () => {
       <ControlledInputText
         type='tel'
         placeholder="Tél"
-        name={`${deliveryAddressName}.tel`}
+        name="deliveryAddressTel"
         rules={rulesFields.tel.rules}
       />
     </div>

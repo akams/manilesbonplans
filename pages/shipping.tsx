@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { db } from '@FirebaseConfig/firebase'
+import { doc, updateDoc } from 'firebase/firestore'
 import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
 import { MainNav } from '@Atoms'
@@ -12,45 +12,41 @@ import { ShippingOrganism } from '@Organisms'
 import { ShippingContextProvider } from '@Organisms/Shipping'
 import { Div } from '@Organisms/SignUp/styledComponent'
 
+import * as Types from '@Types'
+
 const Shipping: NextPage = () => {
   const router = useRouter()
-  //@ts-ignore
-  const user = useSelector((state) => state.auth.user)
+
+  const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
 
   const useFormMethods = useForm({
     defaultValues: {
-      deliveryAddress: {
-        name: '',
-        street: '',
-        city: '',
-        country: 'GABON',
-        zipCode: '',
-        tel: '',
-      },
-      billingAddress: {
-        name: '',
-        street: '',
-        city: '',
-        country: '',
-        zipCode: '',
-        tel: '',
-      },
-      isSame: true,
+      deliveryAddressName: '',
+      deliveryAddressStreet: '',
+      deliveryAddressCity: '',
+      deliveryAddressCountry: 'GABON',
+      deliveryAddressZipCode: '',
+      deliveryAddressTel: '',
     },
     mode: 'onTouched',
   })
-
-  const {
-    getValues,
-  } = useFormMethods
-
-  const { deliveryAddress, billingAddress, isSame } = getValues()
 
   if (!user) {
     router.replace('/signin')
   }
 
-  const submitHandler = async () => console.log('submitHandler')
+  const submitHandlerForm = async (formData: any) => {
+    const { uid } = user
+    const deliveryAddress = {
+      ...formData,
+    }
+    await updateDoc(doc(db, uid, 'cart'), {
+      items: [],
+    })
+    await updateDoc(doc(db, user.uid, 'account'), {
+      deliveryAddress
+    })
+  }
 
   return (
     <>
@@ -61,14 +57,10 @@ const Shipping: NextPage = () => {
         <Link href="/">Home</Link> / <span>Shipping</span>
       </MainNav>
       <Div>
-        <ShippingContextProvider
-          deliveryAddress={deliveryAddress}
-          billingAddress={billingAddress}
-          isSame={isSame}
-        >
+        <ShippingContextProvider>
           <FormProvider {...useFormMethods}>
             <ShippingOrganism
-              submitHandler={submitHandler}
+              submitHandlerForm={submitHandlerForm}
             />
           </FormProvider>
         </ShippingContextProvider>

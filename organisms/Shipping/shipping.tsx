@@ -8,19 +8,28 @@ import {
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import { useFormContext } from 'react-hook-form'
 
 import { ShippingContext } from './shippingContext'
 
 import { Props } from './type'
 
 const Shipping: FC<Props> = ({
-  submitHandler,
+  submitHandlerForm,
 }) => {
   const value = useContext(ShippingContext);
+  const {
+    trigger,
+    getValues,
+  } = useFormContext()
 
-  const HandleSubmit = () => {
-    console.log('here save value')
-    // value?.handleNext()
+  const shippingFormSubmitHandler = async () => {
+    const formIsValid = await trigger()
+    const formValue = getValues()
+    if (formIsValid) {
+      await submitHandlerForm(formValue)
+      value?.handleNext()
+    }
   }
 
   const styles = {
@@ -41,18 +50,9 @@ const Shipping: FC<Props> = ({
         {value?.page === 0 && <ShippingDeliveryAddress />}
         {value?.page === 1 && <OrderPlaced />}
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-          {value?.page !== 0 && <Button
-            color="inherit"
-            disabled={value?.page === 0}
-            onClick={() => value?.handleBack()}
-            sx={{ mr: 1 }}
-            style={{ ...styles.btn, ...styles.color }}
-          >
-            Retour
-          </Button>}
           <Box sx={{ flex: '1 1 auto' }} />
           {value?.page < value?.steps.length - 1 && (
-            <Button style={styles.btn} onClick={() => HandleSubmit()}>
+            <Button style={styles.btn} onClick={() => shippingFormSubmitHandler()}>
               Continuer
             </Button>)}
         </Box>
