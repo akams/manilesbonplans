@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
 import { CheckIcon } from '@Assets/icons'
 
 const Div = styled.div`
@@ -59,7 +57,6 @@ const Div = styled.div`
 `
 
 const SignUpConfirmation = () => {
-  const [open, setOpenModal] = useState(true)
   return (
     <>
       <Div>

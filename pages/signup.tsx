@@ -2,20 +2,24 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
 import { sendEmailVerification } from 'firebase/auth'
-import { useRouter } from 'next/router'
+import { auth, db } from '@FirebaseConfig/firebase'
+
 import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
+import axios from 'axios'
 
 import { MainNav } from '@Atoms'
 import { SignUpOrganism } from '@Organisms'
 import { Div } from '@Organisms/SignUp/styledComponent'
 
-import { auth, db } from '@FirebaseConfig/firebase'
-
 import * as Types from '@Types'
+
+const requestSignUp = (payload) => axios.post(`${process.env.NEXT_PUBLIC_ENDPOINT_API}/signup`, payload);
 
 const SignUp = () => {
   const router = useRouter()
@@ -31,37 +35,23 @@ const SignUp = () => {
     mode: 'onTouched',
   })
 
-  // if (user) {
-  //   router.replace('/collections')
-  // }
-
   const submitHandler = async ({ email, password, name }: Types.SignUpFormData) => {
     try {
       const { user } = await createUserWithEmailAndPassword(auth, email, password)
       const { uid, emailVerified } = user
-
       if (!emailVerified) {
         sendEmailVerification(user)
+        await requestSignUp({
+          uid,
+          name,
+          email,
+        })
         return router.replace('/signup-confirmation')
       }
-
-      return router.replace('/collections')
-
-      // await setDoc(doc(db, uid, 'account'), {
-      //   name,
-      //   email,
-      // })
-      // await setDoc(doc(db, uid, 'wishlist'), {
-      //   items: [],
-      // })
-      // await setDoc(doc(db, uid, 'cart'), {
-      //   items: [],
-      // })
     } catch (error) {
       //@ts-ignore
       const errorCode = error.code
       console.error(error)
-
       if (errorCode === 'auth/email-already-in-use') {
         setServerErrorMessage('Email address already in use.')
       } else {

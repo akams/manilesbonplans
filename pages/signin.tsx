@@ -17,8 +17,7 @@ import * as Types from '@Types'
 
 const SignIn: NextPage = () => {
   const router = useRouter()
-  //@ts-ignore
-  const user = useSelector((state) => state.auth.user)
+  const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
   const [serverErrorMessage, setServerErrorMessage] = useState('')
   const [isGuestLoading, setIsGuestLoading] = useState(false)
 

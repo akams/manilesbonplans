@@ -53,6 +53,8 @@ https://www.twilio.com/blog/add-cors-support-express-typescript-api
 
 https://blog.logrocket.com/rest-api-firebase-cloud-functions-typescript-firestore/
 
+https://stackoverflow.com/questions/59462614/how-to-use-different-env-files-with-nextjs
+
 
 Maybe later:
 
