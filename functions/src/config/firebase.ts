@@ -7,7 +7,7 @@ admin.initializeApp({
   //   projectId: functions.config().project.id,
   //   clientEmail: functions.config().client.email,
   // }),
-  databaseURL: "http://localhost:4000/firestore",
+  // databaseURL: "http://localhost:4000/firestore",
 });
 
 const db = admin.firestore();

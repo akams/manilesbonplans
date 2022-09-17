@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 import { signOut } from 'firebase/auth'
 
 import { LogoIcon, WishlistIcon, CartIcon, UserIcon } from '@Assets/icons'
@@ -142,6 +143,7 @@ const Div = styled.div`
 `
 
 const NavBar = () => {
+  const router = useRouter()
   const [isMenuVisible, setIsMenuVisible] = useState(false)
   //@ts-ignore
   const wishlistCount = useSelector((state) => state.wishlist.items.length)
@@ -169,14 +171,10 @@ const NavBar = () => {
     setIsMenuVisible(false)
   }
 
-  const signOutHandler = () => {
-    signOut(auth)
-      .then(() => {
-        closeMenu()
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+  const signOutHandler = async () => {
+    await signOut(auth)
+    closeMenu()
+    router.replace('/signin')
   }
 
   return (

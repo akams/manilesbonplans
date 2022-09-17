@@ -14,6 +14,7 @@ const signup = async (req: RequestSignup, res: Response) => {
       account: {
         name,
         email,
+        validate: true,
       },
       wishlist: {
         items: [],

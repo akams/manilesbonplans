@@ -2,7 +2,7 @@
 import { useEffect, useState, FC } from 'react'
 import { useDispatch } from 'react-redux'
 import axios from 'axios';
-import { onAuthStateChanged, getIdToken } from 'firebase/auth'
+import { onAuthStateChanged } from 'firebase/auth'
 import { doc, onSnapshot } from 'firebase/firestore'
 import { auth, db } from '@FirebaseConfig/firebase'
 
@@ -17,20 +17,17 @@ import { Props } from './type'
 
 const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
-  const [currentUser, setCurrentUser] = useState({})
   const dispatch = useDispatch()
 
   //@ts-ignore
   const subscriptions = []
-  //@ts-ignore
-  let authInterceptor = null
   useEffect(() => {
     const authSub = onAuthStateChanged(
       auth,
       (user) => {
+        console.log('here before test', user && user.emailVerified)
         if (user && user.emailVerified) {
-          setCurrentUser(user)
-          console.log('user from onAuthStateChanged', user);
+          console.log('after verifie from onAuthStateChanged', user);
           const userInfoSub = onSnapshot(
             doc(db, user.uid, 'account'),
             (document) => {
@@ -81,6 +78,7 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
           )
           subscriptions.push(userInfoSub)
         } else {
+          console.log('ne rentre pas car user deco', user);
           dispatch(authActions.setUser(null))
           dispatch(wishlistActions.setItems([]))
           dispatch(cartActions.setItems([]))
@@ -93,26 +91,22 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
     )
     subscriptions.push(authSub)
 
-    if (currentUser && Object.keys(currentUser).length) {
-      authInterceptor = axios.interceptors.request.use(
-        async (config) => {
-          //@ts-ignore
-          const token = await getIdToken(currentUser)
-          console.log('token', token);
-          config.headers = {
-            ...getHeaders(token),
-          };
-          return config;
-        },
-        (error) => Promise.reject(error)
-      )
-    }
+    const authInterceptor = axios.interceptors.request.use(
+      async (config) => {
+        const token = await auth.currentUser?.getIdToken()
+        console.log('token', token);
+        config.headers = {
+          ...getHeaders(token),
+        };
+        return config;
+      },
+      (error) => Promise.reject(error)
+    )
 
     const unSubscribeAll = () => {
       //@ts-ignore
       subscriptions.forEach((sub) => sub())
       subscriptions.length = 0
-      //@ts-ignore
       axios.interceptors.request.eject(authInterceptor);
     }
 

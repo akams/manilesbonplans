@@ -19,7 +19,6 @@ const SignIn: NextPage = () => {
   const router = useRouter()
   const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
   const [serverErrorMessage, setServerErrorMessage] = useState('')
-  const [isGuestLoading, setIsGuestLoading] = useState(false)
 
   if (user) {
     router.replace('/collections')
@@ -49,26 +48,6 @@ const SignIn: NextPage = () => {
     }
   }
 
-  const signInAsGuestHandler = async () => {
-    setIsGuestLoading(true)
-    try {
-      await signInWithEmailAndPassword(auth, 'lovelyguest@fakemail.com', 'lovelyguest')
-    } catch (error) {
-      //@ts-ignore
-      const errorCode = error.code
-      console.log(errorCode)
-      if (errorCode === 'auth/user-not-found') {
-        setServerErrorMessage('Account doesn\'t exist.')
-      } else if (errorCode === 'auth/wrong-password') {
-        setServerErrorMessage('Invalid password.')
-      } else {
-        setServerErrorMessage('Something went wrong.')
-      }
-    } finally {
-      setIsGuestLoading(false)
-    }
-  }
-
   return (
     <>
       <Head>
@@ -81,7 +60,7 @@ const SignIn: NextPage = () => {
         {user ? (
           <>
             <p>
-              You are signed in as <span className="bold">{user.email}</span>.
+              You are signed in as <span className="bold">{user?.email}</span>.
               You ll now be redirected.
             </p>
           </>
@@ -90,8 +69,6 @@ const SignIn: NextPage = () => {
             <SignInOrganism
               serverErrorMessage={serverErrorMessage}
               submitHandler={submitHandler}
-              signInAsGuestHandler={signInAsGuestHandler}
-              isGuestLoading={isGuestLoading}
             />
           </FormProvider>
         )}

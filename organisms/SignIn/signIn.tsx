@@ -12,8 +12,6 @@ import { Props } from './type'
 const SignIn: FC<Props> = ({
   submitHandler,
   serverErrorMessage,
-  signInAsGuestHandler,
-  isGuestLoading,
 }) => {
   const { formatMessage } = useIntl()
 
@@ -77,16 +75,6 @@ const SignIn: FC<Props> = ({
           {isSubmitting ? <span className="loader"></span> : 'Sign In'}
         </button>
       </form>
-      <div className="ext">
-        <button
-          type="button"
-          disabled={isGuestLoading}
-          onClick={signInAsGuestHandler}
-        >
-          Continue as Guest
-        </button>
-        {isGuestLoading && <span className="loader small"></span>}
-      </div>
       <p className="info">
         Don t have an account? <Link href="/signup">Sign Up</Link>
       </p>

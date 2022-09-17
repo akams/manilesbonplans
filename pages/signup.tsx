@@ -1,13 +1,11 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { doc, setDoc } from 'firebase/firestore'
 import { sendEmailVerification } from 'firebase/auth'
-import { auth, db } from '@FirebaseConfig/firebase'
+import { auth } from '@FirebaseConfig/firebase'
 
 import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -18,8 +16,9 @@ import { SignUpOrganism } from '@Organisms'
 import { Div } from '@Organisms/SignUp/styledComponent'
 
 import * as Types from '@Types'
+import * as ApiTypes from '@Types/api'
 
-const requestSignUp = (payload) => axios.post(`${process.env.NEXT_PUBLIC_ENDPOINT_API}/signup`, payload);
+const requestSignUp = (payload: ApiTypes.ApiSignupType) => axios.post(`${process.env.NEXT_PUBLIC_ENDPOINT_API}/signup`, payload);
 
 const SignUp = () => {
   const router = useRouter()
@@ -38,16 +37,14 @@ const SignUp = () => {
   const submitHandler = async ({ email, password, name }: Types.SignUpFormData) => {
     try {
       const { user } = await createUserWithEmailAndPassword(auth, email, password)
-      const { uid, emailVerified } = user
-      if (!emailVerified) {
-        sendEmailVerification(user)
-        await requestSignUp({
-          uid,
-          name,
-          email,
-        })
-        return router.replace('/signup-confirmation')
-      }
+      const { uid } = user
+      sendEmailVerification(user)
+      await requestSignUp({
+        uid,
+        name,
+        email,
+      })
+      return router.replace('/signup-confirmation')
     } catch (error) {
       //@ts-ignore
       const errorCode = error.code

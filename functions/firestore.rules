@@ -2,39 +2,39 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    match /{document=**} {
-      allow read, write: if true;
-    }
+    // match /{document=**} {
+    //   allow read, write: if true;
+    // }
   
-  	// match /{userId}/{document} {
-    // 	//@todo: à améliorer
-    //   allow create: if emailVerified();
-    //   allow read: if isBelongsTo(userId) && emailVerified() && isValidateAccount() == true;
-    //   allow update: if isBelongsTo(userId) && emailVerified() && isValidateAccount() == true;
-    // }
+  	match /{userId}/{document} {
+    	//@todo: à améliorer
+      allow create: if emailVerified();
+      allow read: if isBelongsTo(userId) && emailVerified() && isValidateAccount() == true;
+      allow update: if isBelongsTo(userId) && emailVerified() && isValidateAccount() == true;
+    }
     
-    // match /orders/{document} {
-    //   allow create: if isSignIn() && emailVerified() && isValidateAccount() == true;
-    //   allow read: if isSignIn() && emailVerified() && isValidateAccount() == true;
-    //   allow update: if isSignIn() && emailVerified() && isValidateAccount() == true;
-    // }
+    match /orders/{document} {
+      allow create: if isSignIn() && emailVerified() && isValidateAccount() == true;
+      allow read: if isSignIn() && emailVerified() && isValidateAccount() == true;
+      allow update: if isSignIn() && emailVerified() && isValidateAccount() == true;
+    }
     
-    // // use for collection uid user
-    // function isBelongsTo(userId) {
-    //   return request.auth != null && request.auth.uid == userId;
-    // }
-    // // use on others collections
-    // function isSignIn() {
-    // 	return request.auth != null && request.auth.uid;
-    // }
-    // function emailVerified() {
-    // 	return request.auth.token.email_verified;
-    // }
-    // function isValidateAccount() {
-    //   return getCurrentUser().validate
-    // }
-    // function getCurrentUser() {
-    //   return get(/databases/$(database)/documents/$(request.auth.uid)/account).data
-    // }
+    // use for collection uid user
+    function isBelongsTo(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+    // use on others collections
+    function isSignIn() {
+    	return request.auth != null && request.auth.uid;
+    }
+    function emailVerified() {
+    	return request.auth.token.email_verified;
+    }
+    function isValidateAccount() {
+      return getCurrentUser().validate
+    }
+    function getCurrentUser() {
+      return get(/databases/$(database)/documents/$(request.auth.uid)/account).data
+    }
   }
 }
