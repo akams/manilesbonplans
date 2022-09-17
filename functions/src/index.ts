@@ -4,6 +4,8 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as cors from "cors";
 
+import {signup} from "./controllers/user";
+
 const app = express(); // Handle intern API
 const main = express(); // Expose API
 
@@ -21,10 +23,11 @@ main.use("/api/v1", app);
 
 exports.mlbp = functions.https.onRequest(main);
 
-app.get("/", (req, res) => res.status(200).send("Hey there! 3"));
-
 app.get("/warmup", (request, response) => {
   response.json({
-    msg: "Warming up serverless 3.",
+    msg: "Warming up serverless",
   });
 });
+
+app.post("/signup", signup);
+
