@@ -4,7 +4,11 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as cors from "cors";
 
+import {validateFirebaseIdToken} from "./middlewares/middlewares";
+import {admin} from "./config/firebase";
+
 import {signup} from "./controllers/user";
+import {create} from "./controllers/orders";
 
 const app = express(); // Handle intern API
 const main = express(); // Expose API
@@ -14,10 +18,12 @@ const options: cors.CorsOptions = {
   origin: true,
 };
 
+const useValidateFirebaseIdToken = validateFirebaseIdToken(admin);
+
 main.use(cors(options));
 main.use(express.json());
 main.use(cookieParser());
-// // main.use(useValidateFirebaseIdToken);
+main.use(useValidateFirebaseIdToken);
 main.use(bodyParser.json());
 main.use("/api/v1", app);
 
@@ -30,4 +36,5 @@ app.get("/warmup", (request, response) => {
 });
 
 app.post("/signup", signup);
+app.post("/orders/terminate", create);
 
