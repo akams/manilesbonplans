@@ -6,6 +6,7 @@ import WishlistOrganism from './Wishlist'
 import CartOrganism from './Cart'
 import ShippingOrganism from './Shipping'
 import SignUpConfirmationOrganism from './SignUpConfirmation'
+import OrdersOrganism from './Orders'
 
 export {
   SignInOrganism,
@@ -16,4 +17,5 @@ export {
   CartOrganism,
   ShippingOrganism,
   SignUpConfirmationOrganism,
+  OrdersOrganism,
 }
