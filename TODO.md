@@ -5,33 +5,26 @@
 - [X] améliorer donnée Product
 - [X] améliorer donnée User
 - [X] améliorer donnée Order
-
 - [X] Page shipping
-  - [X] init archi page
-  - [X] faire micro page shipping delivery 
-  - [X] save data
-  - [X] modal message plus clean
-  
 - [X] sécurité mailing auth
 - [X] sécurité db
-
-- [ ] Page mes commandes (orders) 
-  - [X] api create/update
-  - connecter react query axios auth 
-  - [ ] ui commandes
+- [X] sécurité api
+- [X] Page mes commandes (orders)
 
 - [ ] injection des data Products en BDD
-
 - [ ] Api pour les produits
-- [X] sécurité api
+
+- [ ] reduire les call backend
+  - [ ] supprimer listener cart
+  - [ ] supprimer listener wishlist
 
 - [ ] Faire une page "le site est en cours de maj" avec une branche qui delete tout les pages et garde qu'une seul
 
 - [ ] Footer
+
 - [ ] update all wording app
 
 - [ ] hosting
-
 - [ ] compte whatsapp pro
 ## Fix:
 
