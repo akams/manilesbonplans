@@ -3,8 +3,6 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { db } from '@FirebaseConfig/firebase'
-import { doc, updateDoc } from 'firebase/firestore'
 import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
 import { MainNav } from '@Atoms'
@@ -14,22 +12,16 @@ import { Div } from '@Organisms/SignUp/styledComponent'
 
 import * as Types from '@Types'
 
-const getDefaultValue = (deliveryAddress: any) => {
-  const {
-    deliveryAddressName,
-    deliveryAddressStreet,
-    deliveryAddressCity,
-    deliveryAddressCountry,
-    deliveryAddressZipCode,
-    deliveryAddressTel,
-  } = deliveryAddress
+import { requestPostFinishOrder } from '@Services/api'
+
+const getDefaultValue = (user: Types.User) => {
   return {
-    deliveryAddressName: '' || deliveryAddressName,
-    deliveryAddressStreet: '' || deliveryAddressStreet,
-    deliveryAddressCity: '' || deliveryAddressCity,
-    deliveryAddressCountry: 'GABON' || deliveryAddressCountry,
-    deliveryAddressZipCode: '' || deliveryAddressZipCode,
-    deliveryAddressTel: '' || deliveryAddressTel,
+    deliveryAddressName: '' || user?.deliveryAddress?.name,
+    deliveryAddressStreet: '' || user?.deliveryAddress?.street,
+    deliveryAddressCity: '' || user?.deliveryAddress?.city,
+    deliveryAddressCountry: 'GABON',
+    deliveryAddressZipCode: '' || user?.deliveryAddress?.zipCode,
+    deliveryAddressTel: '' || user?.deliveryAddress?.tel,
   }
 }
 
@@ -38,7 +30,7 @@ const Shipping: NextPage = () => {
   const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
 
   const useFormMethods = useForm({
-    defaultValues: getDefaultValue(user.deliveryAddress),
+    defaultValues: getDefaultValue(user),
     mode: 'onTouched',
   })
 
@@ -47,16 +39,7 @@ const Shipping: NextPage = () => {
   }
 
   const submitHandlerForm = async (formData: any) => {
-    const { uid } = user
-    const deliveryAddress = {
-      ...formData,
-    }
-    await updateDoc(doc(db, uid, 'cart'), {
-      items: [],
-    })
-    await updateDoc(doc(db, user.uid, 'account'), {
-      deliveryAddress
-    })
+    await requestPostFinishOrder(formData)
   }
 
   return (

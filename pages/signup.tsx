@@ -9,16 +9,14 @@ import { auth } from '@FirebaseConfig/firebase'
 
 import { useSelector } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
-import axios from 'axios'
 
 import { MainNav } from '@Atoms'
 import { SignUpOrganism } from '@Organisms'
 import { Div } from '@Organisms/SignUp/styledComponent'
 
-import * as Types from '@Types'
-import * as ApiTypes from '@Types/api'
+import { requestSignUp } from '@Services/api'
 
-const requestSignUp = (payload: ApiTypes.ApiSignupType) => axios.post(`${process.env.NEXT_PUBLIC_ENDPOINT_API}/signup`, payload);
+import * as Types from '@Types'
 
 const SignUp = () => {
   const router = useRouter()

@@ -9,9 +9,6 @@ const filterSlice = createSlice({
   },
   reducers: {
     selectBrand(state, action) {
-      console.log('======selectBrand========action.payload======================')
-      console.log(action.payload)
-      console.log('====================================')
       //@ts-ignore
       state.brands.push(action.payload)
     },
@@ -19,9 +16,6 @@ const filterSlice = createSlice({
       state.brands = state.brands.filter((value) => value !== action.payload)
     },
     selectCategory(state, action) {
-      console.log('======selectCategory========action.payload======================')
-      console.log(action.payload)
-      console.log('====================================')
       //@ts-ignore
       state.categories.push(action.payload)
     },

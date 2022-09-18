@@ -176,7 +176,7 @@ const WishlistItemCard: FC<Props> = ({
             )}`}</div>
           </div>
         </div>
-        <button className="cart" onClick={() => moveToCartHandler}>
+        <button className="cart" onClick={() => moveToCartHandler()}>
           Move to Cart
         </button>
       </Div>

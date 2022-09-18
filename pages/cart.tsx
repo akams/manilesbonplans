@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+
 import { db } from '@FirebaseConfig/firebase'
-import { addDoc, collection } from 'firebase/firestore'
+import { doc, updateDoc } from 'firebase/firestore'
 
 import {
   MainNav,
@@ -18,18 +18,16 @@ import { Div } from '@Organisms/Cart'
 import getItemById from '@Utils/getItemById'
 import * as Types from '@Types'
 
-
 const Cart = () => {
   const router = useRouter()
-  const [clothes, setClothes] = useState([])
+  const [clothes, setClothes] = useState<Types.Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isPlacingOrder, setIsPlacingOrder] = useState(false)
 
   const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
-  const cartItems = useSelector<Types.SelectorTypes>(({ cart }) => cart.items)
+  const cartItems = useSelector<Types.SelectorTypes>(({ cart }) => cart.items) as Types.Cart[]
 
   useEffect(() => {
-    //@ts-ignore
     const items = cartItems.map((item) => {
       const itemDetails = getItemById(item.itemId)
       return {
@@ -38,7 +36,7 @@ const Cart = () => {
         ...itemDetails,
       }
     })
-
+    // @ts-ignore
     setClothes(() => {
       setIsLoading(false)
       return items
@@ -55,20 +53,17 @@ const Cart = () => {
   const totalValue = priceValue - discountValue
 
   const placeOrderHandler = async () => {
-    const { name, uid } = user
+    const { uid } = user
     setIsPlacingOrder(true)
     try {
-      await addDoc(collection(db, 'orders'), {
+      await updateDoc(doc(db, uid, 'draftOrder'), {
         items: cartItems,
         totalPrice: totalValue,
-        userUid: uid,
-        date: new Date(),
-        name,
       })
       setIsPlacingOrder(false)
       router.replace('/shipping')
     } catch (error) {
-      console.log('error', error)
+      console.error(error)
     }
   }
 

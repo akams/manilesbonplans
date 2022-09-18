@@ -4,10 +4,11 @@ import Head from 'next/head'
 import type { NextPage } from 'next'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/router'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { FormProvider, useForm } from 'react-hook-form'
 
 import { auth } from '@FirebaseConfig/firebase'
+import { authActions } from '@Store/authSlice'
 
 import { SignInOrganism } from '@Organisms'
 import { Div } from '@Organisms/SignIn/styledComponent'
@@ -17,6 +18,7 @@ import * as Types from '@Types'
 
 const SignIn: NextPage = () => {
   const router = useRouter()
+  const dispatch = useDispatch()
   const user = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
   const [serverErrorMessage, setServerErrorMessage] = useState('')
 
@@ -34,7 +36,16 @@ const SignIn: NextPage = () => {
 
   const submitHandler = async ({ email, password }: Types.SignInFormData) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      const currentUser = await signInWithEmailAndPassword(auth, email, password)
+      if (currentUser) {
+        dispatch(authActions.setUser({
+          email: currentUser.user.email,
+          uid: currentUser.user.uid,
+          emailVerified: currentUser.user.emailVerified,
+        }))
+
+        router.replace('/collections')
+      }
     } catch (error) {
       //@ts-ignore
       const errorCode = error.code

@@ -3,16 +3,17 @@ import { IntlProvider } from 'react-intl'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-
-import * as locales from '@Locale'
-
-import GlobalStyle from '@Styles'
-import { Container, NavBar } from '@Atoms'
-
+import { QueryClient, QueryClientProvider } from 'react-query'
 import store from '@Store'
+
+import { Container, NavBar } from '@Atoms'
 import {
   ReactReduxFirebaseProvider,
 } from '@Molecules'
+import * as locales from '@Locale'
+import GlobalStyle from '@Styles'
+
+const queryClient = new QueryClient();
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter()
@@ -28,16 +29,17 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Container>
         <Provider store={store}>
           <ReactReduxFirebaseProvider>
-            <NavBar />
-            <IntlProvider
-              //@ts-ignore
-              locale={locale}
-              defaultLocale={defaultLocale}
-              messages={messages}
-            >
-              <Component {...pageProps} />
-
-            </IntlProvider>
+            <QueryClientProvider client={queryClient}>
+              <NavBar />
+              <IntlProvider
+                //@ts-ignore
+                locale={locale}
+                defaultLocale={defaultLocale}
+                messages={messages}
+              >
+                <Component {...pageProps} />
+              </IntlProvider>
+            </QueryClientProvider>
           </ReactReduxFirebaseProvider>
         </Provider>
       </Container>

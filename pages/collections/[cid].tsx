@@ -55,7 +55,7 @@ const ProductDetails = (product: Types.ClothesProduct) => {
           }),
         })
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     } else {
       router.push('/signin')
@@ -80,7 +80,7 @@ const ProductDetails = (product: Types.ClothesProduct) => {
             })
             // removeItemHandler()
           } catch (error) {
-            console.log(error)
+            console.error(error)
           } finally {
             setIsLoading(false)
           }
@@ -95,7 +95,7 @@ const ProductDetails = (product: Types.ClothesProduct) => {
               }),
             })
           } catch (error) {
-            console.log(error)
+            console.error(error)
           } finally {
             setIsLoading(false)
           }

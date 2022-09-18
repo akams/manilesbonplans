@@ -6,12 +6,6 @@ import { SignUpConfirmationOrganism } from '@Organisms'
 import { Div } from '@Organisms/SignUp/styledComponent'
 
 const SignUpConfirmation = () => {
-  // const { emailVerified, uid, name, email } = useSelector<Types.SelectorTypes>(({ auth }) => auth.user) as Types.User
-  // console.log('SignUpConfirmation==>', { emailVerified, uid, name, email })
-
-  // if (user) {
-  //   router.replace('/collections')
-  // }
   return (
     <>
       <Head>

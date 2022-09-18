@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
@@ -203,25 +203,6 @@ const CartItemCard = ({
   const user = useSelector((state) => state.auth.user)
   const cartItems = useSelector((state) => state.cart.items)
 
-  // useEffect(() => {
-  //   const item = cartItems.find((item) => item.itemId === id);
-  //   const updatedItem = {
-  //     ...item,
-  //     itemQuantity: currentQuantity,
-  //   };
-  //   const updatedItems = [...cartItems];
-  //   updatedItems.splice(index, 1, updatedItem);
-  //   updateDoc(doc(db, user.uid, 'cart'), {
-  //     items: updatedItems,
-  //   })
-  //     .then(() => {
-  //       console.log('cart.js // 216');
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, [currentQuantity]);
-
   const removeItemHandler = () => {
     updateDoc(doc(db, user.uid, 'cart'), {
       items: arrayRemove({
@@ -230,7 +211,9 @@ const CartItemCard = ({
         itemQuantity: currentQuantity,
       }),
     })
-      .then(() => { })
+      .then(() => {
+        console.log('okay')
+      })
       .catch((error) => console.log(error))
   }
 

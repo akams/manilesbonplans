@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, FC } from 'react'
 import { useDispatch } from 'react-redux'
-import axios from 'axios';
+
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { doc, onSnapshot } from 'firebase/firestore'
 import { auth, db } from '@FirebaseConfig/firebase'
@@ -9,7 +9,7 @@ import { auth, db } from '@FirebaseConfig/firebase'
 import { authActions } from '@Store/authSlice'
 import { wishlistActions } from '@Store/wishlistSlice'
 import { cartActions } from '@Store/cartSlice'
-import { getHeaders } from '@Utils/headersApi'
+import apiClient, { setHeaders } from '@Utils/http-common';
 
 import { Loading } from '@Atoms'
 
@@ -33,11 +33,11 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
     )
     subscriptionAuth.push(authSub)
 
-    const authInterceptor = axios.interceptors.request.use(
+    const authInterceptor = apiClient.interceptors.request.use(
       async (config) => {
         const token = await auth.currentUser?.getIdToken()
         config.headers = {
-          ...getHeaders(token),
+          ...setHeaders(token),
         };
         return config;
       },
@@ -48,7 +48,7 @@ const ReactReduxFirebaseWrapper: FC<Props> = ({ children }) => {
       //@ts-ignore
       subscriptionAuth.forEach((sub) => sub())
       subscriptionAuth.length = 0
-      axios.interceptors.request.eject(authInterceptor);
+      apiClient.interceptors.request.eject(authInterceptor);
     }
 
     return unSubscribeAll

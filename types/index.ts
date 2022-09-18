@@ -87,11 +87,12 @@ export type Product = {
     id: string;
     imageURL: string;
     brand: string;
-    type: string; // example: hoody ex categorie
+    category: string; // example: hoody ex categorie
     name: string;
     amount: string|number;
-    categorie: CATEGORIES; // chaussure/Vetements/Accessoire
+    bigCategorie?: CATEGORIES; // chaussure/Vetements/Accessoire
     size?: Size;
+    quantity?: string|number;
 }
 
 export type ClothesProduct = {
@@ -104,8 +105,13 @@ export type ClothesProduct = {
     size?: string|null;
 }
 
+declare type STATUS_ORDERS = 'PENDING_ORDER' | 'ORDER_SENT' | 'SHIPPING_IN_PROGRESS' | 'DELIVERY_COMPLETED';
+
 export type Order = {
+    userUID: string;
+    userName: string;
     totalPrice: number;
-    cart: Cart[];
-    userId: string;
+    items: Cart[];
+    date?: Date;
+    status?: STATUS_ORDERS;
 }
