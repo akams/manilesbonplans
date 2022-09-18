@@ -8,7 +8,7 @@ import {validateFirebaseIdToken} from "./middlewares/middlewares";
 import {admin} from "./config/firebase";
 
 import {signup} from "./controllers/user";
-import {create} from "./controllers/orders";
+import {create, getAll} from "./controllers/orders";
 
 const app = express(); // Handle intern API
 const main = express(); // Expose API
@@ -36,5 +36,6 @@ app.get("/warmup", (request, response) => {
 });
 
 app.post("/signup", signup);
+app.get("/orders", getAll);
 app.post("/orders/terminate", create);
 

@@ -12,25 +12,30 @@
   - [X] save data
   - [X] modal message plus clean
   
-- [ ] sécurité mailing auth
+- [X] sécurité mailing auth
+- [X] sécurité db
 
-- [ ] Page mes commandes
+- [ ] Page mes commandes (orders) 
+  - [X] api create/update
+  - connecter react query axios auth 
+  - [ ] ui commandes
 
 - [ ] injection des data Products en BDD
-- [ ] sécurité db
 
 - [ ] Api pour les produits
-- [ ] sécurité api
+- [X] sécurité api
 
-- [ ] compte whatsapp pro
 - [ ] Faire une page "le site est en cours de maj" avec une branche qui delete tout les pages et garde qu'une seul
+
+- [ ] Footer
+- [ ] update all wording app
 
 - [ ] hosting
 
+- [ ] compte whatsapp pro
 ## Fix:
 
 - [X] src img product detail
-- [ ] update all wording app
 - [ ] update type TS in app
 
 
@@ -44,8 +49,9 @@ https://stackoverflow.com/questions/56583184/what-is-the-best-way-to-use-async-a
 
 https://firebase.google.com/docs/rules/rules-and-auth
 
-https://stackoverflow.com/questions/52249352/firebase-dashboard-set-email-verified
+https://codevoweb.com/react-query-context-api-axios-interceptors-jwt-auth/
 
+https://www.bezkoder.com/react-query-axios/
 
 Help back:
 
@@ -61,6 +67,7 @@ Maybe later:
 - [ ] faire micro page shipping billing
 - [ ] faire micro page shipping payment
 - [ ] check lib pour method de paiement
+- [ ] axios + react-query
 
 https://github.com/gladly-team/next-firebase-auth
 

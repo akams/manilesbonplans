@@ -7,9 +7,6 @@ import {RequestCreateOrder} from "./types";
 const create = async (req: RequestCreateOrder, res: Response) => {
   try {
     const {uid} = req.user;
-    console.log("req;user", req.user);
-    console.log("req;Biyd", req.body);
-
     const deliveryAddress = {
       ...req.body,
     };
@@ -52,4 +49,30 @@ const create = async (req: RequestCreateOrder, res: Response) => {
   }
 };
 
-export {create};
+const getAll = async (req: any, res: Response) => {
+  try {
+    const {uid} = req.user;
+    const orders = db.collection("orders").where("userUID", "==", uid);
+    const snapshot = await orders.get();
+
+    // @ts-ignore
+    const data = [];
+    snapshot.forEach((doc) => {
+      data.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+
+    res.status(200).json({
+      status: "success",
+      // @ts-ignore
+      data,
+    });
+  } catch (error) {
+    // @ts-ignore
+    res.status(500).json(error.message);
+  }
+};
+
+export {create, getAll};

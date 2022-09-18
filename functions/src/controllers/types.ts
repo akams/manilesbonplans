@@ -1,4 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+import {Request} from "express";
+
+type RequestUser = {
+  user?: any
+}
+export type RequestEnhance = Request & RequestUser
+
 type BodySignupType = {
   uid: string,
   name: string,
