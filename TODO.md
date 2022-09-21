@@ -11,8 +11,13 @@
 - [X] sécurité api
 - [X] Page mes commandes (orders)
 
-- [ ] injection des data Products en BDD
-- [ ] Api pour les produits
+- [X] injection des data Products en BDD
+- [X] UI produits 
+- [ ] Api pour les produits (coté front ou cloud function ?)
+  - [ ] Api create produits
+  - [ ] Api get with pagination produits
+
+- [ ] UI detail produit
 
 - [ ] reduire les call backend
   - [ ] supprimer listener cart
@@ -60,7 +65,6 @@ Maybe later:
 - [ ] faire micro page shipping billing
 - [ ] faire micro page shipping payment
 - [ ] check lib pour method de paiement
-- [ ] axios + react-query
 
 https://github.com/gladly-team/next-firebase-auth
 
