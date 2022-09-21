@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable max-len */
 import {Request, Response} from "express";
 import {db} from "../config/firebase";
-// import {RequestSignup} from "./types";
+import {RequestQueryProducts} from "./types";
 
 import * as producstShoes1 from "../models/data/shoes_1.json";
 
@@ -26,7 +27,136 @@ const create = async (req: Request, res: Response) => {
   }
 };
 
-// const getAll = async (req: Request, res: Response) => {
-// }
+const getProductsBrands = async (req: Request, res: Response) => {
+  try {
+    const products = db.collection("products");
+    const snapshot = await products.get();
 
-export {create};
+    // @ts-ignore
+    const data: any = [];
+    snapshot.forEach((doc) => {
+      data.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+
+    const brands = data.reduce((previous: string[], {brand}: any) => {
+      if (!previous.includes(brand)) {
+        previous.push(brand);
+      }
+      return previous;
+    }, []);
+
+    res.status(200).json({
+      status: "success",
+      // @ts-ignore
+      brands,
+    });
+  } catch (error) {
+    // @ts-ignore
+    res.status(500).json(error.message);
+  }
+};
+
+const getProductsCategories = async (req: Request, res: Response) => {
+  try {
+    const products = db.collection("products");
+    const snapshot = await products.get();
+
+    // @ts-ignore
+    const data: any = [];
+    snapshot.forEach((doc) => {
+      data.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+
+    const categories = data.reduce((previous: string[], {type}: any) => {
+      if (!previous.includes(type)) {
+        previous.push(type);
+      }
+      return previous;
+    }, []).sort((c1: string, c2: string) => c1 < c2 ? -1 : 1 );
+
+    res.status(200).json({
+      status: "success",
+      // @ts-ignore
+      categories,
+    });
+  } catch (error) {
+    // @ts-ignore
+    res.status(500).json(error.message);
+  }
+};
+
+const getProducts = async (req: RequestQueryProducts, res: Response) => {
+  try {
+    console.log("req", req.query);
+    const {categories: categoriesQuery, last} = req.query;
+    const filteredBrands = categoriesQuery !== "" ? categoriesQuery.split("&") : [];
+
+    console.log("lastSnapshot", filteredBrands);
+
+    const productsRef = db.collection("products");
+    let queryProducts = productsRef.orderBy("id");
+    if (filteredBrands.length > 0) {
+      queryProducts = queryProducts.where("brand", "in", filteredBrands);
+    }
+
+
+    if (last) {
+      const lastSnapshot = await db.collection("products").doc(last).get();
+      queryProducts = queryProducts.startAfter(lastSnapshot);
+    }
+
+    const snapshot = await queryProducts.limit(20).get();
+
+    // @ts-ignore
+    const rawProducts: any = [];
+    snapshot.forEach((doc) => {
+      rawProducts.push({
+        idDocument: doc.id,
+        ...doc.data(),
+      });
+    });
+
+    const products = rawProducts.map(({idDocument, imgSrc, type, price, ...product}: any) => {
+      const [directory, filename] = imgSrc.split("/");
+      const templateString = `/${directory}%2F${filename}`;
+      // price
+      const [currency, amount] = price.split(" ");
+      return {
+        ...product,
+        amount: Number(amount.replace(",", ".")),
+        currency,
+        category: type,
+        imageURL: `https://firebasestorage.googleapis.com/v0/b/manilesbonsplans-22c99.appspot.com/o${templateString}?alt=media`,
+      };
+    });
+
+    console.log("rawProducts.length", rawProducts.length);
+    const lastDocument = (rawProducts.length > 1) ?
+      rawProducts[rawProducts.length - 1] :
+      undefined;
+
+    res.status(200).json({
+      // @ts-ignore
+      products,
+      last: lastDocument?.idDocument,
+      size: products.length,
+    });
+  } catch (error) {
+    // @ts-ignore
+    console.log("err", error);
+    res.status(500).json(error.message);
+  }
+};
+
+export {
+  create,
+  getProducts,
+  getProductsBrands,
+  getProductsCategories,
+};

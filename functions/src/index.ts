@@ -11,6 +11,9 @@ import {signup} from "./controllers/user";
 import {create, getAll} from "./controllers/orders";
 import {
   create as createProduct,
+  getProducts,
+  getProductsBrands,
+  getProductsCategories,
 } from "./controllers/products";
 
 const app = express(); // Handle intern API
@@ -39,7 +42,12 @@ app.get("/warmup", (request, response) => {
 });
 
 app.post("/signup", signup);
+// api orders
 app.get("/orders", getAll);
 app.post("/orders/terminate", create);
+// api products
 app.post("/products", createProduct);
+app.get("/products", getProducts);
+app.get("/products/brands", getProductsBrands);
+app.post("/products/categories", getProductsCategories);
 

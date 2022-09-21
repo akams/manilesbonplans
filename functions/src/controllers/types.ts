@@ -17,7 +17,6 @@ export type RequestSignup = {
   body: BodySignupType,
 }
 
-
 type BodyCreateOrderType = {
   deliveryAddressName: string;
   deliveryAddressStreet: string;
@@ -30,4 +29,14 @@ type BodyCreateOrderType = {
 export type RequestCreateOrder = {
   body: BodyCreateOrderType,
   user?: any
+}
+
+
+type QueryProducts = {
+  categories: string,
+  last: string,
+}
+
+export type RequestQueryProducts = {
+  query: QueryProducts,
 }
