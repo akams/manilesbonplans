@@ -4,7 +4,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import {
   EmptyResults,
   BrandFilter,
-  CategoryFilter,
   ItemCard,
   SortSelect,
   SmallSort,
@@ -13,33 +12,17 @@ import {
 } from '@Atoms'
 
 //@ts-ignore
-const Products = ({ clothes, brands, categories, hasMore, fetchMoreData }) => {
+const Products = ({ products, brands, hasMore, fetchMoreData }) => {
   const [width, setWidth] = useState(window.innerWidth)
-  //@ts-ignore
-  const filteredBrands = useSelector((state) => state.filter.brands)
-  //@ts-ignore
-  const filteredCategories = useSelector((state) => state.filter.categories)
   //@ts-ignore
   const filteredSort = useSelector((state) => state.filter.sort)
 
-  let filteredClothes
-
-  filteredClothes
-    = filteredBrands.length > 0
-      ? [...clothes].filter((value) => filteredBrands.includes(value.brand))
-      : [...clothes]
-
-  filteredClothes
-    = filteredCategories.length > 0
-      ? filteredClothes.filter((value) =>
-        filteredCategories.includes(value.category),
-      )
-      : filteredClothes
+  let filteredProducts = [...products]
 
   if (filteredSort === 'price_high_to_low') {
-    filteredClothes = filteredClothes.sort((a, b) => +b.amount - +a.amount)
+    filteredProducts = filteredProducts.sort((a, b) => +b.amount - +a.amount)
   } else if (filteredSort === 'price_low_to_high') {
-    filteredClothes = filteredClothes.sort((a, b) => +a.amount - +b.amount)
+    filteredProducts = filteredProducts.sort((a, b) => +a.amount - +b.amount)
   }
 
   useEffect(() => {
@@ -57,7 +40,6 @@ const Products = ({ clothes, brands, categories, hasMore, fetchMoreData }) => {
         <aside className="aside">
           <div className="title">Filters</div>
           <BrandFilter items={brands} />
-          <CategoryFilter items={categories} />
         </aside>
       )}
       <main className="main">
@@ -68,24 +50,24 @@ const Products = ({ clothes, brands, categories, hasMore, fetchMoreData }) => {
           ) : (
             <div className="sort-filter">
               <SmallSort />
-              <SmallFilter brandItems={brands} categoryItems={categories} />
+              <SmallFilter brandItems={brands} />
             </div>
           )}
         </div>
         <InfiniteScroll
-          dataLength={filteredClothes.length}
+          dataLength={filteredProducts.length}
           next={fetchMoreData}
           hasMore={hasMore}
-          loader={<Loading />}
+          loader={hasMore ? <Loading /> : ''}
           endMessage={
             <p style={{ textAlign: "center" }}>
               <b>Yay! You have seen it all</b>
             </p>
           }
         >
-          {filteredClothes.length > 0 ? (
+          {filteredProducts.length > 0 ? (
             <div className="clothes">
-              {filteredClothes.map((item, index) => (
+              {filteredProducts.map((item, index) => (
                 <ItemCard key={item.id} {...item} setPriority={index < 8} />
               ))}
             </div>
