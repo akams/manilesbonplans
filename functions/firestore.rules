@@ -18,6 +18,11 @@ service cloud.firestore {
       allow read: if isSignIn() && emailVerified();
       allow update: if isSignIn() && emailVerified() && isValidateAccount() == true;
     }
+
+    match /products/{document} {
+      allow write: if true;
+      allow list: if true;
+    }
     
     // use for collection uid user
     function isBelongsTo(userId) {

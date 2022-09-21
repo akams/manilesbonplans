@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-
+import InfiniteScroll from "react-infinite-scroll-component";
 import {
   EmptyResults,
   BrandFilter,
@@ -9,10 +9,11 @@ import {
   SortSelect,
   SmallSort,
   SmallFilter,
+  Loading,
 } from '@Atoms'
 
 //@ts-ignore
-const Products = ({ clothes, brands, categories }) => {
+const Products = ({ clothes, brands, categories, hasMore, fetchMoreData }) => {
   const [width, setWidth] = useState(window.innerWidth)
   //@ts-ignore
   const filteredBrands = useSelector((state) => state.filter.brands)
@@ -71,15 +72,27 @@ const Products = ({ clothes, brands, categories }) => {
             </div>
           )}
         </div>
-        {filteredClothes.length > 0 ? (
-          <div className="clothes">
-            {filteredClothes.map((item, index) => (
-              <ItemCard key={item.id} {...item} setPriority={index < 8} />
-            ))}
-          </div>
-        ) : (
-          <EmptyResults />
-        )}
+        <InfiniteScroll
+          dataLength={filteredClothes.length}
+          next={fetchMoreData}
+          hasMore={hasMore}
+          loader={<Loading />}
+          endMessage={
+            <p style={{ textAlign: "center" }}>
+              <b>Yay! You have seen it all</b>
+            </p>
+          }
+        >
+          {filteredClothes.length > 0 ? (
+            <div className="clothes">
+              {filteredClothes.map((item, index) => (
+                <ItemCard key={item.id} {...item} setPriority={index < 8} />
+              ))}
+            </div>
+          ) : (
+            <EmptyResults />
+          )}
+        </InfiniteScroll>
       </main>
     </>
   )
