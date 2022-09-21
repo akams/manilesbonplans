@@ -23,6 +23,7 @@ import Notification from './Notification'
 import EmptyWishlist from './EmptyWishlist'
 import SignInPromptTemplate from './SignInPromptTemplate'
 import EmptyCart from './EmptyCart'
+import RadioBtn from './RadioBtn'
 
 export {
   MainNav,
@@ -50,4 +51,5 @@ export {
   EmptyWishlist,
   SignInPromptTemplate,
   EmptyCart,
+  RadioBtn,
 }
