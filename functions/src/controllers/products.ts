@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable max-len */
-import {Request, Response} from "express";
-import {db} from "../config/firebase";
-import {RequestQueryProducts} from "./types";
+import { Request, Response } from "express";
+import { db } from "../config/firebase";
+import { RequestQueryProducts } from "./types";
 
 import * as producstShoes1 from "../models/data/shoes_1.json";
 
@@ -41,7 +41,7 @@ const getProductsBrands = async (req: Request, res: Response) => {
       });
     });
 
-    const brands = data.reduce((previous: string[], {brand}: any) => {
+    const brands = data.reduce((previous: string[], { brand }: any) => {
       if (!previous.includes(brand)) {
         previous.push(brand);
       }
@@ -73,12 +73,12 @@ const getProductsCategories = async (req: Request, res: Response) => {
       });
     });
 
-    const categories = data.reduce((previous: string[], {type}: any) => {
+    const categories = data.reduce((previous: string[], { type }: any) => {
       if (!previous.includes(type)) {
         previous.push(type);
       }
       return previous;
-    }, []).sort((c1: string, c2: string) => c1 < c2 ? -1 : 1 );
+    }, []).sort((c1: string, c2: string) => c1 < c2 ? -1 : 1);
 
     res.status(200).json({
       status: "success",
@@ -94,10 +94,8 @@ const getProductsCategories = async (req: Request, res: Response) => {
 const getProducts = async (req: RequestQueryProducts, res: Response) => {
   try {
     console.log("req", req.query);
-    const {categories: categoriesQuery, last} = req.query;
-    const filteredBrands = categoriesQuery !== "" ? categoriesQuery.split("&") : [];
-
-    console.log("lastSnapshot", filteredBrands);
+    const { categories: categoriesQuery, last } = req.query;
+    const filteredBrands = categoriesQuery !== "ALL" ? categoriesQuery.split("&") : [];
 
     const productsRef = db.collection("products");
     let queryProducts = productsRef.orderBy("id");
@@ -105,14 +103,15 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
       queryProducts = queryProducts.where("brand", "in", filteredBrands);
     }
 
-
     if (last) {
       const lastSnapshot = await db.collection("products").doc(last).get();
       queryProducts = queryProducts.startAfter(lastSnapshot);
     }
 
-    const snapshot = await queryProducts.limit(20).get();
-
+    if (filteredBrands.length === 0) {
+      queryProducts = queryProducts.limit(20);
+    }
+    const snapshot = await queryProducts.get();
     // @ts-ignore
     const rawProducts: any = [];
     snapshot.forEach((doc) => {
@@ -122,7 +121,7 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
       });
     });
 
-    const products = rawProducts.map(({idDocument, imgSrc, type, price, ...product}: any) => {
+    const products = rawProducts.map(({ idDocument, imgSrc, type, price, ...product }: any) => {
       const [directory, filename] = imgSrc.split("/");
       const templateString = `/${directory}%2F${filename}`;
       // price
@@ -137,7 +136,7 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
     });
 
     console.log("rawProducts.length", rawProducts.length);
-    const lastDocument = (rawProducts.length > 1) ?
+    const lastDocument = (rawProducts.length > 1 && filteredBrands.length === 0) ?
       rawProducts[rawProducts.length - 1] :
       undefined;
 

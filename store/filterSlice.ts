@@ -3,17 +3,22 @@ import { createSlice } from '@reduxjs/toolkit'
 const filterSlice = createSlice({
   name: 'filter',
   initialState: {
-    brands: [],
+    brands: ['ALL'],
     categories: [],
     sort: 'default',
   },
   reducers: {
     selectBrand(state, action) {
+      const brands = state.brands.filter((brand) => brand !== 'ALL')
       //@ts-ignore
-      state.brands.push(action.payload)
+      brands.push(action.payload)
+      //@ts-ignore
+      state.brands = brands
     },
     deselectBrand(state, action) {
-      state.brands = state.brands.filter((value) => value !== action.payload)
+      const brands = state.brands.filter((value) => value !== action.payload)
+      //@ts-ignore
+      state.brands = brands.length === 0 ? ['ALL'] : brands
     },
     selectCategory(state, action) {
       //@ts-ignore

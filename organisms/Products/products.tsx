@@ -10,7 +10,6 @@ import {
   SmallFilter,
   Loading,
 } from '@Atoms'
-
 //@ts-ignore
 const Products = ({ products, brands, hasMore, fetchMoreData }) => {
   const [width, setWidth] = useState(window.innerWidth)
@@ -59,11 +58,7 @@ const Products = ({ products, brands, hasMore, fetchMoreData }) => {
           next={fetchMoreData}
           hasMore={hasMore}
           loader={hasMore ? <Loading /> : ''}
-          endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
+          endMessage={<p style={{ textAlign: "center" }}></p>}
         >
           {filteredProducts.length > 0 ? (
             <div className="clothes">

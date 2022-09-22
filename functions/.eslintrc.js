@@ -28,5 +28,6 @@ module.exports = {
     "quotes": ["error", "double"],
     "import/no-unresolved": 0,
     "@typescript-eslint/ban-ts-comment": "off"
+    "object-curly-spacing": "off"
   },
 };

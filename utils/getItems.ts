@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as Types from '@Types'
 import data from '../pages/api/data.json'
 
@@ -25,6 +26,18 @@ const shuffle = (array: Types.ClothesProduct[]) => {
 const getItems = () => {
   const { clothes } = data
   return shuffle(clothes)
+}
+
+export const deleteDoublonProducts = (products: any[]) => {
+  return products
+    .reduce((listProduct: any, product: any) => {
+      const isAlready = listProduct.some((listP: any) => listP.id === product.id)
+      if (!isAlready) {
+        //@ts-ignore
+        listProduct.push(product);
+      }
+      return listProduct;
+    }, []);
 }
 
 export default getItems

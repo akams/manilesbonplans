@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   useQuery,
-  QueryClient,
-  useMutation,
 } from 'react-query'
 
 import apiClient from '@Utils/http-common';
@@ -17,26 +15,10 @@ type optionsType = {
   retry: boolean;
 }
 
-const getProducts: any = async({
-  filteredBrands,
-  lastVisibleItem,
-}: any) => {
-    const { data } = await apiClient.get(`/products?categories=${filteredBrands.join("&")}&last=${lastVisibleItem || ''}`)
-    return { 
-      products: data?.products,
-      last: data?.last
-    }
-}
-
-export const useGetProductsMutation = (queryClient: QueryClient) => useMutation(getProducts, {
-  onSuccess: () => queryClient.invalidateQueries(GET_PRODUCT_CACHE_KEY),
-  onError: (error: any) => console.log(error),
-})
-
-export const useGetProducts = ({ filteredBrands, last }: any, options: optionsType) => useQuery<[typeof GET_PRODUCT_CACHE_KEY, optionsType]>(
-  [GET_PRODUCT_CACHE_KEY, options],
-  async() => {
-    const { data } = await apiClient.get(`/products?categories=${filteredBrands.join("&")}&last=${last || ''}`)
+export const useGetProducts = ({ filteredBrands, last }: any, options: optionsType) => useQuery<[typeof GET_PRODUCT_CACHE_KEY, any, optionsType]>(
+  [GET_PRODUCT_CACHE_KEY, { filteredBrands, last }, options],
+  async () => {
+    const { data } = await apiClient.get('/products', { params: { categories: filteredBrands || '', last: last || '' } })
     return data
   },
   options,
@@ -44,7 +26,7 @@ export const useGetProducts = ({ filteredBrands, last }: any, options: optionsTy
 
 export const useGetBrands = (options: optionsType) => useQuery<[typeof GET_PRODUCT_BRANDS_CACHE_KEY, optionsType]>(
   [GET_PRODUCT_BRANDS_CACHE_KEY, options],
-  async() => {
+  async () => {
     const { data } = await apiClient.get("/products/brands")
     return data?.brands
   },
