@@ -7,6 +7,7 @@ import { doc, updateDoc, arrayUnion } from 'firebase/firestore'
 import { db } from '@FirebaseConfig/firebase'
 
 import {
+  Loading,
   MainNav,
   Modal,
   SizeChartForTops,
@@ -16,18 +17,23 @@ import { ModalDiv } from '@Atoms/Modal'
 import { ProductDetailsOrganism } from '@Organisms'
 import { Div } from '@Organisms/ProductDetails/styledComponent'
 
-import getAllStaticPaths from '@Utils/getAllStaticPaths'
-import getItemById from '@Utils/getItemById'
+import { useGetProduct } from '@Services/products'
 
-import * as Types from '@Types'
+const ProductDetails = () => {
+  const router = useRouter()
+  const { cid } = router.query
 
-const ProductDetails = (product: Types.ClothesProduct) => {
-  const { id, brand, category, name } = product
+  const { data, isSuccess } = useGetProduct({ id: cid }, {
+    enabled: true,
+    cacheTime: 5000,
+    retry: false,
+  })
+
+  // const { id, brand, category, name } = product
   const [showSizeChart, setShowSizeChart] = useState(false)
   const [size, setSize] = useState('')
   const [promptSize, setPromptSize] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
   //@ts-ignore
   const user = useSelector((state) => state.auth.user)
   //@ts-ignore
@@ -37,11 +43,11 @@ const ProductDetails = (product: Types.ClothesProduct) => {
 
   const cartItem = cartItems.find(
     //@ts-ignore
-    (item) => item.itemId === id && item.itemSize === size,
+    (item) => item.itemId === data?.id && item.itemSize === size,
   )
   const cartItemIndex = cartItems.findIndex(
     //@ts-ignore
-    (item) => item.itemId === id && item.itemSize === size,
+    (item) => item.itemId === data?.id && item.itemSize === size,
   )
   const isInCart = !!cartItem
 
@@ -50,7 +56,8 @@ const ProductDetails = (product: Types.ClothesProduct) => {
       try {
         await updateDoc(doc(db, user.uid, 'wishlist'), {
           items: arrayUnion({
-            itemId: id,
+            //@ts-ignore
+            itemId: data?.id,
             itemSize: size || null,
           }),
         })
@@ -89,7 +96,8 @@ const ProductDetails = (product: Types.ClothesProduct) => {
           try {
             await updateDoc(doc(db, user.uid, 'cart'), {
               items: arrayUnion({
-                itemId: id,
+                //@ts-ignore
+                itemId: data?.id,
                 itemSize: size,
                 itemQuantity: '1',
               }),
@@ -123,27 +131,32 @@ const ProductDetails = (product: Types.ClothesProduct) => {
         {' / '}
         <Link href="/collections">Collections</Link>
         {' / '}
-        <span>{` ${brand} ${name}`}</span>
+        <span>{` ${data?.brand} ${data?.category}`}</span>
       </MainNav>
       <Div>
-        <ProductDetailsOrganism
-          product={product}
-          openSizeChartHandler={openSizeChartHandler}
-          size={size}
-          setSize={setSize}
-          promptSize={promptSize}
-          isLoading={isLoading}
-          addToWishlistHandler={addToWishlistHandler}
-          addToCartHandler={addToCartHandler}
-          wishlistItems={wishlistItems}
-        />
+        {isSuccess
+          ? (
+            <ProductDetailsOrganism
+              //@ts-ignore
+              product={data}
+              openSizeChartHandler={openSizeChartHandler}
+              size={size}
+              setSize={setSize}
+              promptSize={promptSize}
+              isLoading={isLoading}
+              addToWishlistHandler={addToWishlistHandler}
+              addToCartHandler={addToCartHandler}
+              wishlistItems={wishlistItems}
+            />
+          ) : <Loading />
+        }
       </Div>
       {showSizeChart && (
         <Modal closeHandler={closeSizeChartHandler}>
           <ModalDiv>
             <div className="title">Size Chart</div>
             <div className="table">
-              {category === 'Jeans' ? (
+              {data?.category === 'Jeans' ? (
                 <SizeChartForBottoms />
               ) : (
                 <SizeChartForTops />
@@ -154,27 +167,6 @@ const ProductDetails = (product: Types.ClothesProduct) => {
       )}
     </>
   )
-}
-
-export const getStaticPaths = () => {
-  const paths = getAllStaticPaths()
-
-  return {
-    paths,
-    fallback: true,
-  }
-}
-
-//@ts-ignore
-export const getStaticProps = (context) => {
-  const cid = context.params.cid
-  const item = getItemById(cid)
-
-  return {
-    props: {
-      ...item,
-    },
-  }
 }
 
 export default ProductDetails

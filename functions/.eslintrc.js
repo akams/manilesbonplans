@@ -29,5 +29,6 @@ module.exports = {
     "import/no-unresolved": 0,
     "@typescript-eslint/ban-ts-comment": "off"
     "object-curly-spacing": "off"
+    "max-len": "off"
   },
 };

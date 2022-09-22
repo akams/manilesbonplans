@@ -9,15 +9,20 @@
 - [X] sécurité mailing auth
 - [X] sécurité db
 - [X] sécurité api
-- [X] Page mes commandes (orders)
-
-- [X] injection des data Products en BDD
+- [X] Page mes commandes (orders) 
+- [X] injection des data Products en BDD mock 1
 - [X] UI produits 
-- [ ] Api pour les produits (coté front ou cloud function ?)
-  - [ ] Api create produits
-  - [ ] Api get with pagination produits
+- [X] Api pour les produits (coté front ou cloud function ?)
+- [X] UI detail produit
 
-- [ ] UI detail produit
+- [ ] Fix wishlist / orders / etc...
+
+- [] injection de plus de produits Products en BDD mock 1
+  - [] création nuage de tag
+  - [] produit par categorie definir exactement la structure d'un produit
+    - [] homme/femme - vetement; chaussure; accessoire; parfums ?
+
+- [ ] re tester grandeur nature toute l'application
 
 - [ ] reduire les call backend
   - [ ] supprimer listener cart

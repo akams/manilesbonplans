@@ -6,6 +6,7 @@ import {
 import apiClient from '@Utils/http-common';
 
 export const GET_PRODUCT_CACHE_KEY = 'getProduct'
+export const GET_PRODUCTS_CACHE_KEY = 'getProducts'
 export const GET_PRODUCT_BRANDS_CACHE_KEY = 'getProductBrand'
 
 
@@ -15,11 +16,20 @@ type optionsType = {
   retry: boolean;
 }
 
-export const useGetProducts = ({ filteredBrands, last }: any, options: optionsType) => useQuery<[typeof GET_PRODUCT_CACHE_KEY, any, optionsType]>(
-  [GET_PRODUCT_CACHE_KEY, { filteredBrands, last }, options],
+export const useGetProducts = ({ filteredBrands, last }: any, options: optionsType) => useQuery<[typeof GET_PRODUCTS_CACHE_KEY, any, optionsType]>(
+  [GET_PRODUCTS_CACHE_KEY, { filteredBrands, last }, options],
   async () => {
     const { data } = await apiClient.get('/products', { params: { categories: filteredBrands || '', last: last || '' } })
     return data
+  },
+  options,
+)
+
+export const useGetProduct = ({ id }: any, options: optionsType) => useQuery<[typeof GET_PRODUCT_CACHE_KEY, any, optionsType]>(
+  [GET_PRODUCT_CACHE_KEY, { id }, options],
+  async () => {
+    const { data } = await apiClient.get(`/product/${id}`)
+    return data?.product
   },
   options,
 )

@@ -7,10 +7,11 @@ import * as cors from "cors";
 // import {validateFirebaseIdToken} from "./middlewares/middlewares";
 // import {admin} from "./config/firebase";
 
-import {signup} from "./controllers/user";
-import {create, getAll} from "./controllers/orders";
+import { signup } from "./controllers/user";
+import { create, getAll } from "./controllers/orders";
 import {
   create as createProduct,
+  getProduct,
   getProducts,
   getProductsBrands,
   getProductsCategories,
@@ -46,6 +47,7 @@ app.post("/signup", signup);
 app.get("/orders", getAll);
 app.post("/orders/terminate", create);
 // api products
+app.get("/product/:id", getProduct);
 app.post("/products", createProduct);
 app.get("/products", getProducts);
 app.get("/products/brands", getProductsBrands);

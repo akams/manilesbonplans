@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import {Request} from "express";
+import { Request } from "express";
 
 type RequestUser = {
   user?: any
@@ -30,7 +30,6 @@ export type RequestCreateOrder = {
   body: BodyCreateOrderType,
   user?: any
 }
-
 
 type QueryProducts = {
   categories: string,

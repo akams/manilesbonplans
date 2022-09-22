@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable max-len */
 import { Request, Response } from "express";
 import { db } from "../config/firebase";
 import { RequestQueryProducts } from "./types";
 
+import { formatDataProducts } from '../models/products'
 import * as producstShoes1 from "../models/data/shoes_1.json";
 
 const create = async (req: Request, res: Response) => {
@@ -121,19 +121,7 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
       });
     });
 
-    const products = rawProducts.map(({ idDocument, imgSrc, type, price, ...product }: any) => {
-      const [directory, filename] = imgSrc.split("/");
-      const templateString = `/${directory}%2F${filename}`;
-      // price
-      const [currency, amount] = price.split(" ");
-      return {
-        ...product,
-        amount: Number(amount.replace(",", ".")),
-        currency,
-        category: type,
-        imageURL: `https://firebasestorage.googleapis.com/v0/b/manilesbonsplans-22c99.appspot.com/o${templateString}?alt=media`,
-      };
-    });
+    const products = rawProducts.map(formatDataProducts);
 
     console.log("rawProducts.length", rawProducts.length);
     const lastDocument = (rawProducts.length > 1 && filteredBrands.length === 0) ?
@@ -153,8 +141,41 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
   }
 };
 
+const getProduct = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params
+    const productsRef = db.collection("products");
+    const queryProducts = productsRef.where("id", "==", id);
+    const snapshot = await queryProducts.get();
+    // @ts-ignore
+    const rawProducts: any = [];
+    snapshot.forEach((doc) => {
+      rawProducts.push({
+        ...doc.data(),
+      });
+    });
+
+    const product = rawProducts
+      .map(formatDataProducts)
+      .reduce((acc: any, current: any) => {
+        acc = current
+        return acc
+      }, {})
+
+    res.status(200).json({
+      // @ts-ignore
+      product,
+    });
+  } catch (error) {
+    // @ts-ignore
+    console.log("err", error);
+    res.status(500).json(error.message);
+  }
+}
+
 export {
   create,
+  getProduct,
   getProducts,
   getProductsBrands,
   getProductsCategories,
