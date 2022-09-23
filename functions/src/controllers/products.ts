@@ -8,6 +8,7 @@ import * as producstShoes1 from "../models/data/shoes_1.json";
 
 const create = async (req: Request, res: Response) => {
   try {
+    console.log("Api: create");
     const batch = db.batch();
     producstShoes1.forEach((doc: any) => {
       const docRef = db.collection("products").doc(); // automatically generate unique id
@@ -29,6 +30,7 @@ const create = async (req: Request, res: Response) => {
 
 const getProductsBrands = async (req: Request, res: Response) => {
   try {
+    console.log("Api: getProductsBrands");
     const products = db.collection("products");
     const snapshot = await products.get();
 
@@ -61,6 +63,7 @@ const getProductsBrands = async (req: Request, res: Response) => {
 
 const getProductsCategories = async (req: Request, res: Response) => {
   try {
+    console.log("Api: getProductsCategories");
     const products = db.collection("products");
     const snapshot = await products.get();
 
@@ -93,7 +96,7 @@ const getProductsCategories = async (req: Request, res: Response) => {
 
 const getProducts = async (req: RequestQueryProducts, res: Response) => {
   try {
-    console.log("req", req.query);
+    console.log("Api: getProducts", req.query);
     const { categories: categoriesQuery, last } = req.query;
     const filteredBrands = categoriesQuery !== "ALL" ? categoriesQuery.split("&") : [];
 
@@ -135,14 +138,15 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
       size: products.length,
     });
   } catch (error) {
-    // @ts-ignore
     console.log("err", error);
+    // @ts-ignore
     res.status(500).json(error.message);
   }
 };
 
 const getProduct = async (req: Request, res: Response) => {
   try {
+    console.log("Api: getProduct", req.params);
     const { id } = req.params
     const productsRef = db.collection("products");
     const queryProducts = productsRef.where("id", "==", id);
@@ -167,8 +171,8 @@ const getProduct = async (req: Request, res: Response) => {
       product,
     });
   } catch (error) {
-    // @ts-ignore
     console.log("err", error);
+    // @ts-ignore
     res.status(500).json(error.message);
   }
 }

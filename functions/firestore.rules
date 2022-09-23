@@ -8,7 +8,7 @@ service cloud.firestore {
   
   	match /{userId}/{document} {
     	//@todo: à améliorer
-      allow create: if emailVerified();
+      allow create: if true;
       allow read: if isBelongsTo(userId) && emailVerified() && isValidateAccount() == true;
       allow update: if isBelongsTo(userId) && emailVerified() && isValidateAccount() == true;
     }

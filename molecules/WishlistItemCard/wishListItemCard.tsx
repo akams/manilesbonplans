@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, FC } from 'react'
 import Image from 'next/image'
 import { useSelector } from 'react-redux'
-import { doc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore'
+import { doc, updateDoc, arrayUnion } from 'firebase/firestore'
+
+import { useQueryClient } from 'react-query'
 
 import { db } from '@FirebaseConfig/firebase'
 import { getFormattedCurrency } from '@Utils/getFormattedCurrency'
@@ -13,13 +16,17 @@ import {
 } from '@Atoms'
 import { CloseIcon } from '@Assets/icons'
 
+import { useUpdateWishlistMutation } from '@Services/wishlist'
+
 import { Div, ModalDiv } from './styledComponent'
 import { Props } from './type'
 
 const WishlistItemCard: FC<Props> = ({
-  clothe,
+  product,
   setImage,
+  refetchWishlist,
 }) => {
+  const queryClient = useQueryClient()
   const {
     id,
     size,
@@ -28,7 +35,14 @@ const WishlistItemCard: FC<Props> = ({
     name,
     amount,
     category,
-  } = clothe
+  } = product
+  const { mutateAsync: wishlistRequestMutation } = useUpdateWishlistMutation(queryClient)
+
+  const removeWishListRequest = async (itemId: string) => {
+    await wishlistRequestMutation({
+      productId: itemId
+    })
+  }
 
   const [pickedSize, setPickedSize] = useState('')
   const [showSizePicker, setShowSizePicker] = useState(false)
@@ -55,9 +69,7 @@ const WishlistItemCard: FC<Props> = ({
 
   const deleteItemHandler = async () => {
     try {
-      await updateDoc(doc(db, user.uid, 'wishlist'), {
-        items: arrayRemove({ itemId: id, itemSize: size }),
-      })
+      await removeWishListRequest(id)
     } catch (error) {
       console.log(error)
     }
@@ -65,10 +77,10 @@ const WishlistItemCard: FC<Props> = ({
 
   const removeItemHandler = async () => {
     try {
-      await updateDoc(doc(db, user.uid, 'wishlist'), {
-        items: arrayRemove({ itemId: id, itemSize: size }),
-      })
+      await removeWishListRequest(id)
       setImage(imageURL)
+      closeSizePickerHandler()
+      refetchWishlist()
     } catch (error) {
       console.log(error)
     }
@@ -76,6 +88,7 @@ const WishlistItemCard: FC<Props> = ({
 
   const moveToCartHandler = async (fromModal = false) => {
     if (size) {
+      console.log('enter here ==>size')
       if (isInCart) {
         const updatedItem = {
           ...cartItem,
@@ -106,6 +119,7 @@ const WishlistItemCard: FC<Props> = ({
         }
       }
     } else if (pickedSize) {
+      console.log('enter here ==>pickedSize')
       const cartItem = cartItems.find(
         (item) => item.itemId === id && item.itemSize === pickedSize,
       )
@@ -122,23 +136,25 @@ const WishlistItemCard: FC<Props> = ({
         const updatedItems = [...cartItems]
         updatedItems.splice(cartItemIndex, 1, updatedItem)
         try {
+
           await updateDoc(doc(db, user.uid, 'cart'), {
             items: updatedItems,
           })
-          removeItemHandler()
+          removeItemHandler(updatedItem)
         } catch (error) {
           console.log(error)
         }
       } else {
         try {
+          const updatedItem = {
+            itemId: id,
+            itemSize: pickedSize,
+            itemQuantity: '1',
+          }
           await updateDoc(doc(db, user.uid, 'cart'), {
-            items: arrayUnion({
-              itemId: id,
-              itemSize: pickedSize,
-              itemQuantity: '1',
-            }),
+            items: arrayUnion(updatedItem),
           })
-          removeItemHandler()
+          removeItemHandler(updatedItem)
         } catch (error) {
           console.log(error)
         }
@@ -166,6 +182,7 @@ const WishlistItemCard: FC<Props> = ({
               height={275}
               layout="responsive"
               alt={name}
+              priority
             />
           </BetterLink>
           <div className="info">

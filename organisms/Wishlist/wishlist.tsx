@@ -4,19 +4,21 @@ import { WishlistItemCard } from '@Molecules'
 import { Props } from './type'
 
 const Wishlist: FC<Props> = ({
+  refetchWishlist,
   setImageToBeNotified,
-  clothes,
+  products,
 }) => {
   return (
     <>
       <div className="title">
-        Wishlist <span>({clothes.length} items)</span>
+        Wishlist <span>({products.length} items)</span>
       </div>
       <div className="clothes">
-        {clothes.map((clothe) => (
+        {products.map((product) => (
           <WishlistItemCard
-            key={clothe.id}
-            clothe={clothe}
+            key={product.id}
+            product={product}
+            refetchWishlist={refetchWishlist}
             setImage={setImageToBeNotified}
           />
         ))}

@@ -2,42 +2,37 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useSelector } from 'react-redux'
 
 import {
+  Loading,
   MainNav,
   Notification,
   EmptyWishlist,
-  SignInPromptTemplate,
 } from '@Atoms'
 import { WishlistOrganism } from '@Organisms'
 import { Div } from '@Organisms/Wishlist'
 
-import getItemById from '@Utils/getItemById'
-
-import * as Types from '@Types'
+import { useGetWishlistProducts } from '@Services/wishlist'
 
 const Wishlist = () => {
-  const [clothes, setClothes] = useState([])
+  const [products, setProducts] = useState([])
+  const {
+    data,
+    isSuccess,
+    refetch,
+  } = useGetWishlistProducts()
+
   const [activateNotification, setActivateNotification] = useState(false)
   const [imageToBeNotified, setImageToBeNotified] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
-  //@ts-ignore
-  const user = useSelector((state) => state.auth.user)
-  //@ts-ignore
-  const wishlistItems = useSelector((state) => state.wishlist.items)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    const items = wishlistItems.map((item: Types.Wishlist) => {
-      const itemDetails = getItemById(item.itemId)
-      return { size: item.itemSize, ...itemDetails }
-    })
-
-    setClothes(() => {
-      setIsLoading(false)
-      return items
-    })
-  }, [wishlistItems])
+    if (data) {
+      //@ts-ignore
+      setProducts(data)
+      setIsLoading(isSuccess)
+    }
+  }, [data, isSuccess])
 
   useEffect(() => {
     if (imageToBeNotified) {
@@ -57,20 +52,20 @@ const Wishlist = () => {
         <Link href="/">Home</Link> / <span>Wishlist</span>
       </MainNav>
       {!isLoading
-        && (user ? (
-          clothes.length > 0 ? (
-            <Div>
-              <WishlistOrganism
-                clothes={clothes}
-                setImageToBeNotified={setImageToBeNotified}
-              />
-            </Div>
-          ) : (
-            <EmptyWishlist />
-          )
+        ? (<Loading />)
+        : products.length > 0 ? (
+          <Div>
+            <WishlistOrganism
+              //@ts-ignore
+              products={products}
+              refetchWishlist={refetch}
+              setImageToBeNotified={setImageToBeNotified}
+            />
+          </Div>
         ) : (
-          <SignInPromptTemplate type="wishlist" />
-        ))}
+          <EmptyWishlist />
+        )
+      }
       <Notification
         className={`notification ${activateNotification ? 'activate' : ''}`}
       >

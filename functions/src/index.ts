@@ -4,10 +4,11 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as cors from "cors";
 
-// import {validateFirebaseIdToken} from "./middlewares/middlewares";
-// import {admin} from "./config/firebase";
+import { validateFirebaseIdToken } from "./middlewares/middlewares";
+import { admin } from "./config/firebase";
 
 import { signup } from "./controllers/user";
+import { getWishList, removeWishlistItem } from "./controllers/wishlist";
 import { create, getAll } from "./controllers/orders";
 import {
   create as createProduct,
@@ -25,30 +26,33 @@ const options: cors.CorsOptions = {
   origin: true,
 };
 
-// const useValidateFirebaseIdToken = validateFirebaseIdToken(admin);
+const useValidateFirebaseIdToken = validateFirebaseIdToken(admin);
 
 main.use(cors(options));
 main.use(express.json());
 main.use(cookieParser());
-// main.use(useValidateFirebaseIdToken);
+main.use(useValidateFirebaseIdToken);
 main.use(bodyParser.json());
 main.use("/api/v1", app);
 
 exports.mlbp = functions.https.onRequest(main);
 
-app.get("/warmup", (request, response) => {
+app.get("/warmup", (_, response) => {
   response.json({
     msg: "Warming up serverless",
   });
 });
 
 app.post("/signup", signup);
+// api wishlist
+app.get("/wishlist", getWishList);
+app.patch("/wishlist/remove/:idProduct", removeWishlistItem);
 // api orders
 app.get("/orders", getAll);
 app.post("/orders/terminate", create);
 // api products
 app.get("/product/:id", getProduct);
-app.post("/products", createProduct);
+app.post("/products", createProduct);// look l'api que pour les admins
 app.get("/products", getProducts);
 app.get("/products/brands", getProductsBrands);
 app.post("/products/categories", getProductsCategories);
