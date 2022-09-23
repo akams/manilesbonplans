@@ -1,7 +1,7 @@
 [
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zqy7",
        "oldPrice":"PVC € 64,95 -74%",
        "price":"€ 16,99",
@@ -9,21 +9,21 @@
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zqyo",
        "price":"€ 16,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898zqyo_tennis.jpg"
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zqz3",
        "price":"€ 16,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898zqz3_tennis.jpg"
     },
     {
        "brand":"Diadora",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zqzq",
        "oldPrice":"PVC € 100,00 -80%",
        "price":"€ 19,99",
@@ -31,7 +31,7 @@
     },
     {
        "brand":"Diadora",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr0d",
        "oldPrice":"PVC € 100,00 -80%",
        "price":"€ 19,99",
@@ -39,7 +39,7 @@
     },
     {
        "brand":"Puma",
-       "type":"106061 RAPIDO II IT",
+       "name":"106061 RAPIDO II IT",
        "id":"7l8fxz1mvnl898zr0r",
        "oldPrice":"PVC € 39,95 -50%",
        "price":"€ 19,99",
@@ -47,7 +47,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr18",
        "oldPrice":"PVC € 79,95 -75%",
        "price":"€ 19,99",
@@ -55,7 +55,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr1p",
        "oldPrice":"PVC € 49,95 -60%",
        "price":"€ 19,99",
@@ -63,7 +63,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr25",
        "oldPrice":"PVC € 49,95 -60%",
        "price":"€ 19,99",
@@ -71,42 +71,42 @@
     },
     {
        "brand":"Lawrence Grey Home",
-       "type":"chausse-pied",
+       "name":"chausse-pied",
        "id":"7l8fxz1mvnl898zr2i",
        "price":"€ 19,99",
        "imgSrc":"Baskets_files/image_Lawrence Grey Home_7l8fxz1mvnl898zr2i_chausse-pied.jpg"
     },
     {
        "brand":"Lawrence Grey Home",
-       "type":"chausse-pied",
+       "name":"chausse-pied",
        "id":"7l8fxz1mvnl898zr2v",
        "price":"€ 19,99",
        "imgSrc":"Baskets_files/image_Lawrence Grey Home_7l8fxz1mvnl898zr2v_chausse-pied.jpg"
     },
     {
        "brand":"Lawrence Grey Home",
-       "type":"chausse-pied",
+       "name":"chausse-pied",
        "id":"7l8fxz1mvnl898zr37",
        "price":"€ 19,99",
        "imgSrc":"Baskets_files/image_Lawrence Grey Home_7l8fxz1mvnl898zr37_chausse-pied.jpg"
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr3v",
        "price":"€ 19,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898zr3v_tennis.jpg"
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr4d",
        "price":"€ 19,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898zr4d_tennis.jpg"
     },
     {
        "brand":"S.Oliver",
-       "type":"Tennis",
+       "name":"Tennis",
        "id":"7l8fxz1mvnl898zr4o",
        "oldPrice":"PVC € 59,95 -67%",
        "price":"€ 19,99",
@@ -114,7 +114,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr52",
        "oldPrice":"PVC € 69,00 -71%",
        "price":"€ 19,99",
@@ -122,7 +122,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr5i",
        "oldPrice":"PVC € 69,00 -71%",
        "price":"€ 19,99",
@@ -130,7 +130,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr5v",
        "oldPrice":"PVC € 69,00 -71%",
        "price":"€ 19,99",
@@ -138,7 +138,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr6a",
        "oldPrice":"PVC € 69,00 -71%",
        "price":"€ 19,99",
@@ -146,7 +146,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr6o",
        "oldPrice":"PVC € 64,95 -65%",
        "price":"€ 22,99",
@@ -154,7 +154,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr70",
        "oldPrice":"PVC € 59,95 -62%",
        "price":"€ 22,99",
@@ -162,7 +162,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr7h",
        "oldPrice":"PVC € 59,95 -62%",
        "price":"€ 22,99",
@@ -170,7 +170,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr7w",
        "oldPrice":"PVC € 59,95 -62%",
        "price":"€ 22,99",
@@ -178,7 +178,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr86",
        "oldPrice":"PVC € 59,95 -62%",
        "price":"€ 22,99",
@@ -186,7 +186,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr8i",
        "oldPrice":"PVC € 39,99 -43%",
        "price":"€ 22,99",
@@ -194,7 +194,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr8v",
        "oldPrice":"PVC € 39,99 -43%",
        "price":"€ 22,99",
@@ -202,7 +202,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr9b",
        "oldPrice":"PVC € 39,99 -43%",
        "price":"€ 22,99",
@@ -210,14 +210,14 @@
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zr9m",
        "price":"€ 22,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898zr9m_tennis.jpg"
     },
     {
        "brand":"S.Oliver",
-       "type":"Tennis – 5-13611-38",
+       "name":"Tennis – 5-13611-38",
        "id":"7l8fxz1mvnl898zra1",
        "oldPrice":"PVC € 49,95 -54%",
        "price":"€ 22,99",
@@ -225,7 +225,7 @@
     },
     {
        "brand":"Tom Tailor",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrae",
        "oldPrice":"PVC € 49,95 -54%",
        "price":"€ 22,99",
@@ -233,7 +233,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"Tennis – VN0A45J64N41",
+       "name":"Tennis – VN0A45J64N41",
        "id":"7l8fxz1mvnl898zray",
        "oldPrice":"PVC € 79,95 -71%",
        "price":"€ 22,99",
@@ -241,7 +241,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrbb",
        "oldPrice":"PVC € 69,00 -67%",
        "price":"€ 22,99",
@@ -249,7 +249,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrbm",
        "oldPrice":"PVC € 85,00 -73%",
        "price":"€ 22,99",
@@ -257,7 +257,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrc0",
        "oldPrice":"PVC € 85,00 -73%",
        "price":"€ 22,99",
@@ -265,7 +265,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrcl",
        "oldPrice":"PVC € 69,00 -67%",
        "price":"€ 22,99",
@@ -273,7 +273,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrd1",
        "oldPrice":"PVC € 69,00 -67%",
        "price":"€ 22,99",
@@ -281,7 +281,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrdi",
        "oldPrice":"PVC € 69,00 -67%",
        "price":"€ 22,99",
@@ -289,7 +289,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrdv",
        "oldPrice":"PVC € 69,00 -67%",
        "price":"€ 22,99",
@@ -297,7 +297,7 @@
     },
     {
        "brand":"Champion",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zre6",
        "oldPrice":"PVC € 39,90 -37%",
        "price":"€ 24,99",
@@ -305,7 +305,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zreo",
        "oldPrice":"PVC € 69,90 -64%",
        "price":"€ 24,99",
@@ -313,7 +313,7 @@
     },
     {
        "brand":"Puma",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrf2",
        "oldPrice":"PVC € 49,95 -50%",
        "price":"€ 24,99",
@@ -321,7 +321,7 @@
     },
     {
        "brand":"Puma",
-       "type":"chaussures de course",
+       "name":"chaussures de course",
        "id":"7l8fxz1mvnl898zrfd",
        "oldPrice":"PVC € 59,95 -58%",
        "price":"€ 24,99",
@@ -329,7 +329,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrfp",
        "oldPrice":"PVC € 70,00 -64%",
        "price":"€ 24,99",
@@ -337,7 +337,7 @@
     },
     {
        "brand":"Vans",
-       "type":"mocassins",
+       "name":"mocassins",
        "id":"7l8fxz1mvnl898zrg1",
        "oldPrice":"PVC € 74,95 -67%",
        "price":"€ 24,99",
@@ -345,7 +345,7 @@
     },
     {
        "brand":"Vans",
-       "type":"Tennis – VN0A5JMLB351",
+       "name":"Tennis – VN0A5JMLB351",
        "id":"7l8fxz1mvnl898zrge",
        "oldPrice":"PVC € 70,00 -64%",
        "price":"€ 24,99",
@@ -353,7 +353,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrgq",
        "oldPrice":"PVC € 75,00 -67%",
        "price":"€ 24,99",
@@ -361,7 +361,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrh2",
        "oldPrice":"PVC € 59,95 -58%",
        "price":"€ 24,99",
@@ -369,7 +369,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrhf",
        "oldPrice":"PVC € 59,95 -58%",
        "price":"€ 24,99",
@@ -377,7 +377,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrhx",
        "oldPrice":"PVC € 59,95 -58%",
        "price":"€ 24,99",
@@ -385,7 +385,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrie",
        "oldPrice":"PVC € 59,95 -58%",
        "price":"€ 24,99",
@@ -393,7 +393,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zriq",
        "oldPrice":"PVC € 59,95 -58%",
        "price":"€ 24,99",
@@ -401,7 +401,7 @@
     },
     {
        "brand":"ACBC",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrj3",
        "oldPrice":"PVC € 139,00 -82%",
        "price":"€ 24,99",
@@ -409,7 +409,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrjg",
        "oldPrice":"PVC € 49,95 -50%",
        "price":"€ 24,99",
@@ -417,7 +417,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrjs",
        "oldPrice":"PVC € 69,95 -64%",
        "price":"€ 24,99",
@@ -425,7 +425,7 @@
     },
     {
        "brand":"Crime",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrk4",
        "oldPrice":"PVC € 159,00 -84%",
        "price":"€ 24,99",
@@ -433,7 +433,7 @@
     },
     {
        "brand":"Heydude",
-       "type":"mocassins",
+       "name":"mocassins",
        "id":"7l8fxz1mvnl898zrkh",
        "oldPrice":"PVC € 59,90 -58%",
        "price":"€ 24,99",
@@ -441,7 +441,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrkt",
        "oldPrice":"PVC € 75,95 -67%",
        "price":"€ 24,99",
@@ -449,7 +449,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrlb",
        "oldPrice":"PVC € 79,95 -69%",
        "price":"€ 24,99",
@@ -457,7 +457,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrlq",
        "oldPrice":"PVC € 69,00 -64%",
        "price":"€ 24,99",
@@ -465,7 +465,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrm3",
        "oldPrice":"PVC € 85,00 -71%",
        "price":"€ 24,99",
@@ -473,7 +473,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrmg",
        "oldPrice":"PVC € 85,00 -71%",
        "price":"€ 24,99",
@@ -481,7 +481,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrmr",
        "oldPrice":"PVC € 85,00 -71%",
        "price":"€ 24,99",
@@ -489,7 +489,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrn3",
        "oldPrice":"PVC € 85,00 -71%",
        "price":"€ 24,99",
@@ -497,7 +497,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrne",
        "oldPrice":"PVC € 85,00 -71%",
        "price":"€ 24,99",
@@ -505,7 +505,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrnr",
        "oldPrice":"PVC € 85,00 -71%",
        "price":"€ 24,99",
@@ -513,7 +513,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zro4",
        "oldPrice":"PVC € 69,00 -64%",
        "price":"€ 24,99",
@@ -521,7 +521,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrom",
        "oldPrice":"PVC € 79,00 -68%",
        "price":"€ 24,99",
@@ -529,7 +529,7 @@
     },
     {
        "brand":"Blauer USA",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrp2",
        "oldPrice":"PVC € 119,00 -76%",
        "price":"€ 27,99",
@@ -537,7 +537,7 @@
     },
     {
        "brand":"G-Star",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrpn",
        "oldPrice":"PVC € 69,95 -60%",
        "price":"€ 27,99",
@@ -545,7 +545,7 @@
     },
     {
        "brand":"G-Star",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrq7",
        "oldPrice":"PVC € 69,95 -60%",
        "price":"€ 27,99",
@@ -553,7 +553,7 @@
     },
     {
        "brand":"Gant",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrqt",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -561,7 +561,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrr9",
        "oldPrice":"PVC € 120,00 -77%",
        "price":"€ 27,99",
@@ -569,7 +569,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrrl",
        "oldPrice":"PVC € 79,90 -65%",
        "price":"€ 27,99",
@@ -577,7 +577,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrrx",
        "oldPrice":"PVC € 69,90 -60%",
        "price":"€ 27,99",
@@ -585,7 +585,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrs9",
        "oldPrice":"PVC € 99,00 -72%",
        "price":"€ 27,99",
@@ -593,7 +593,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrss",
        "oldPrice":"PVC € 99,00 -72%",
        "price":"€ 27,99",
@@ -601,7 +601,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrt7",
        "oldPrice":"PVC € 64,95 -57%",
        "price":"€ 27,99",
@@ -609,7 +609,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrtk",
        "oldPrice":"PVC € 69,95 -60%",
        "price":"€ 27,99",
@@ -617,7 +617,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrty",
        "oldPrice":"PVC € 70,00 -60%",
        "price":"€ 27,99",
@@ -625,7 +625,7 @@
     },
     {
        "brand":"Vans",
-       "type":"Sneakers à semelles compensées",
+       "name":"Sneakers à semelles compensées",
        "id":"7l8fxz1mvnl898zrua",
        "oldPrice":"PVC € 70,00 -60%",
        "price":"€ 27,99",
@@ -633,7 +633,7 @@
     },
     {
        "brand":"Vans",
-       "type":"Sneakers à semelles compensées",
+       "name":"Sneakers à semelles compensées",
        "id":"7l8fxz1mvnl898zruo",
        "oldPrice":"PVC € 70,00 -60%",
        "price":"€ 27,99",
@@ -641,7 +641,7 @@
     },
     {
        "brand":"Vans",
-       "type":"mocassins",
+       "name":"mocassins",
        "id":"7l8fxz1mvnl898zrv1",
        "oldPrice":"PVC € 70,00 -60%",
        "price":"€ 27,99",
@@ -649,7 +649,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrvf",
        "oldPrice":"PVC € 75,00 -63%",
        "price":"€ 27,99",
@@ -657,7 +657,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrvq",
        "oldPrice":"PVC € 75,00 -63%",
        "price":"€ 27,99",
@@ -665,7 +665,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrw8",
        "oldPrice":"PVC € 70,00 -60%",
        "price":"€ 27,99",
@@ -673,7 +673,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrwq",
        "oldPrice":"PVC € 80,00 -65%",
        "price":"€ 27,99",
@@ -681,7 +681,7 @@
     },
     {
        "brand":"Vans",
-       "type":"mocassins",
+       "name":"mocassins",
        "id":"7l8fxz1mvnl898zrx3",
        "oldPrice":"PVC € 70,00 -60%",
        "price":"€ 27,99",
@@ -689,7 +689,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrxf",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -697,7 +697,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrxs",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -705,7 +705,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zry6",
        "oldPrice":"PVC € 89,95 -69%",
        "price":"€ 27,99",
@@ -713,7 +713,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zryh",
        "oldPrice":"PVC € 39,99 -30%",
        "price":"€ 27,99",
@@ -721,7 +721,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zryu",
        "oldPrice":"PVC € 39,99 -30%",
        "price":"€ 27,99",
@@ -729,7 +729,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrz7",
        "oldPrice":"PVC € 49,99 -44%",
        "price":"€ 27,99",
@@ -737,21 +737,21 @@
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zrzp",
        "price":"€ 27,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898zrzp_tennis.jpg"
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs05",
        "price":"€ 27,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898zs05_tennis.jpg"
     },
     {
        "brand":"Reebok",
-       "type":"Sneakers à semelles compensées",
+       "name":"Sneakers à semelles compensées",
        "id":"7l8fxz1mvnl898zs0h",
        "oldPrice":"PVC € 60,00 -53%",
        "price":"€ 27,99",
@@ -759,7 +759,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs0t",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -767,7 +767,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs15",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -775,7 +775,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs1i",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -783,7 +783,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs1v",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -791,7 +791,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs26",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -799,7 +799,7 @@
     },
     {
        "brand":"Tom Tailor",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs2i",
        "oldPrice":"PVC € 49,95 -44%",
        "price":"€ 27,99",
@@ -807,7 +807,7 @@
     },
     {
        "brand":"Tom Tailor",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs31",
        "oldPrice":"PVC € 49,95 -44%",
        "price":"€ 27,99",
@@ -815,7 +815,7 @@
     },
     {
        "brand":"ACBC",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs3g",
        "oldPrice":"PVC € 89,00 -69%",
        "price":"€ 27,99",
@@ -823,7 +823,7 @@
     },
     {
        "brand":"ACBC",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs3t",
        "oldPrice":"PVC € 89,00 -69%",
        "price":"€ 27,99",
@@ -831,7 +831,7 @@
     },
     {
        "brand":"ACBC",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs47",
        "oldPrice":"PVC € 139,00 -80%",
        "price":"€ 27,99",
@@ -839,7 +839,7 @@
     },
     {
        "brand":"ACBC",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs4j",
        "oldPrice":"PVC € 89,00 -69%",
        "price":"€ 27,99",
@@ -847,7 +847,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs4v",
        "oldPrice":"PVC € 39,90 -30%",
        "price":"€ 27,99",
@@ -855,7 +855,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs56",
        "oldPrice":"PVC € 39,90 -30%",
        "price":"€ 27,99",
@@ -863,7 +863,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs5j",
        "oldPrice":"PVC € 39,90 -30%",
        "price":"€ 27,99",
@@ -871,7 +871,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs5u",
        "oldPrice":"PVC € 39,90 -30%",
        "price":"€ 27,99",
@@ -879,7 +879,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs6c",
        "oldPrice":"PVC € 39,90 -30%",
        "price":"€ 27,99",
@@ -887,7 +887,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs6s",
        "oldPrice":"PVC € 69,95 -60%",
        "price":"€ 27,99",
@@ -895,7 +895,7 @@
     },
     {
        "brand":"Lumberjack",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs74",
        "oldPrice":"PVC € 70,00 -60%",
        "price":"€ 27,99",
@@ -903,7 +903,7 @@
     },
     {
        "brand":"Mustang",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs7j",
        "oldPrice":"PVC € 59,95 -53%",
        "price":"€ 27,99",
@@ -911,7 +911,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs83",
        "oldPrice":"PVC € 69,95 -60%",
        "price":"€ 27,99",
@@ -919,7 +919,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs8j",
        "oldPrice":"PVC € 85,95 -67%",
        "price":"€ 27,99",
@@ -927,7 +927,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zs9t",
        "oldPrice":"PVC € 75,95 -63%",
        "price":"€ 27,99",
@@ -935,7 +935,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsa6",
        "oldPrice":"PVC € 75,95 -63%",
        "price":"€ 27,99",
@@ -943,7 +943,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"Tennis – VN0A3DPBXEV1",
+       "name":"Tennis – VN0A3DPBXEV1",
        "id":"7l8fxz1mvnl898zsaj",
        "oldPrice":"PVC € 69,95 -60%",
        "price":"€ 27,99",
@@ -951,7 +951,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsbn",
        "oldPrice":"PVC € 99,00 -72%",
        "price":"€ 27,99",
@@ -959,7 +959,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsco",
        "oldPrice":"PVC € 69,00 -59%",
        "price":"€ 27,99",
@@ -967,7 +967,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsd2",
        "oldPrice":"PVC € 79,00 -65%",
        "price":"€ 27,99",
@@ -975,7 +975,7 @@
     },
     {
        "brand":"G-Star",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsde",
        "oldPrice":"PVC € 69,95 -57%",
        "price":"€ 29,99",
@@ -983,7 +983,7 @@
     },
     {
        "brand":"G-Star",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsdp",
        "oldPrice":"PVC € 69,95 -57%",
        "price":"€ 29,99",
@@ -991,7 +991,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zse3",
        "oldPrice":"PVC € 54,90 -45%",
        "price":"€ 29,99",
@@ -999,7 +999,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsef",
        "oldPrice":"PVC € 59,95 -50%",
        "price":"€ 29,99",
@@ -1007,7 +1007,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsep",
        "oldPrice":"PVC € 80,00 -63%",
        "price":"€ 29,99",
@@ -1015,7 +1015,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsf2",
        "oldPrice":"PVC € 80,00 -63%",
        "price":"€ 29,99",
@@ -1023,7 +1023,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsfd",
        "oldPrice":"PVC € 64,90 -54%",
        "price":"€ 29,99",
@@ -1031,7 +1031,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsfp",
        "oldPrice":"PVC € 70,00 -57%",
        "price":"€ 29,99",
@@ -1039,7 +1039,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsg0",
        "oldPrice":"PVC € 89,95 -67%",
        "price":"€ 29,99",
@@ -1047,7 +1047,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsgc",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1055,7 +1055,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsgp",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1063,7 +1063,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsh1",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1071,7 +1071,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zshc",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1079,7 +1079,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsho",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1087,7 +1087,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zshy",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1095,7 +1095,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsib",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1103,7 +1103,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsio",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1111,7 +1111,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsiz",
        "oldPrice":"PVC € 39,99 -25%",
        "price":"€ 29,99",
@@ -1119,7 +1119,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsjc",
        "oldPrice":"PVC € 89,95 -67%",
        "price":"€ 29,99",
@@ -1127,7 +1127,7 @@
     },
     {
        "brand":"Tom Tailor Denim",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsjq",
        "oldPrice":"PVC € 49,95 -40%",
        "price":"€ 29,99",
@@ -1135,7 +1135,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsk2",
        "oldPrice":"PVC € 49,90 -40%",
        "price":"€ 29,99",
@@ -1143,7 +1143,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zske",
        "oldPrice":"PVC € 49,90 -40%",
        "price":"€ 29,99",
@@ -1151,7 +1151,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zskr",
        "oldPrice":"PVC € 49,90 -40%",
        "price":"€ 29,99",
@@ -1159,7 +1159,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"Slip-on Sneaker",
+       "name":"Slip-on Sneaker",
        "id":"7l8fxz1mvnl898zsl3",
        "oldPrice":"PVC € 49,95 -40%",
        "price":"€ 29,99",
@@ -1167,7 +1167,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"Slip-on Sneaker",
+       "name":"Slip-on Sneaker",
        "id":"7l8fxz1mvnl898zslg",
        "oldPrice":"PVC € 49,95 -40%",
        "price":"€ 29,99",
@@ -1175,7 +1175,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"Slip-on Sneaker",
+       "name":"Slip-on Sneaker",
        "id":"7l8fxz1mvnl898zsls",
        "oldPrice":"PVC € 49,95 -40%",
        "price":"€ 29,99",
@@ -1183,7 +1183,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsm3",
        "oldPrice":"PVC € 49,95 -40%",
        "price":"€ 29,99",
@@ -1191,7 +1191,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsmg",
        "oldPrice":"PVC € 49,95 -40%",
        "price":"€ 29,99",
@@ -1199,7 +1199,7 @@
     },
     {
        "brand":"Mustang",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsmu",
        "oldPrice":"PVC € 59,95 -50%",
        "price":"€ 29,99",
@@ -1207,7 +1207,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsn6",
        "oldPrice":"PVC € 79,95 -62%",
        "price":"€ 29,99",
@@ -1215,7 +1215,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsnj",
        "oldPrice":"PVC € 79,95 -62%",
        "price":"€ 29,99",
@@ -1223,7 +1223,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsnv",
        "oldPrice":"PVC € 79,95 -62%",
        "price":"€ 29,99",
@@ -1231,7 +1231,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zso6",
        "oldPrice":"PVC € 75,95 -61%",
        "price":"€ 29,99",
@@ -1239,7 +1239,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsok",
        "oldPrice":"PVC € 89,95 -67%",
        "price":"€ 29,99",
@@ -1247,7 +1247,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsov",
        "oldPrice":"PVC € 75,95 -61%",
        "price":"€ 29,99",
@@ -1255,7 +1255,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zspa",
        "oldPrice":"PVC € 79,95 -62%",
        "price":"€ 29,99",
@@ -1263,7 +1263,7 @@
     },
     {
        "brand":"Saucony",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zspn",
        "oldPrice":"PVC € 130,00 -75%",
        "price":"€ 32,99",
@@ -1271,7 +1271,7 @@
     },
     {
        "brand":"Saucony",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zspz",
        "oldPrice":"PVC € 129,00 -74%",
        "price":"€ 32,99",
@@ -1279,7 +1279,7 @@
     },
     {
        "brand":"Converse",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsqh",
        "oldPrice":"PVC € 90,00 -63%",
        "price":"€ 32,99",
@@ -1287,7 +1287,7 @@
     },
     {
        "brand":"G-Star",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsqy",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1295,7 +1295,7 @@
     },
     {
        "brand":"G-Star",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsrh",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1303,7 +1303,7 @@
     },
     {
        "brand":"Geox",
-       "type":"Tennis – U02H5C 02214",
+       "name":"Tennis – U02H5C 02214",
        "id":"7l8fxz1mvnl898zssa",
        "oldPrice":"PVC € 79,95 -59%",
        "price":"€ 32,99",
@@ -1311,7 +1311,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zssn",
        "oldPrice":"PVC € 99,95 -67%",
        "price":"€ 32,99",
@@ -1319,7 +1319,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zssx",
        "oldPrice":"PVC € 135,00 -76%",
        "price":"€ 32,99",
@@ -1327,7 +1327,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zst9",
        "oldPrice":"PVC € 54,90 -40%",
        "price":"€ 32,99",
@@ -1335,7 +1335,7 @@
     },
     {
        "brand":"Napapijri",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zstk",
        "oldPrice":"PVC € 99,90 -67%",
        "price":"€ 32,99",
@@ -1343,7 +1343,7 @@
     },
     {
        "brand":"Pepe Jeans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zstw",
        "oldPrice":"PVC € 59,90 -45%",
        "price":"€ 32,99",
@@ -1351,7 +1351,7 @@
     },
     {
        "brand":"Pepe Jeans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsu9",
        "oldPrice":"PVC € 85,00 -61%",
        "price":"€ 32,99",
@@ -1359,7 +1359,7 @@
     },
     {
        "brand":"Pepe Jeans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsul",
        "oldPrice":"PVC € 85,00 -61%",
        "price":"€ 32,99",
@@ -1367,7 +1367,7 @@
     },
     {
        "brand":"Pepe Jeans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsux",
        "oldPrice":"PVC € 90,00 -63%",
        "price":"€ 32,99",
@@ -1375,7 +1375,7 @@
     },
     {
        "brand":"Puma",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsv8",
        "oldPrice":"PVC € 59,95 -45%",
        "price":"€ 32,99",
@@ -1383,7 +1383,7 @@
     },
     {
        "brand":"Puma",
-       "type":"chaussures de sport",
+       "name":"chaussures de sport",
        "id":"7l8fxz1mvnl898zsvj",
        "oldPrice":"PVC € 49,95 -34%",
        "price":"€ 32,99",
@@ -1391,7 +1391,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsvv",
        "oldPrice":"PVC € 64,95 -49%",
        "price":"€ 32,99",
@@ -1399,7 +1399,7 @@
     },
     {
        "brand":"Superga",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsw8",
        "oldPrice":"PVC € 64,95 -49%",
        "price":"€ 32,99",
@@ -1407,7 +1407,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zswk",
        "oldPrice":"PVC € 84,95 -61%",
        "price":"€ 32,99",
@@ -1415,7 +1415,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zswu",
        "oldPrice":"PVC € 85,00 -61%",
        "price":"€ 32,99",
@@ -1423,7 +1423,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsx8",
        "oldPrice":"PVC € 85,00 -61%",
        "price":"€ 32,99",
@@ -1431,7 +1431,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsxj",
        "oldPrice":"PVC € 85,00 -61%",
        "price":"€ 32,99",
@@ -1439,7 +1439,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsxw",
        "oldPrice":"PVC € 85,00 -61%",
        "price":"€ 32,99",
@@ -1447,7 +1447,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsy8",
        "oldPrice":"PVC € 80,00 -59%",
        "price":"€ 32,99",
@@ -1455,7 +1455,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsyk",
        "oldPrice":"PVC € 80,00 -59%",
        "price":"€ 32,99",
@@ -1463,7 +1463,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsyv",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1471,7 +1471,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zsz8",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1479,7 +1479,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zszl",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1487,7 +1487,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zszy",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1495,7 +1495,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt09",
        "oldPrice":"PVC € 84,95 -61%",
        "price":"€ 32,99",
@@ -1503,7 +1503,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt0m",
        "oldPrice":"PVC € 99,95 -67%",
        "price":"€ 32,99",
@@ -1511,14 +1511,14 @@
     },
     {
        "brand":"Cypres",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt0y",
        "price":"€ 32,99",
        "imgSrc":"Baskets_files/image_Cypres_7l8fxz1mvnl898zt0y_tennis.jpg"
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt1a",
        "oldPrice":"PVC € 79,99 -59%",
        "price":"€ 32,99",
@@ -1526,7 +1526,7 @@
     },
     {
        "brand":"Lotto",
-       "type":"chaussures de sport",
+       "name":"chaussures de sport",
        "id":"7l8fxz1mvnl898zt1n",
        "oldPrice":"PVC € 60,00 -45%",
        "price":"€ 32,99",
@@ -1534,7 +1534,7 @@
     },
     {
        "brand":"Lotto",
-       "type":"chaussures de sport",
+       "name":"chaussures de sport",
        "id":"7l8fxz1mvnl898zt1z",
        "oldPrice":"PVC € 60,00 -45%",
        "price":"€ 32,99",
@@ -1542,7 +1542,7 @@
     },
     {
        "brand":"Mexx",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt2b",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1550,7 +1550,7 @@
     },
     {
        "brand":"Mexx",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt2n",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1558,7 +1558,7 @@
     },
     {
        "brand":"Mexx",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt30",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1566,7 +1566,7 @@
     },
     {
        "brand":"Reebok",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt3c",
        "oldPrice":"PVC € 90,00 -63%",
        "price":"€ 32,99",
@@ -1574,7 +1574,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"Tennis – 5-13611-38",
+       "name":"Tennis – 5-13611-38",
        "id":"7l8fxz1mvnl898zt3p",
        "oldPrice":"PVC € 49,95 -34%",
        "price":"€ 32,99",
@@ -1582,7 +1582,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt41",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1590,7 +1590,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt4c",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1598,7 +1598,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt4o",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1606,7 +1606,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt50",
        "oldPrice":"PVC € 59,95 -45%",
        "price":"€ 32,99",
@@ -1614,7 +1614,7 @@
     },
     {
        "brand":"Tom Tailor",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt5a",
        "oldPrice":"PVC € 49,95 -34%",
        "price":"€ 32,99",
@@ -1622,7 +1622,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt5n",
        "oldPrice":"PVC € 49,95 -34%",
        "price":"€ 32,99",
@@ -1630,7 +1630,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt5z",
        "oldPrice":"PVC € 49,95 -34%",
        "price":"€ 32,99",
@@ -1638,7 +1638,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"Tennis – 332-A4I02-5000",
+       "name":"Tennis – 332-A4I02-5000",
        "id":"7l8fxz1mvnl898zt6b",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1646,7 +1646,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"Tennis – 332-A4I02-5000",
+       "name":"Tennis – 332-A4I02-5000",
        "id":"7l8fxz1mvnl898zt6o",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1654,7 +1654,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt71",
        "oldPrice":"PVC € 49,95 -34%",
        "price":"€ 32,99",
@@ -1662,7 +1662,7 @@
     },
     {
        "brand":"Bugatti",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt7d",
        "oldPrice":"PVC € 49,95 -34%",
        "price":"€ 32,99",
@@ -1670,7 +1670,7 @@
     },
     {
        "brand":"Heydude",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt7o",
        "oldPrice":"PVC € 59,90 -45%",
        "price":"€ 32,99",
@@ -1678,7 +1678,7 @@
     },
     {
        "brand":"Mustang",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt80",
        "oldPrice":"PVC € 59,95 -45%",
        "price":"€ 32,99",
@@ -1686,7 +1686,7 @@
     },
     {
        "brand":"Mustang",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt8a",
        "oldPrice":"PVC € 59,95 -45%",
        "price":"€ 32,99",
@@ -1694,7 +1694,7 @@
     },
     {
        "brand":"Mustang",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt8n",
        "oldPrice":"PVC € 59,95 -45%",
        "price":"€ 32,99",
@@ -1702,7 +1702,7 @@
     },
     {
        "brand":"Pantofola d'Oro",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt90",
        "oldPrice":"PVC € 99,95 -67%",
        "price":"€ 32,99",
@@ -1710,7 +1710,7 @@
     },
     {
        "brand":"Pantofola d'Oro",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt9b",
        "oldPrice":"PVC € 99,95 -67%",
        "price":"€ 32,99",
@@ -1718,7 +1718,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt9n",
        "oldPrice":"PVC € 89,95 -63%",
        "price":"€ 32,99",
@@ -1726,7 +1726,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zt9z",
        "oldPrice":"PVC € 79,95 -59%",
        "price":"€ 32,99",
@@ -1734,7 +1734,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztaa",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1742,7 +1742,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztam",
        "oldPrice":"PVC € 69,95 -53%",
        "price":"€ 32,99",
@@ -1750,7 +1750,7 @@
     },
     {
        "brand":"Vault by Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztay",
        "oldPrice":"PVC € 79,95 -59%",
        "price":"€ 32,99",
@@ -1758,7 +1758,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztba",
        "oldPrice":"PVC € 99,00 -67%",
        "price":"€ 32,99",
@@ -1766,7 +1766,7 @@
     },
     {
        "brand":"Warrior Shanghai",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztbm",
        "oldPrice":"PVC € 79,00 -58%",
        "price":"€ 32,99",
@@ -1774,7 +1774,7 @@
     },
     {
        "brand":"Champion",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztby",
        "oldPrice":"PVC € 42,95 -21%",
        "price":"€ 33,99",
@@ -1782,7 +1782,7 @@
     },
     {
        "brand":"Champion",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztcc",
        "oldPrice":"PVC € 42,95 -21%",
        "price":"€ 33,99",
@@ -1790,7 +1790,7 @@
     },
     {
        "brand":"Adidas",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztcn",
        "oldPrice":"PVC € 120,00 -71%",
        "price":"€ 34,99",
@@ -1798,7 +1798,7 @@
     },
     {
        "brand":"Adidas Originals",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztcy",
        "oldPrice":"PVC € 90,00 -61%",
        "price":"€ 34,99",
@@ -1806,7 +1806,7 @@
     },
     {
        "brand":"Gant",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztdc",
        "oldPrice":"PVC € 69,95 -50%",
        "price":"€ 34,99",
@@ -1814,7 +1814,7 @@
     },
     {
        "brand":"Gant",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztdo",
        "oldPrice":"PVC € 59,95 -42%",
        "price":"€ 34,99",
@@ -1822,7 +1822,7 @@
     },
     {
        "brand":"Gant",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zte1",
        "oldPrice":"PVC € 59,95 -42%",
        "price":"€ 34,99",
@@ -1830,7 +1830,7 @@
     },
     {
        "brand":"Gant",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztee",
        "oldPrice":"PVC € 69,95 -50%",
        "price":"€ 34,99",
@@ -1838,7 +1838,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zteq",
        "oldPrice":"PVC € 79,95 -56%",
        "price":"€ 34,99",
@@ -1846,7 +1846,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztf1",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -1854,7 +1854,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztfd",
        "oldPrice":"PVC € 79,95 -56%",
        "price":"€ 34,99",
@@ -1862,7 +1862,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztfo",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -1870,7 +1870,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztg1",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -1878,7 +1878,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztgd",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -1886,7 +1886,7 @@
     },
     {
        "brand":"Geox",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztgp",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -1894,7 +1894,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zth0",
        "oldPrice":"PVC € 54,90 -36%",
        "price":"€ 34,99",
@@ -1902,7 +1902,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zthb",
        "oldPrice":"PVC € 69,90 -50%",
        "price":"€ 34,99",
@@ -1910,7 +1910,7 @@
     },
     {
        "brand":"Levi's",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zthm",
        "oldPrice":"PVC € 89,90 -61%",
        "price":"€ 34,99",
@@ -1918,7 +1918,7 @@
     },
     {
        "brand":"Napapijri",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zthz",
        "oldPrice":"PVC € 79,90 -56%",
        "price":"€ 34,99",
@@ -1926,7 +1926,7 @@
     },
     {
        "brand":"O'Neill",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztia",
        "oldPrice":"PVC € 60,00 -42%",
        "price":"€ 34,99",
@@ -1934,7 +1934,7 @@
     },
     {
        "brand":"O'Neill",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztim",
        "oldPrice":"PVC € 60,00 -42%",
        "price":"€ 34,99",
@@ -1942,7 +1942,7 @@
     },
     {
        "brand":"O'Neill",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztiz",
        "oldPrice":"PVC € 60,00 -42%",
        "price":"€ 34,99",
@@ -1950,7 +1950,7 @@
     },
     {
        "brand":"O'Neill",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztja",
        "oldPrice":"PVC € 60,00 -42%",
        "price":"€ 34,99",
@@ -1958,7 +1958,7 @@
     },
     {
        "brand":"Pepe Jeans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztjk",
        "oldPrice":"PVC € 79,90 -56%",
        "price":"€ 34,99",
@@ -1966,7 +1966,7 @@
     },
     {
        "brand":"Pepe Jeans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztjx",
        "oldPrice":"PVC € 59,90 -42%",
        "price":"€ 34,99",
@@ -1974,7 +1974,7 @@
     },
     {
        "brand":"Puma",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztk8",
        "oldPrice":"PVC € 79,95 -56%",
        "price":"€ 34,99",
@@ -1982,7 +1982,7 @@
     },
     {
        "brand":"Puma",
-       "type":"chaussures de sport",
+       "name":"chaussures de sport",
        "id":"7l8fxz1mvnl898ztkl",
        "oldPrice":"PVC € 49,95 -30%",
        "price":"€ 34,99",
@@ -1990,7 +1990,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztkv",
        "oldPrice":"PVC € 90,00 -61%",
        "price":"€ 34,99",
@@ -1998,7 +1998,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztl7",
        "oldPrice":"PVC € 85,00 -59%",
        "price":"€ 34,99",
@@ -2006,7 +2006,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztli",
        "oldPrice":"PVC € 74,90 -53%",
        "price":"€ 34,99",
@@ -2014,7 +2014,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztlu",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -2022,7 +2022,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztm7",
        "oldPrice":"PVC € 90,00 -61%",
        "price":"€ 34,99",
@@ -2030,7 +2030,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztmj",
        "oldPrice":"PVC € 79,90 -56%",
        "price":"€ 34,99",
@@ -2038,7 +2038,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztmu",
        "oldPrice":"PVC € 79,90 -56%",
        "price":"€ 34,99",
@@ -2046,7 +2046,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztn6",
        "oldPrice":"PVC € 85,00 -59%",
        "price":"€ 34,99",
@@ -2054,7 +2054,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztni",
        "oldPrice":"PVC € 69,90 -50%",
        "price":"€ 34,99",
@@ -2062,7 +2062,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztnt",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -2070,7 +2070,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zto6",
        "oldPrice":"PVC € 75,00 -53%",
        "price":"€ 34,99",
@@ -2078,7 +2078,7 @@
     },
     {
        "brand":"Vans",
-       "type":"Tennis – VN0A54FB9GU1",
+       "name":"Tennis – VN0A54FB9GU1",
        "id":"7l8fxz1mvnl898ztoj",
        "oldPrice":"PVC € 95,95 -64%",
        "price":"€ 34,99",
@@ -2086,7 +2086,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztov",
        "oldPrice":"PVC € 99,95 -65%",
        "price":"€ 34,99",
@@ -2094,7 +2094,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztp6",
        "oldPrice":"PVC € 95,95 -64%",
        "price":"€ 34,99",
@@ -2102,7 +2102,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztpk",
        "oldPrice":"PVC € 65,00 -46%",
        "price":"€ 34,99",
@@ -2110,7 +2110,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztpw",
        "oldPrice":"PVC € 85,00 -59%",
        "price":"€ 34,99",
@@ -2118,7 +2118,7 @@
     },
     {
        "brand":"Vans",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztq9",
        "oldPrice":"PVC € 90,00 -61%",
        "price":"€ 34,99",
@@ -2126,7 +2126,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztqm",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -2134,7 +2134,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztqx",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -2142,7 +2142,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztr9",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -2150,7 +2150,7 @@
     },
     {
        "brand":"Bullboxer",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztrk",
        "oldPrice":"PVC € 89,95 -61%",
        "price":"€ 34,99",
@@ -2158,14 +2158,14 @@
     },
     {
        "brand":"Cypres",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztrz",
        "price":"€ 34,99",
        "imgSrc":"Baskets_files/image_Cypres_7l8fxz1mvnl898ztrz_tennis.jpg"
     },
     {
        "brand":"Daniel Hechter",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztsa",
        "oldPrice":"PVC € 69,95 -50%",
        "price":"€ 34,99",
@@ -2173,7 +2173,7 @@
     },
     {
        "brand":"Fila",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztsm",
        "oldPrice":"PVC € 55,00 -36%",
        "price":"€ 34,99",
@@ -2181,7 +2181,7 @@
     },
     {
        "brand":"Geographical Norway",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztt0",
        "oldPrice":"PVC € 139,00 -75%",
        "price":"€ 34,99",
@@ -2189,7 +2189,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zttb",
        "oldPrice":"PVC € 49,99 -30%",
        "price":"€ 34,99",
@@ -2197,7 +2197,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zttm",
        "oldPrice":"PVC € 79,99 -56%",
        "price":"€ 34,99",
@@ -2205,7 +2205,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztu0",
        "oldPrice":"PVC € 49,99 -30%",
        "price":"€ 34,99",
@@ -2213,7 +2213,7 @@
     },
     {
        "brand":"Jack & Jones",
-       "type":"Tennis – 12169463",
+       "name":"Tennis – 12169463",
        "id":"7l8fxz1mvnl898ztuc",
        "oldPrice":"PVC € 49,99 -30%",
        "price":"€ 34,99",
@@ -2221,7 +2221,7 @@
     },
     {
        "brand":"Lotto",
-       "type":"chaussures de sport",
+       "name":"chaussures de sport",
        "id":"7l8fxz1mvnl898ztup",
        "oldPrice":"PVC € 60,00 -42%",
        "price":"€ 34,99",
@@ -2229,7 +2229,7 @@
     },
     {
        "brand":"Mexx",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztv1",
        "oldPrice":"PVC € 79,95 -56%",
        "price":"€ 34,99",
@@ -2237,14 +2237,14 @@
     },
     {
        "brand":"Rapid Soul",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztvd",
        "price":"€ 34,99",
        "imgSrc":"Baskets_files/image_Rapid Soul_7l8fxz1mvnl898ztvd_tennis.jpg"
     },
     {
        "brand":"Reebok",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztvq",
        "oldPrice":"PVC € 55,00 -36%",
        "price":"€ 34,99",
@@ -2252,7 +2252,7 @@
     },
     {
        "brand":"Reebok",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztw3",
        "oldPrice":"PVC € 80,00 -56%",
        "price":"€ 34,99",
@@ -2260,7 +2260,7 @@
     },
     {
        "brand":"Reebok",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztwe",
        "oldPrice":"PVC € 45,00 -22%",
        "price":"€ 34,99",
@@ -2268,7 +2268,7 @@
     },
     {
        "brand":"Reebok",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztwq",
        "oldPrice":"PVC € 74,95 -53%",
        "price":"€ 34,99",
@@ -2276,7 +2276,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztx2",
        "oldPrice":"PVC € 59,95 -42%",
        "price":"€ 34,99",
@@ -2284,7 +2284,7 @@
     },
     {
        "brand":"S.Oliver",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztxe",
        "oldPrice":"PVC € 49,95 -30%",
        "price":"€ 34,99",
@@ -2292,7 +2292,7 @@
     },
     {
        "brand":"Tom Tailor",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztxq",
        "oldPrice":"PVC € 44,95 -22%",
        "price":"€ 34,99",
@@ -2300,7 +2300,7 @@
     },
     {
        "brand":"Tom Tailor",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zty1",
        "oldPrice":"PVC € 44,95 -22%",
        "price":"€ 34,99",
@@ -2308,7 +2308,7 @@
     },
     {
        "brand":"Tom Tailor",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztye",
        "oldPrice":"PVC € 49,95 -30%",
        "price":"€ 34,99",
@@ -2316,7 +2316,7 @@
     },
     {
        "brand":"Tom Tailor Denim",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztyr",
        "oldPrice":"PVC € 49,95 -30%",
        "price":"€ 34,99",
@@ -2324,7 +2324,7 @@
     },
     {
        "brand":"ACBC",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztz5",
        "oldPrice":"PVC € 109,00 -68%",
        "price":"€ 34,99",
@@ -2332,7 +2332,7 @@
     },
     {
        "brand":"AM318",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztzk",
        "oldPrice":"PVC € 149,00 -77%",
        "price":"€ 34,99",
@@ -2340,7 +2340,7 @@
     },
     {
        "brand":"AM318",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898ztzw",
        "oldPrice":"PVC € 139,00 -75%",
        "price":"€ 34,99",
@@ -2348,7 +2348,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zu07",
        "oldPrice":"PVC € 59,90 -42%",
        "price":"€ 34,99",
@@ -2356,7 +2356,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zu0j",
        "oldPrice":"PVC € 59,90 -42%",
        "price":"€ 34,99",
@@ -2364,7 +2364,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zu0v",
        "oldPrice":"PVC € 59,90 -42%",
        "price":"€ 34,99",
@@ -2372,7 +2372,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zu17",
        "oldPrice":"PVC € 59,90 -42%",
        "price":"€ 34,99",
@@ -2380,7 +2380,7 @@
     },
     {
        "brand":"Avia",
-       "type":"tennis",
+       "name":"tennis",
        "id":"7l8fxz1mvnl898zu1k",
        "oldPrice":"PVC € 59,90 -42%",
        "price":"€ 34,99",

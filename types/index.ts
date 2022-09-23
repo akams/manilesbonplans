@@ -70,7 +70,7 @@ interface ISelectorWishlist {
 }
 export type Wishlist = {
     itemId: string;
-    itemSize: string|null;
+    itemSize: string | null;
 }
 
 declare type CATEGORIES = 'CLOTHES' | 'SHOES' | 'ACCESSORIES';
@@ -89,11 +89,43 @@ export type Product = {
     brand: string;
     category: string; // example: hoody ex categorie
     name: string;
-    amount: string|number;
+    amount: string | number;
     bigCategorie?: CATEGORIES; // chaussure/Vetements/Accessoire
     size?: Size;
-    quantity?: string|number;
+    quantity?: string | number;
 }
+
+// type SCHOES_PRODUCT = {
+//     id,
+//     name, // type tennis /
+//     brand,
+//     price,
+//     oldPrice,
+//     imgSrc,
+//     cloudTag  // categorie;categorie_general;
+//     gender
+//     size
+//     quantity
+// }
+
+
+// id
+// photo
+// marque
+// old_price?
+// price
+// categorie ex: botte dhiver
+// categorie_general ex: botte
+// types ex: chaussure
+// gender: femme
+
+// cloud_tag: [
+//     // categorie;categorie_general;
+// ]
+// ---------> bottes --> chaussure --> femme
+// HOMME / FEMME / ENFANTS
+// VETEMENT | CHAUSSURE | ACCESSOIRE |
+// CHAUSSURE / HOMME|FEMME
 
 export type ClothesProduct = {
     id: string;
@@ -101,8 +133,8 @@ export type ClothesProduct = {
     brand: string;
     category: string;
     name: string;
-    amount: string|number;
-    size?: string|null;
+    amount: string | number;
+    size?: string | null;
 }
 
 declare type STATUS_ORDERS = 'PENDING_ORDER' | 'ORDER_SENT' | 'SHIPPING_IN_PROGRESS' | 'DELIVERY_COMPLETED';

@@ -2,6 +2,7 @@
 
 import { Request } from "express";
 
+
 type RequestUser = {
   user?: any
 }
@@ -38,27 +39,4 @@ type QueryProducts = {
 
 export type RequestQueryProducts = {
   query: QueryProducts,
-}
-
-/**
- * Key = taille , nb restant        
- * example {[44]: 3}, {[43]: 0}, {[42]: 5}
- * taille -> nb restant
- */
-export type Size = {
-  [key: number]: number;
-}
-
-export type GlobalProduct = {
-  id: string;
-  name: string; // ex: tennis
-  brand: string;
-  amount: number;
-  oldPrice: string | number;
-  currency: string;
-  imgSrc: string;
-  cloudTag: string[]; // categorie;categorie_general;
-  gender: string;
-  size?: Size;
-  quantity?: number;
 }

@@ -4,19 +4,23 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as cors from "cors";
 
-import { validateFirebaseIdToken } from "./middlewares/middlewares";
-import { admin } from "./config/firebase";
+// import { validateFirebaseIdToken } from "./middlewares/middlewares";
+// import { admin } from "./config/firebase";
 
 import { signup } from "./controllers/user";
 import { getWishList, removeWishlistItem } from "./controllers/wishlist";
 import { create, getAll } from "./controllers/orders";
 import {
-  create as createProduct,
+  // create as createProduct,
   getProduct,
   getProducts,
   getProductsBrands,
   getProductsCategories,
 } from "./controllers/products";
+
+import {
+  create as createShoesProduct
+} from './controllers/shoes'
 
 const app = express(); // Handle intern API
 const main = express(); // Expose API
@@ -26,12 +30,12 @@ const options: cors.CorsOptions = {
   origin: true,
 };
 
-const useValidateFirebaseIdToken = validateFirebaseIdToken(admin);
+// const useValidateFirebaseIdToken = validateFirebaseIdToken(admin);
 
 main.use(cors(options));
 main.use(express.json());
 main.use(cookieParser());
-main.use(useValidateFirebaseIdToken);
+// main.use(useValidateFirebaseIdToken);
 main.use(bodyParser.json());
 main.use("/api/v1", app);
 
@@ -52,8 +56,10 @@ app.get("/orders", getAll);
 app.post("/orders/terminate", create);
 // api products
 app.get("/product/:id", getProduct);
-app.post("/products", createProduct);// look l'api que pour les admins
 app.get("/products", getProducts);
 app.get("/products/brands", getProductsBrands);
 app.post("/products/categories", getProductsCategories);
+
+// api admin
+app.post("/admin/products", createShoesProduct);// look l'api que pour les admins
 

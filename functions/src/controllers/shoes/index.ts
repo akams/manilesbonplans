@@ -1,17 +1,34 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Request, Response } from "express";
-import { db } from "../config/firebase";
+import { db } from "../../config/firebase";
 import { RequestQueryProducts } from "./types";
+import { GlobalProduct } from "../types";
 
-import { formatDataProducts } from '../models/products'
-import * as producstShoes1 from "../models/data/shoes/shoes_1.json";
+import { formatDataProducts } from '../../models/products'
+import { getDefaultDataShoesSize } from '../../models/data/size.data'
+import * as producstShoes1 from "../../models/data/shoes/shoes_1.json";
+
+const _COLLECTION_NAME = "shoes_products"
 
 const create = async (req: Request, res: Response) => {
   try {
     console.log("Api: create");
+    const shoesProduct: GlobalProduct[] = producstShoes1.map(({ price, ...product }: any) => {
+      // price
+      const [currency, amount] = price.split(" ");
+      return {
+        ...product,
+        cloudTag: ['Baskets basses', 'Baskets'],
+        gender: "Homme",
+        size: getDefaultDataShoesSize(),
+        amount: Number(amount.replace(",", ".")),
+        currency,
+        quantity: 5,
+      }
+    })
     const batch = db.batch();
-    producstShoes1.forEach((doc: any) => {
-      const docRef = db.collection("products").doc(); // automatically generate unique id
+    shoesProduct.forEach((doc: any) => {
+      const docRef = db.collection(_COLLECTION_NAME).doc(); // automatically generate unique id
       batch.set(docRef, doc);
     });
 
@@ -19,8 +36,8 @@ const create = async (req: Request, res: Response) => {
 
     res.status(200).send({
       status: "success",
-      message: "order added successfully",
-      data: producstShoes1.length,
+      message: "initialize data successfully",
+      data: shoesProduct.length,
     });
   } catch (error: unknown) {
     // @ts-ignore
@@ -31,7 +48,7 @@ const create = async (req: Request, res: Response) => {
 const getProductsBrands = async (req: Request, res: Response) => {
   try {
     console.log("Api: getProductsBrands");
-    const products = db.collection("products");
+    const products = db.collection(_COLLECTION_NAME);
     const snapshot = await products.get();
 
     // @ts-ignore
@@ -64,7 +81,7 @@ const getProductsBrands = async (req: Request, res: Response) => {
 const getProductsCategories = async (req: Request, res: Response) => {
   try {
     console.log("Api: getProductsCategories");
-    const products = db.collection("products");
+    const products = db.collection(_COLLECTION_NAME);
     const snapshot = await products.get();
 
     // @ts-ignore
@@ -100,14 +117,14 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
     const { categories: categoriesQuery, last } = req.query;
     const filteredBrands = categoriesQuery !== "ALL" ? categoriesQuery.split("&") : [];
 
-    const productsRef = db.collection("products");
+    const productsRef = db.collection(_COLLECTION_NAME);
     let queryProducts = productsRef.orderBy("id");
     if (filteredBrands.length > 0) {
       queryProducts = queryProducts.where("brand", "in", filteredBrands);
     }
 
     if (last) {
-      const lastSnapshot = await db.collection("products").doc(last).get();
+      const lastSnapshot = await db.collection(_COLLECTION_NAME).doc(last).get();
       queryProducts = queryProducts.startAfter(lastSnapshot);
     }
 
@@ -148,7 +165,7 @@ const getProduct = async (req: Request, res: Response) => {
   try {
     console.log("Api: getProduct", req.params);
     const { id } = req.params
-    const productsRef = db.collection("products");
+    const productsRef = db.collection(_COLLECTION_NAME);
     const queryProducts = productsRef.where("id", "==", id);
     const snapshot = await queryProducts.get();
     // @ts-ignore
