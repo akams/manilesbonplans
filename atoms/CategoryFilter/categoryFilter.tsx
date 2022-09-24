@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { CheckBox } from '@Atoms'
+import { RadioBtn } from '@Atoms'
 
 const Div = styled.div`
   margin-top: 32px;
@@ -41,7 +41,7 @@ const CategoryFilter = ({ items }) => {
         .sort((a, b) => a.localeCompare(b))
         .map((value, index) => (
           <div className="item" key={index}>
-            <CheckBox of={value} type="category" />
+            <RadioBtn of={value} />
             <span className="text">{value}</span>
           </div>
         ))}

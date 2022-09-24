@@ -42,7 +42,6 @@ const getProductsBrands = async (req: Request, res: Response) => {
         ...doc.data(),
       });
     });
-
     const brands = data.reduce((previous: string[], { brand }: any) => {
       if (!previous.includes(brand)) {
         previous.push(brand);

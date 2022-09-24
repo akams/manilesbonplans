@@ -1,5 +1,4 @@
 import * as admin from "firebase-admin";
-// import * as functions from "firebase-functions";
 
 admin.initializeApp({
   // credential: admin.credential.cert({
@@ -11,4 +10,4 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
-export {admin, db};
+export { admin, db };

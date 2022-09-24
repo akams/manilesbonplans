@@ -9,9 +9,10 @@ import {
   SmallSort,
   SmallFilter,
   Loading,
+  CategoryFilter,
 } from '@Atoms'
 //@ts-ignore
-const Products = ({ products, brands, hasMore, fetchMoreData }) => {
+const Products = ({ products, brands, categories, hasMore, fetchMoreData }) => {
   const [width, setWidth] = useState(window.innerWidth)
   //@ts-ignore
   const filteredSort = useSelector((state) => state.filter.sort)
@@ -38,6 +39,7 @@ const Products = ({ products, brands, hasMore, fetchMoreData }) => {
       {width > 640 && (
         <aside className="aside">
           <div className="title">Filters</div>
+          <CategoryFilter items={categories} />
           <BrandFilter items={brands} />
         </aside>
       )}
@@ -49,11 +51,11 @@ const Products = ({ products, brands, hasMore, fetchMoreData }) => {
           ) : (
             <div className="sort-filter">
               <SmallSort />
-              <SmallFilter brandItems={brands} />
+              <SmallFilter brandItems={brands} categoryItems={categories} />
             </div>
           )}
         </div>
-        <InfiniteScroll
+        {<InfiniteScroll
           dataLength={filteredProducts.length}
           next={fetchMoreData}
           hasMore={hasMore}
@@ -69,7 +71,7 @@ const Products = ({ products, brands, hasMore, fetchMoreData }) => {
           ) : (
             <EmptyResults />
           )}
-        </InfiniteScroll>
+        </InfiniteScroll>}
       </main>
     </>
   )

@@ -32,8 +32,9 @@ export type RequestCreateOrder = {
 }
 
 type QueryProducts = {
-  categories: string,
-  last: string,
+  brands: string,
+  category?: string,
+  last?: string,
 }
 
 export type RequestQueryProducts = {
@@ -57,7 +58,7 @@ export type GlobalProduct = {
   oldPrice: string | number;
   currency: string;
   imgSrc: string;
-  cloudTag: string[]; // categorie;categorie_general;
+  cloudTag: string[]; // categorie;categorie_general; ex: botte dhiver;botte
   gender: string;
   size?: Size;
   quantity?: number;

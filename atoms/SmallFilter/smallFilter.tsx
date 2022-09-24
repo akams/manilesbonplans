@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 
 import { FilterIcon } from '@Assets/icons'
-import { BrandFilter, Modal } from '@Atoms'
+import { BrandFilter, Modal, CategoryFilter } from '@Atoms'
 
 const Button = styled.button`
   color: inherit;
@@ -33,7 +33,7 @@ const ModalDiv = styled.div`
   }
 `
 
-const SmallFilter = ({ brandItems }) => {
+const SmallFilter = ({ brandItems, categoryItems }) => {
   const [showFilter, setShowFilter] = useState(false)
 
   const openFilterHandler = () => {
@@ -54,6 +54,7 @@ const SmallFilter = ({ brandItems }) => {
           <ModalDiv>
             <div className="title">Filter</div>
             <div className="filters">
+              <CategoryFilter items={categoryItems} />
               <BrandFilter items={brandItems} />
             </div>
           </ModalDiv>

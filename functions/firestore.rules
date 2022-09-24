@@ -19,8 +19,15 @@ service cloud.firestore {
       allow update: if isSignIn() && emailVerified() && isValidateAccount() == true;
     }
 
+    // open for all pour le moment
+    match /shoes_products/{document} {
+      allow write: if true; // only for test mode
+      allow list: if true;
+    }
+
+    // open for all pour le moment
     match /products/{document} {
-      allow write: if true;
+      allow write: if true; // only for test mode
       allow list: if true;
     }
     

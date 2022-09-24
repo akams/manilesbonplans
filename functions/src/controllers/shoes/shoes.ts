@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Request, Response } from "express";
 import { db } from "../../config/firebase";
-import { RequestQueryProducts } from "./types";
-import { GlobalProduct } from "../types";
+import { GlobalProduct, RequestQueryProducts } from "../types";
 
 import { formatDataProducts } from '../../models/products'
 import { getDefaultDataShoesSize } from '../../models/data/size.data'
@@ -10,9 +9,9 @@ import * as producstShoes1 from "../../models/data/shoes/shoes_1.json";
 
 const _COLLECTION_NAME = "shoes_products"
 
-const create = async (req: Request, res: Response) => {
+const createProductShoes = async (req: Request, res: Response) => {
   try {
-    console.log("Api: create");
+    console.log("Api: createShoesProduct");
     const shoesProduct: GlobalProduct[] = producstShoes1.map(({ price, ...product }: any) => {
       // price
       const [currency, amount] = price.split(" ");
@@ -45,9 +44,45 @@ const create = async (req: Request, res: Response) => {
   }
 };
 
-const getProductsBrands = async (req: Request, res: Response) => {
+const getProductShoesCategories = async (req: Request, res: Response) => {
   try {
-    console.log("Api: getProductsBrands");
+    console.log("Api: getShoesProductsCategories");
+    const shoesProducts = db.collection(_COLLECTION_NAME);
+    const snapshot = await shoesProducts.get();
+
+    // @ts-ignore
+    const data: any = [];
+    snapshot.forEach((doc) => {
+      data.push({
+        ...doc.data(),
+      });
+    });
+
+    const categories = data.reduce((previous: any, { cloudTag }: any) => {
+      previous = previous.concat(cloudTag)
+      return previous;
+    }, [])
+      .reduce((previous: string[], current: string) => {
+        if (!previous.includes(current)) {
+          previous.push(current);
+        }
+        return previous;
+      }, [])
+      .sort((c1: string, c2: string) => c1 < c2 ? -1 : 1);
+
+    res.status(200).json({
+      status: "success",
+      categories,
+    });
+  } catch (error) {
+    // @ts-ignore
+    res.status(500).json(error.message);
+  }
+};
+
+const getProductShoesBrands = async (req: Request, res: Response) => {
+  try {
+    console.log("Api: getShoesProductsBrands");
     const products = db.collection(_COLLECTION_NAME);
     const snapshot = await products.get();
 
@@ -59,7 +94,6 @@ const getProductsBrands = async (req: Request, res: Response) => {
         ...doc.data(),
       });
     });
-
     const brands = data.reduce((previous: string[], { brand }: any) => {
       if (!previous.includes(brand)) {
         previous.push(brand);
@@ -78,60 +112,32 @@ const getProductsBrands = async (req: Request, res: Response) => {
   }
 };
 
-const getProductsCategories = async (req: Request, res: Response) => {
+const getProductShoes = async (req: RequestQueryProducts, res: Response) => {
   try {
-    console.log("Api: getProductsCategories");
-    const products = db.collection(_COLLECTION_NAME);
-    const snapshot = await products.get();
+    console.log("Api: getProductShoes", req.query);
+    const { category, brands: brandsQuery, last } = req.query;
+    const filteredBrands = brandsQuery !== "ALL" ? brandsQuery.split("&") : [];
 
-    // @ts-ignore
-    const data: any = [];
-    snapshot.forEach((doc) => {
-      data.push({
-        id: doc.id,
-        ...doc.data(),
-      });
-    });
+    const productShoessRef = db.collection(_COLLECTION_NAME);
+    let queryProductShoes = productShoessRef.orderBy("id");
 
-    const categories = data.reduce((previous: string[], { type }: any) => {
-      if (!previous.includes(type)) {
-        previous.push(type);
-      }
-      return previous;
-    }, []).sort((c1: string, c2: string) => c1 < c2 ? -1 : 1);
+    if (category !== 'ALL') {
+      queryProductShoes = queryProductShoes.where("cloudTag", "array-contains", category);
+    }
 
-    res.status(200).json({
-      status: "success",
-      // @ts-ignore
-      categories,
-    });
-  } catch (error) {
-    // @ts-ignore
-    res.status(500).json(error.message);
-  }
-};
-
-const getProducts = async (req: RequestQueryProducts, res: Response) => {
-  try {
-    console.log("Api: getProducts", req.query);
-    const { categories: categoriesQuery, last } = req.query;
-    const filteredBrands = categoriesQuery !== "ALL" ? categoriesQuery.split("&") : [];
-
-    const productsRef = db.collection(_COLLECTION_NAME);
-    let queryProducts = productsRef.orderBy("id");
     if (filteredBrands.length > 0) {
-      queryProducts = queryProducts.where("brand", "in", filteredBrands);
+      queryProductShoes = queryProductShoes.where("brand", "in", filteredBrands);
     }
 
     if (last) {
       const lastSnapshot = await db.collection(_COLLECTION_NAME).doc(last).get();
-      queryProducts = queryProducts.startAfter(lastSnapshot);
+      queryProductShoes = queryProductShoes.startAfter(lastSnapshot);
     }
 
     if (filteredBrands.length === 0) {
-      queryProducts = queryProducts.limit(20);
+      queryProductShoes = queryProductShoes.limit(20);
     }
-    const snapshot = await queryProducts.get();
+    const snapshot = await queryProductShoes.get();
     // @ts-ignore
     const rawProducts: any = [];
     snapshot.forEach((doc) => {
@@ -141,18 +147,17 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
       });
     });
 
-    const products = rawProducts.map(formatDataProducts);
+    const productShoes = rawProducts.map(formatDataProducts);
 
-    console.log("rawProducts.length", rawProducts.length);
     const lastDocument = (rawProducts.length > 1 && filteredBrands.length === 0) ?
       rawProducts[rawProducts.length - 1] :
       undefined;
 
     res.status(200).json({
       // @ts-ignore
-      products,
+      productShoes,
       last: lastDocument?.idDocument,
-      size: products.length,
+      size: productShoes.length,
     });
   } catch (error) {
     console.log("err", error);
@@ -161,43 +166,9 @@ const getProducts = async (req: RequestQueryProducts, res: Response) => {
   }
 };
 
-const getProduct = async (req: Request, res: Response) => {
-  try {
-    console.log("Api: getProduct", req.params);
-    const { id } = req.params
-    const productsRef = db.collection(_COLLECTION_NAME);
-    const queryProducts = productsRef.where("id", "==", id);
-    const snapshot = await queryProducts.get();
-    // @ts-ignore
-    const rawProducts: any = [];
-    snapshot.forEach((doc) => {
-      rawProducts.push({
-        ...doc.data(),
-      });
-    });
-
-    const product = rawProducts
-      .map(formatDataProducts)
-      .reduce((acc: any, current: any) => {
-        acc = current
-        return acc
-      }, {})
-
-    res.status(200).json({
-      // @ts-ignore
-      product,
-    });
-  } catch (error) {
-    console.log("err", error);
-    // @ts-ignore
-    res.status(500).json(error.message);
-  }
-}
-
 export {
-  create,
-  getProduct,
-  getProducts,
-  getProductsBrands,
-  getProductsCategories,
+  createProductShoes,
+  getProductShoesCategories,
+  getProductShoesBrands,
+  getProductShoes,
 };

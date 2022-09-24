@@ -30,39 +30,26 @@ const Button = styled.button`
 `
 
 //@ts-ignore
-const RadioButton = ({ of, type }) => {
+const RadioButton = ({ of }) => {
   //@ts-ignore
-  const { brands, categories } = useSelector((state) => state.filter)
+  const { category } = useSelector((state) => state.filter)
   const [isChecked, setIsChecked] = useState(false)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (type === 'brand') {
-      if (brands.includes(of)) {
-        setIsChecked(true)
-      }
-    } else if (type === 'category') {
-      if (categories.includes(of)) {
-        setIsChecked(true)
-      }
+    if (category === of) {
+      setIsChecked(true)
+    } else {
+      setIsChecked(false)
     }
-  }, [brands, categories, of, type])
+  }, [category, of])
 
   const clickHandler = () => {
     if (isChecked) {
-      if (type === 'brand') {
-        dispatch(filterActions.deselectBrand(of))
-      } else if (type === 'category') {
-        dispatch(filterActions.deselectCategory(of))
-      }
+      dispatch(filterActions.deselectCategory())
     } else {
-      if (type === 'brand') {
-        dispatch(filterActions.selectBrand(of))
-      } else if (type === 'category') {
-        dispatch(filterActions.selectCategory(of))
-      }
+      dispatch(filterActions.selectCategory(of))
     }
-
     setIsChecked((prevValue) => !prevValue)
   }
 

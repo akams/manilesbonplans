@@ -19,8 +19,11 @@ import {
 } from "./controllers/products";
 
 import {
-  create as createShoesProduct
-} from './controllers/shoes'
+  createProductShoes,
+  getProductShoesCategories,
+  getProductShoesBrands,
+  getProductShoes,
+} from './controllers/shoes/shoes'
 
 const app = express(); // Handle intern API
 const main = express(); // Expose API
@@ -60,6 +63,11 @@ app.get("/products", getProducts);
 app.get("/products/brands", getProductsBrands);
 app.post("/products/categories", getProductsCategories);
 
-// api admin
-app.post("/admin/products", createShoesProduct);// look l'api que pour les admins
+// api shoes product
+app.get("/products/shoes", getProductShoes);
+app.get("/products/shoes/categories", getProductShoesCategories);
+app.get("/products/shoes/brands", getProductShoesBrands);
 
+// api admin
+// look l'api que pour les admins
+app.post("/admin/products", createProductShoes);
