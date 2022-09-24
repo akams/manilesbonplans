@@ -10,28 +10,36 @@ import { MainNav } from '@Atoms'
 import { ProductsOrganism } from '@Organisms'
 import { Div } from '@Organisms/Products/styledComponent'
 
+import { useGetShoes, useGetShoesCategories, useGetShoesBrands } from '@Services/shoes'
 
-import { useGetBrands, useGetProducts } from '@Services/products'
 
-
-const Products = () => {
+const ProductShoes = () => {
   const [products, setProducts] = useState([])
   const [lastVisibleItem, setLastVisible] = useState<any>()
-  const [hasMore, setHasMore] = useState(true)
+  const [hasMore, setHasMore] = useState(false)
   const [selectedBrands, setSelectedBrands] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('')
+  let dataProduct: any[]
+  let last: string
   //@ts-ignore
-  const filteredBrands = useSelector((state) => state.filter.brands)
+  const {
+    brands: selectorBrands,
+    category: selectorCategory,
+  } = useSelector((state) => state.filter)
 
-  const { data: dataBrands = [] } = useGetBrands({
+  const { data: dataShoesCategories = [] } = useGetShoesCategories({
     enabled: true,
     cacheTime: 5000,
     retry: false,
   })
 
-  let dataProduct: any[]
-  let last: string
+  const { data: dataShoesBrands = [] } = useGetShoesBrands({
+    enabled: true,
+    cacheTime: 5000,
+    retry: false,
+  })
 
-  const { data, refetch } = useGetProducts({ filteredBrands: selectedBrands, last: lastVisibleItem }, {
+  const { data, refetch } = useGetShoes({ filteredBrands: selectedBrands, last: lastVisibleItem, category: selectedCategory }, {
     enabled: true,
     cacheTime: 500,
     retry: false,
@@ -39,7 +47,7 @@ const Products = () => {
 
   if (data) {
     //@ts-ignore
-    dataProduct = data?.products
+    dataProduct = data?.productShoes
     //@ts-ignore
     last = data?.last
   }
@@ -61,7 +69,7 @@ const Products = () => {
       setHasMore(true)
       //@ts-ignore
       setProducts((oldData) => {
-        const brandsWithoutAll = filteredBrands.filter((brand: string) => brand !== 'ALL')
+        const brandsWithoutAll = selectorBrands.filter((brand: string) => brand !== 'ALL')
         if (brandsWithoutAll.length > 0) {
           if (dataProduct.length === 1) setHasMore(false)
           return dataProduct
@@ -71,14 +79,21 @@ const Products = () => {
       })
     }
     //@ts-ignore
-  }, [dataProduct, filteredBrands, last, setProducts]);
+  }, [dataProduct, selectorBrands, selectorCategory, last, setProducts]);
 
   // selected brands
   useEffect(() => {
-    if (filteredBrands) {
-      setSelectedBrands(`${filteredBrands.join("&")}`)
+    if (selectorBrands) {
+      setSelectedBrands(`${selectorBrands.join("&")}`)
     }
-  }, [filteredBrands]);
+  }, [selectorBrands]);
+
+  // selected category
+  useEffect(() => {
+    if (selectorCategory) {
+      setSelectedCategory(selectorCategory)
+    }
+  }, [selectorCategory]);
 
   return (
     <>
@@ -86,21 +101,19 @@ const Products = () => {
         <title>Collections</title>
       </Head>
       <MainNav>
-        <Link href="/">Home</Link> / <span>Collections</span>
+        <Link href="/">Home</Link> / <Link href="/collections">Collections</Link> / <span>Chaussures</span>
       </MainNav>
       <Div>
-        {products.length !== 0 && (
-          <ProductsOrganism
-            products={products}
-            brands={dataBrands}
-            hasMore={hasMore}
-            categories={[]}
-            fetchMoreData={fetchMoreData}
-          />
-        )}
+        <ProductsOrganism
+          products={products}
+          hasMore={hasMore}
+          brands={dataShoesBrands}
+          categories={dataShoesCategories}
+          fetchMoreData={fetchMoreData}
+        />
       </Div>
     </>
   )
 }
 
-export default Products
+export default ProductShoes
