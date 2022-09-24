@@ -21,18 +21,31 @@ const ProductDetails: FC<Props> = ({
   addToWishlistHandler,
   addToCartHandler,
   wishlistItems,
+  typeProduct,
 }) => {
   const {
     id,
     imageURL,
     brand,
-    category,
     name,
     amount,
+    currency,
+    size: sizeProduct,
   } = product
+
+  const sizeBottomToDisplay: string[] = ['shoes']
+  const sizeTopToDisplay: string[] = []
 
   //@ts-ignore
   const isWishlisted = !!wishlistItems.find((value) => value.itemId === id)
+
+  const sizeListAvaiblable = Object.entries(sizeProduct).reduce((previous: string[], current: any) => {
+    const [key, value] = current
+    if (value) {
+      previous.push(key)
+    }
+    return previous
+  }, [])
 
   if (!id) return <Spinner />
 
@@ -51,20 +64,21 @@ const ProductDetails: FC<Props> = ({
       <div className="info">
         <div className="brand">{brand}</div>
         <div className="name">{name}</div>
-        <div className="amount">{`Rs. ${getFormattedCurrency(
+        <div className="amount">{`${getFormattedCurrency(
           Number(amount),
-        )}`}</div>
+        )} ${currency}`}</div>
         <div className="size-box">
-          <div className="head">
+          {sizeTopToDisplay.includes(typeProduct) && <div className="head">
             <div className="title">Select Size</div>
             <div className="chart" onClick={openSizeChartHandler}>
               Size Chart
             </div>
-          </div>
+          </div>}
           {promptSize && <div className="error">Please select a size</div>}
           <div className="sizes">
-            {category === 'Jeans' ? (
+            {sizeBottomToDisplay.includes(typeProduct) ? (
               <SizePickerForBottoms
+                sizeListAvaiblable={sizeListAvaiblable}
                 currentSize={size}
                 onSetSize={setSize}
               />

@@ -10,7 +10,7 @@ import { MainNav } from '@Atoms'
 import { ProductsOrganism } from '@Organisms'
 import { Div } from '@Organisms/Products/styledComponent'
 
-import { useGetShoes, useGetShoesCategories, useGetShoesBrands } from '@Services/shoes'
+import { useGetListShoes, useGetShoesCategories, useGetShoesBrands } from '@Services/shoes'
 
 
 const ProductShoes = () => {
@@ -39,7 +39,7 @@ const ProductShoes = () => {
     retry: false,
   })
 
-  const { data, refetch } = useGetShoes({ filteredBrands: selectedBrands, last: lastVisibleItem, category: selectedCategory }, {
+  const { data, refetch } = useGetListShoes({ filteredBrands: selectedBrands, last: lastVisibleItem, category: selectedCategory }, {
     enabled: true,
     cacheTime: 500,
     retry: false,
@@ -110,6 +110,7 @@ const ProductShoes = () => {
           brands={dataShoesBrands}
           categories={dataShoesCategories}
           fetchMoreData={fetchMoreData}
+          subLink="shoes"
         />
       </Div>
     </>

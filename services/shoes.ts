@@ -5,6 +5,7 @@ import {
 
 import apiClient from '@Utils/http-common';
 
+export const GET_SHOES_CACHE_KEY = 'getShoes'
 export const GET_LIST_SHOES_CACHE_KEY = 'getListShoes'
 export const GET_SHOES_CATEGORIES_CACHE_KEY = 'getShoesCategories'
 export const GET_SHOES_BRANDS_CACHE_KEY = 'getShoesBrand'
@@ -22,15 +23,16 @@ type ProductShoes = {
   last: string;
 }
 
-// export const useGetProduct = ({ id }: any, options: optionsType) => useQuery<[typeof GET_PRODUCT_CACHE_KEY, any, optionsType]>(
-//   [GET_PRODUCT_CACHE_KEY, { id }, options],
-//   async () => {
-//     const { data } = await apiClient.get(`/product/${id}`)
-//     return data?.product
-//   },
-//   options,
-// )
-export const useGetShoes = ({ filteredBrands, last, category }: ProductShoes, options: optionsType) => useQuery<[typeof GET_LIST_SHOES_CACHE_KEY, ProductShoes, optionsType]>(
+export const useGetShoes = ({ id }: any, options: optionsType) => useQuery<[typeof GET_SHOES_CACHE_KEY, any, optionsType]>(
+  [GET_SHOES_CACHE_KEY, { id }, options],
+  async () => {
+    const { data } = await apiClient.get(`/product/shoes/${id}`)
+    return data?.product
+  },
+  options,
+)
+
+export const useGetListShoes = ({ filteredBrands, last, category }: ProductShoes, options: optionsType) => useQuery<[typeof GET_LIST_SHOES_CACHE_KEY, ProductShoes, optionsType]>(
   [GET_LIST_SHOES_CACHE_KEY, { filteredBrands, last, category }, options],
   async () => {
     const { data } = await apiClient.get('/products/shoes', { params: { brands: filteredBrands || '', last: last || '', category } })

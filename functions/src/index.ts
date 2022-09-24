@@ -22,6 +22,7 @@ import {
   createProductShoes,
   getProductShoesCategories,
   getProductShoesBrands,
+  getListProductShoes,
   getProductShoes,
 } from './controllers/shoes/shoes'
 
@@ -64,7 +65,8 @@ app.get("/products/brands", getProductsBrands);
 app.post("/products/categories", getProductsCategories);
 
 // api shoes product
-app.get("/products/shoes", getProductShoes);
+app.get("/products/shoes", getListProductShoes);
+app.get("/product/shoes/:id", getProductShoes);
 app.get("/products/shoes/categories", getProductShoesCategories);
 app.get("/products/shoes/brands", getProductShoesBrands);
 

@@ -134,7 +134,8 @@ export type ClothesProduct = {
     category: string;
     name: string;
     amount: string | number;
-    size?: string | null;
+    size: Size;
+    currency?: string | number;
 }
 
 declare type STATUS_ORDERS = 'PENDING_ORDER' | 'ORDER_SENT' | 'SHIPPING_IN_PROGRESS' | 'DELIVERY_COMPLETED';

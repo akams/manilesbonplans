@@ -12,7 +12,7 @@ import {
   CategoryFilter,
 } from '@Atoms'
 //@ts-ignore
-const Products = ({ products, brands, categories, hasMore, fetchMoreData }) => {
+const Products = ({ products, brands, categories, hasMore, fetchMoreData, subLink }) => {
   const [width, setWidth] = useState(window.innerWidth)
   //@ts-ignore
   const filteredSort = useSelector((state) => state.filter.sort)
@@ -65,7 +65,7 @@ const Products = ({ products, brands, categories, hasMore, fetchMoreData }) => {
           {filteredProducts.length > 0 ? (
             <div className="clothes">
               {filteredProducts.map((item, index) => (
-                <ItemCard key={item.id} {...item} setPriority={index < 8} />
+                <ItemCard key={item.id} {...item} setPriority={index < 8} subLink={subLink} />
               ))}
             </div>
           ) : (

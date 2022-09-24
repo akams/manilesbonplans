@@ -112,7 +112,7 @@ const getProductShoesBrands = async (req: Request, res: Response) => {
   }
 };
 
-const getProductShoes = async (req: RequestQueryProducts, res: Response) => {
+const getListProductShoes = async (req: RequestQueryProducts, res: Response) => {
   try {
     console.log("Api: getProductShoes", req.query);
     const { category, brands: brandsQuery, last } = req.query;
@@ -166,9 +166,43 @@ const getProductShoes = async (req: RequestQueryProducts, res: Response) => {
   }
 };
 
+const getProductShoes = async (req: Request, res: Response) => {
+  try {
+    console.log("Api: getProduct", req.params);
+    const { id } = req.params
+    const productsRef = db.collection(_COLLECTION_NAME);
+    const queryProducts = productsRef.where("id", "==", id);
+    const snapshot = await queryProducts.get();
+    // @ts-ignore
+    const rawProducts: any = [];
+    snapshot.forEach((doc) => {
+      rawProducts.push({
+        ...doc.data(),
+      });
+    });
+
+    const product = rawProducts
+      .map(formatDataProducts)
+      .reduce((acc: any, current: any) => {
+        acc = current
+        return acc
+      }, {})
+
+    res.status(200).json({
+      // @ts-ignore
+      product,
+    });
+  } catch (error) {
+    console.log("err", error);
+    // @ts-ignore
+    res.status(500).json(error.message);
+  }
+}
+
 export {
   createProductShoes,
   getProductShoesCategories,
   getProductShoesBrands,
+  getListProductShoes,
   getProductShoes,
 };
