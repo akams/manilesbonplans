@@ -4,11 +4,11 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as cors from "cors";
 
-// import { validateFirebaseIdToken } from "./middlewares/middlewares";
-// import { admin } from "./config/firebase";
+import { validateFirebaseIdToken } from "./middlewares/middlewares";
+import { admin } from "./config/firebase";
 
 import { signup } from "./controllers/user";
-import { getWishList, removeWishlistItem } from "./controllers/wishlist";
+import { getWishList, removeWishlistItem } from "./controllers/wishlist/wishlist";
 import { create, getAll } from "./controllers/orders";
 import {
   // create as createProduct,
@@ -34,12 +34,12 @@ const options: cors.CorsOptions = {
   origin: true,
 };
 
-// const useValidateFirebaseIdToken = validateFirebaseIdToken(admin);
+const useValidateFirebaseIdToken = validateFirebaseIdToken(admin);
 
 main.use(cors(options));
 main.use(express.json());
 main.use(cookieParser());
-// main.use(useValidateFirebaseIdToken);
+main.use(useValidateFirebaseIdToken);
 main.use(bodyParser.json());
 main.use("/api/v1", app);
 

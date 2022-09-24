@@ -7,6 +7,7 @@ import {
 
 import { Spinner } from '@Atoms/Loading'
 import { getFormattedCurrency } from '@Utils/getFormattedCurrency'
+import { getSizeAvailable } from '@Utils/size'
 
 import { Props } from './type'
 
@@ -39,13 +40,7 @@ const ProductDetails: FC<Props> = ({
   //@ts-ignore
   const isWishlisted = !!wishlistItems.find((value) => value.itemId === id)
 
-  const sizeListAvaiblable = Object.entries(sizeProduct).reduce((previous: string[], current: any) => {
-    const [key, value] = current
-    if (value) {
-      previous.push(key)
-    }
-    return previous
-  }, [])
+  const sizeListAvaiblable = getSizeAvailable(sizeProduct)
 
   if (!id) return <Spinner />
 

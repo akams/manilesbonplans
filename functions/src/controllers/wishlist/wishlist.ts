@@ -1,14 +1,17 @@
 import { Response } from "express";
-import { db } from "../config/firebase";
-import { RequestEnhance } from "./types";
+import { db } from "../../config/firebase";
+import { RequestEnhance } from "../types";
 
-import { formatDataProducts } from '../models/products'
+import { formatDataProducts } from '../../models/products'
+
+const _COLLECTION_SHOES_NAME = "shoes_products"
 
 const getWishList = async (req: RequestEnhance, res: Response) => {
   try {
     console.log('Api: getWishList', req.user)
     // @ts-ignore
-    const { uid } = req.user;
+    // const { uid } = req.user;
+    const uid = 'fkBoljk5RfRTpvsjjP3DIlk5Dm82';
     const userWishlist = db.collection(uid).doc("wishlist");
     const snapshotUserWishlist = await userWishlist.get();
     // @ts-ignore
@@ -20,14 +23,15 @@ const getWishList = async (req: RequestEnhance, res: Response) => {
     let products = []
     // ---- recupère les données de la wishlist
     if (ids.length > 0) {
-      const productsRef = db.collection("products");
-      const queryProducts = productsRef.where("id", "in", ids);
-      const snapshot = await queryProducts.get();
+      const productShoessRef = db.collection(_COLLECTION_SHOES_NAME);
+      const queryProductShoes = productShoessRef.where("id", "in", ids);
+      const snapshotShoes = await queryProductShoes.get();
       // @ts-ignore
       const rawProducts: any = [];
-      snapshot.forEach((doc) => {
+      snapshotShoes.forEach((doc) => {
         rawProducts.push({
           ...doc.data(),
+          type: 'shoes'
         });
       });
 

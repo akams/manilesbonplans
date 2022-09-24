@@ -17,6 +17,7 @@ import {
 import { CloseIcon } from '@Assets/icons'
 
 import { useUpdateWishlistMutation } from '@Services/wishlist'
+import { getSizeAvailable } from '@Utils/size'
 
 import { Div, ModalDiv } from './styledComponent'
 import { Props } from './type'
@@ -34,7 +35,9 @@ const WishlistItemCard: FC<Props> = ({
     brand,
     name,
     amount,
-    category,
+    currency,
+    type,
+    itemSize,
   } = product
   const { mutateAsync: wishlistRequestMutation } = useUpdateWishlistMutation(queryClient)
 
@@ -43,6 +46,8 @@ const WishlistItemCard: FC<Props> = ({
       productId: itemId
     })
   }
+
+  const sizeBottomToDisplay: string[] = ['shoes']
 
   const [pickedSize, setPickedSize] = useState('')
   const [showSizePicker, setShowSizePicker] = useState(false)
@@ -56,6 +61,8 @@ const WishlistItemCard: FC<Props> = ({
     (item) => item.itemId === id && item.itemSize === size,
   )
   const isInCart = !!cartItem
+
+  const sizeListAvaiblable = getSizeAvailable(size)
 
   const openSizePickerHandler = () => {
     setShowSizePicker(true)
@@ -87,7 +94,8 @@ const WishlistItemCard: FC<Props> = ({
   }
 
   const moveToCartHandler = async (fromModal = false) => {
-    if (size) {
+
+    if (itemSize) {
       console.log('enter here ==>size')
       if (isInCart) {
         const updatedItem = {
@@ -119,7 +127,6 @@ const WishlistItemCard: FC<Props> = ({
         }
       }
     } else if (pickedSize) {
-      console.log('enter here ==>pickedSize')
       const cartItem = cartItems.find(
         (item) => item.itemId === id && item.itemSize === pickedSize,
       )
@@ -140,7 +147,7 @@ const WishlistItemCard: FC<Props> = ({
           await updateDoc(doc(db, user.uid, 'cart'), {
             items: updatedItems,
           })
-          removeItemHandler(updatedItem)
+          removeItemHandler()
         } catch (error) {
           console.log(error)
         }
@@ -154,7 +161,7 @@ const WishlistItemCard: FC<Props> = ({
           await updateDoc(doc(db, user.uid, 'cart'), {
             items: arrayUnion(updatedItem),
           })
-          removeItemHandler(updatedItem)
+          removeItemHandler()
         } catch (error) {
           console.log(error)
         }
@@ -188,9 +195,9 @@ const WishlistItemCard: FC<Props> = ({
           <div className="info">
             <div className="brand">{brand}</div>
             <div className="name">{name}</div>
-            <div className="amount">{`Rs. ${getFormattedCurrency(
+            <div className="amount">{`${getFormattedCurrency(
               Number(amount),
-            )}`}</div>
+            )} ${currency}`}</div>
           </div>
         </div>
         <button className="cart" onClick={() => moveToCartHandler()}>
@@ -203,10 +210,11 @@ const WishlistItemCard: FC<Props> = ({
             <div className="title">Select size</div>
             {promptSize && <div className="error">Please select a size</div>}
             <div className="sizes">
-              {category === 'Jeans' ? (
+              {sizeBottomToDisplay.includes(type) ? (
                 <SizePickerForBottoms
                   currentSize={pickedSize}
                   onSetSize={setPickedSize}
+                  sizeListAvaiblable={sizeListAvaiblable}
                 />
               ) : (
                 <SizePickerForTops

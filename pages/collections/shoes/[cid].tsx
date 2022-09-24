@@ -59,7 +59,6 @@ const ProductDetails = () => {
             //@ts-ignore
             itemId: data?.id,
             itemSize: size || null,
-            type: 'shoes'
           }),
         })
       } catch (error) {
@@ -78,7 +77,6 @@ const ProductDetails = () => {
         if (isInCart) {
           const updatedItem = {
             ...cartItem,
-            type: 'shoes',
             itemQuantity: (+cartItem.itemQuantity + 1).toString(),
           }
           const updatedItems = [...cartItems]
@@ -102,7 +100,6 @@ const ProductDetails = () => {
                 itemId: data?.id,
                 itemSize: size,
                 itemQuantity: '1',
-                type: 'shoes'
               }),
             })
           } catch (error) {

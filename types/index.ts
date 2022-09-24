@@ -79,7 +79,7 @@ declare type CATEGORIES = 'CLOTHES' | 'SHOES' | 'ACCESSORIES';
  * example {[44]: 3}, {[43]: 0}, {[42]: 5}
  * taille -> nb restant
  */
-type Size = {
+export type Size = {
     [key: number]: number;
 }
 
@@ -136,6 +136,8 @@ export type ClothesProduct = {
     amount: string | number;
     size: Size;
     currency?: string | number;
+    type?: string;
+    itemSize?: string | null;
 }
 
 declare type STATUS_ORDERS = 'PENDING_ORDER' | 'ORDER_SENT' | 'SHIPPING_IN_PROGRESS' | 'DELIVERY_COMPLETED';
