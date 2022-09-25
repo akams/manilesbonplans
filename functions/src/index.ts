@@ -11,6 +11,11 @@ import { signup } from "./controllers/user";
 import { getWishList, removeWishlistItem } from "./controllers/wishlist/wishlist";
 import { create, getAll } from "./controllers/orders";
 import {
+  getCart,
+  removeCartItem,
+  updateCartItem,
+} from "./controllers/cart/cart";
+import {
   // create as createProduct,
   getProduct,
   getProducts,
@@ -55,6 +60,12 @@ app.post("/signup", signup);
 // api wishlist
 app.get("/wishlist", getWishList);
 app.patch("/wishlist/remove/:idProduct", removeWishlistItem);
+
+// api cart
+app.get("/cart", getCart);
+app.patch("/cart/remove/:idProduct", removeCartItem);
+app.patch("/cart/update", updateCartItem);
+
 // api orders
 app.get("/orders", getAll);
 app.post("/orders/terminate", create);

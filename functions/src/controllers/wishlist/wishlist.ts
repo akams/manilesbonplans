@@ -10,8 +10,7 @@ const getWishList = async (req: RequestEnhance, res: Response) => {
   try {
     console.log('Api: getWishList', req.user)
     // @ts-ignore
-    // const { uid } = req.user;
-    const uid = 'fkBoljk5RfRTpvsjjP3DIlk5Dm82';
+    const { uid } = req.user;
     const userWishlist = db.collection(uid).doc("wishlist");
     const snapshotUserWishlist = await userWishlist.get();
     // @ts-ignore

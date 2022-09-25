@@ -9,12 +9,11 @@ const Cart = ({
 
   const priceValue = clothes.reduce(
     //@ts-ignore
-    (prev, cur) => prev + +cur.amount * +cur.quantity,
+    (prev, cur) => prev + +cur.amount * +(Number(cur.itemQuantity)),
     0,
   )
-  const discountValue = Math.floor(priceValue / 5)
-  const totalValue = priceValue - discountValue
-
+  // const discountValue = Math.floor(priceValue / 5)
+  const totalValue = priceValue
   return (
     <>
       <div className="cart">
@@ -33,12 +32,12 @@ const Cart = ({
         <div className="basic">
           <div className="price">
             <div className="title">Price</div>
-            <div className="amount">Rs. {priceValue}</div>
+            <div className="amount">{priceValue} €</div>
           </div>
-          <div className="discount">
+          {/* <div className="discount">
             <div className="title">Discount</div>
             <div className="amount">- Rs. {discountValue}</div>
-          </div>
+          </div> */}
           <div className="shipping">
             <div className="title">Shipping</div>
             <div className="amount">FREE</div>
@@ -47,7 +46,7 @@ const Cart = ({
         <div className="total">
           <div className="final">
             <div className="title">Total Amount</div>
-            <div className="amount">Rs. {totalValue}</div>
+            <div className="amount">{totalValue} €</div>
           </div>
           <button
             className="order"

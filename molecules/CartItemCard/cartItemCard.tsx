@@ -2,17 +2,20 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { doc, updateDoc, arrayRemove } from 'firebase/firestore'
-import { db } from '@FirebaseConfig/firebase'
+import { useQueryClient } from 'react-query'
 
 import { ChevronDownIcon, CloseIcon } from '@Assets/icons'
-import { getFormattedCurrency } from '@Utils/getFormattedCurrency'
 
 import {
   BetterLink,
   Modal,
 } from '@Atoms'
 import { QuantityPicker } from '@Molecules'
+
+import { useRemoveCartMutation, useUpdateCartMutation } from '@Services/cart'
+
+import { getFormattedCurrency } from '@Utils/getFormattedCurrency'
+import { getQteBySize } from '@Utils/size'
 
 const Div = styled.div`
   font-size: 14px;
@@ -196,25 +199,33 @@ const CartItemCard = ({
   brand,
   name,
   amount,
-  quantity,
+  currency,
+  itemSize,
+  itemQuantity,
+  type,
 }) => {
+  const queryClient = useQueryClient()
+  const { mutateAsync: cartRemoveRequestMutation } = useRemoveCartMutation(queryClient)
+  const { mutateAsync: cartUpdateRequestMutation } = useUpdateCartMutation(queryClient)
+
+  const removeCartItemRequest = async () => {
+    await cartRemoveRequestMutation({
+      productId: id
+    })
+  }
+
+  const updateCartItemRequest = async (updateItem: any) => {
+    await cartUpdateRequestMutation(updateItem)
+  }
+
   const [showQuantityPicker, setShowQuantityPicker] = useState(false)
-  const [currentQuantity, setCurrentQuantity] = useState(quantity)
-  const user = useSelector((state) => state.auth.user)
+  const [currentQuantity, setCurrentQuantity] = useState(Number(itemQuantity))
   const cartItems = useSelector((state) => state.cart.items)
 
-  const removeItemHandler = () => {
-    updateDoc(doc(db, user.uid, 'cart'), {
-      items: arrayRemove({
-        itemId: id,
-        itemSize: size,
-        itemQuantity: currentQuantity,
-      }),
-    })
-      .then(() => {
-        console.log('okay')
-      })
-      .catch((error) => console.log(error))
+  const qteProductAvaiblable = getQteBySize(itemSize, size)
+
+  const removeItemHandler = async () => {
+    await removeCartItemRequest()
   }
 
   const openQuantityPickerHandler = () => {
@@ -225,10 +236,10 @@ const CartItemCard = ({
     setShowQuantityPicker(false)
   }
 
-  const setQuantityHandler = (selectedQuantity) => {
+  const setQuantityHandler = async (selectedQuantity) => {
     setCurrentQuantity(selectedQuantity)
     const item = cartItems.find(
-      (item) => item.itemId === id && item.itemSize === size,
+      (item) => item.itemId === id && item.itemSize === itemSize,
     )
     const updatedItem = {
       ...item,
@@ -236,41 +247,38 @@ const CartItemCard = ({
     }
     const updatedItems = [...cartItems]
     updatedItems.splice(index, 1, updatedItem)
-    updateDoc(doc(db, user.uid, 'cart'), {
-      items: updatedItems,
-    })
-      .then(() => { })
-      .catch((error) => {
-        console.log(error)
-      })
+
+    await updateCartItemRequest(updatedItems)
   }
 
   return (
     <>
       <Div>
         <div className="item">
-          <BetterLink href={`/collections/${id}`}>
+          <BetterLink href={`/collections/${type}/${id}`}>
             <Image
               src={imageURL}
               width={110}
               height={138}
               layout="responsive"
+              alt='img'
+              priority
             />
           </BetterLink>
           <div className="info">
             <div className="brand">{brand}</div>
             <div className="name">{name}</div>
             <div className="actions">
-              <button>Size: {size}</button>
+              <button>Size: {itemSize}</button>
               <button className="quantity" onClick={openQuantityPickerHandler}>
                 <span>Quantity: {currentQuantity}</span>
                 <ChevronDownIcon />
               </button>
             </div>
             <div className="amount">
-              <span>{quantity}</span>
+              <span>{currentQuantity}</span>
               <CloseIcon />
-              <span>{`Rs. ${getFormattedCurrency(amount)}`}</span>
+              <span>{`${getFormattedCurrency(amount)} ${currency}`}</span>
             </div>
           </div>
           <button className="delete" onClick={removeItemHandler}>
@@ -284,6 +292,7 @@ const CartItemCard = ({
             <div className="title">Select Quantity</div>
             <div className="quantities">
               <QuantityPicker
+                qteProductAvaiblable={qteProductAvaiblable}
                 currentQuantity={currentQuantity}
                 onSetQuantity={setQuantityHandler}
               />

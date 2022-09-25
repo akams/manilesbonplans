@@ -94,7 +94,6 @@ const WishlistItemCard: FC<Props> = ({
   }
 
   const moveToCartHandler = async (fromModal = false) => {
-
     if (itemSize) {
       console.log('enter here ==>size')
       if (isInCart) {
