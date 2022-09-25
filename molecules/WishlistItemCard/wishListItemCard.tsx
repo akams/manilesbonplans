@@ -95,7 +95,6 @@ const WishlistItemCard: FC<Props> = ({
 
   const moveToCartHandler = async (fromModal = false) => {
     if (itemSize) {
-      console.log('enter here ==>size')
       if (isInCart) {
         const updatedItem = {
           ...cartItem,
@@ -116,7 +115,7 @@ const WishlistItemCard: FC<Props> = ({
           await updateDoc(doc(db, user.uid, 'cart'), {
             items: arrayUnion({
               itemId: id,
-              itemSize: size,
+              itemSize,
               itemQuantity: '1',
             }),
           })

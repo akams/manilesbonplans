@@ -98,11 +98,16 @@ const updateCartItem = async (req: RequestEnhance, res: Response) => {
 
     console.log('Start Transaction');
     await db.runTransaction(async (transaction) => {
-      const updateItemCart = data.items.reduce((acc: any, { itemId }: any) => {
+      const updateItemCart = data.items.reduce((acc: any, { itemId, ...rest }: any) => {
         const found = updateItem.find((item: any) => item.itemId === itemId)
         if (found) {
           acc.push({
             ...found,
+          })
+        } else {
+          acc.push({
+            itemId,
+            ...rest,
           })
         }
         return acc
