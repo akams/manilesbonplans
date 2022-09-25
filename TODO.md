@@ -14,13 +14,22 @@
 - [X] UI produits 
 - [X] Api pour les produits (coté front ou cloud function ?)
 - [X] UI detail produit
+- [X] Fix wishlist / orders
+- [X] injection de plus de produits Products en BDD mock 1
+  - [X] création nuage de tag
+  - [X] produit par categorie definir exactement la structure d'un produit
+    - [X] homme/femme/enfants - vetement ok ; chaussure ok ; accessoire ok; parfums ?
 
-- [ ] Fix wishlist / orders / etc...
-
-- [] injection de plus de produits Products en BDD mock 1
-  - [] création nuage de tag
-  - [] produit par categorie definir exactement la structure d'un produit
-    - [] homme/femme - vetement; chaussure; accessoire; parfums ?
+- [ ] injection de plus de produits Products en BDD part 2
+  - [ ] homme - vetement;
+  - [X] homme - chaussure;
+  - [ ] homme - accessoire;
+  - [ ] femme - vetement;
+  - [ ] femme - chaussure;
+  - [ ] femme - accessoire;
+  - [ ] enfants - vetement;
+  - [ ] enfants - chaussure;
+  - [ ] enfants - accessoire;
 
 - [ ] re tester grandeur nature toute l'application
 
