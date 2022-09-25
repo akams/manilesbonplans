@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import store from '@Store'
 
-import { Container, NavBar } from '@Atoms'
+import { Container, NavBar, ChooseGender, ChooseCategoryProduct } from '@Atoms'
 import {
   ReactReduxFirebaseProvider,
 } from '@Molecules'
@@ -31,6 +31,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <ReactReduxFirebaseProvider>
             <QueryClientProvider client={queryClient}>
               <NavBar />
+              <ChooseGender />
+              <ChooseCategoryProduct />
               <IntlProvider
                 //@ts-ignore
                 locale={locale}

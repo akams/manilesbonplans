@@ -4,6 +4,7 @@ import filterReducer from './filterSlice'
 import authReducer from './authSlice'
 import wishlistReducer from './wishlistSlice'
 import cartReducer from './cartSlice'
+import genderReducer from './genderSlice'
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     auth: authReducer,
     wishlist: wishlistReducer,
     cart: cartReducer,
+    gender: genderReducer,
   },
 })
 
@@ -19,6 +21,7 @@ export {
   authReducer,
   wishlistReducer,
   cartReducer,
+  genderReducer,
 }
 
 export default store

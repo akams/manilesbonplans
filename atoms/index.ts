@@ -24,6 +24,8 @@ import EmptyWishlist from './EmptyWishlist'
 import SignInPromptTemplate from './SignInPromptTemplate'
 import EmptyCart from './EmptyCart'
 import RadioBtn from './RadioBtn'
+import ChooseGender from './ChooseGender'
+import ChooseCategoryProduct from './ChooseCategoryProduct'
 
 export {
   MainNav,
@@ -52,4 +54,6 @@ export {
   SignInPromptTemplate,
   EmptyCart,
   RadioBtn,
+  ChooseGender,
+  ChooseCategoryProduct,
 }
